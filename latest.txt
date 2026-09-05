@@ -1,1 +1,1 @@
-RT: https://truthsocial.com/users/realDonaldTrump/statuses/117216178911963514
+	ℹ️ ​Usage: !cmd <command_name> [args]
