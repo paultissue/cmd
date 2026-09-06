@@ -41,7 +41,7 @@ The service supports a comprehensive set of built-in utility commands, argument-
 
 | Command | Aliases | Response | --- |--- | --- |
 | --- | --- | --- | --- |--- | --- |
-| `ao` | `angry`, `oregon` | 📢 The Angry Oregonian 🇺🇸 | 📺 `@TheAngryOregonian1776` | CashApp / Venmo |
+| `ao` | `angry`, `oregon` | 📢 The Angry Oregonian 🇺🇸 | 📺 `@TheAngryOregonian1776` | 💬 `@TheAngryOregonian1776` | CashApp / Venmo |
 | `cs` | `chris`, `sims` | 📢 Chris Sims 🇺🇸 | 📺 `@ChrisxSims` | 💬 `@ChrisxSims` | CashApp / Venmo |
 | `dr` | `danny`, `rebel` | 📢 Danny Rebel 🇺🇸 | 📺 `@DannyRebel333` | 💬 `@DannyRebel333` | CashApp / Venmo |
 | `ht` | `hoot`, `hooty`, `hoot_troop` | 📢 Hoot Troop 🇺🇸 | 📺 `@Hoot_Troop` | 💬 `@Hoot_Troop` | CashApp / Linktr.ee |
