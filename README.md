@@ -78,16 +78,16 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 📢 Go follow @NickShirley | 📺 [https://www.youtube.com/@NickShirley](https://www.youtube.com/@NickShirley)
 ```
 
-### Example 3: Creator Specific Shout-out Command (`!nick`)
+### Example 3: Creator Specific Shout-out Command (`!hoot`)
 
 * **Chat Input**:
 ```text
-!cmd nick
+!cmd hoot
 ```
 
 * **Bot Response**:
 ```text
-📢 Nick Shirley 🇺🇸 | 📺 https://www.youtube.com/@NickShirley | 💬 https://www.instagram.com/nickshirley | 💸 https://officialnickshirley.us
+📢 Our World Live - Hoot Troop 🦉 🇺🇸 | 📺 https://www.youtube.com/@Hoot_Troop | 💬 https://x.com/Hoot_Troop | 🔗 https://linktr.ee/hoot_troop
 ```
 
 ### Example 4: Viewer Watcher Count Macro (`!watchers`)
