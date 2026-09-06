@@ -49,9 +49,9 @@ The service supports a comprehensive set of built-in utility commands, argument-
 | `ns` | `nick`, `shirley` | 📢 Nick Shirley 🇺🇸 | 📺 `@NickShirley` | 💬 Instagram | 🔗 Official Site |
 | `uc` | `unscripted`, `pj` | 📢 Unscripted Chronicles (PJ) 🇺🇸 | 📺 `@Unscripted-1437` | 💬 `@Pjsjourney82` | PayPal / Linktr.ee |
 
-## 💬 Usage Examples in Live Video Chat
+## 💬 Usage Examples in a Live Stream's Chat
 
-When viewers or moderators type `!cmd` commands in a live stream chat, the chatbot triggers the Cloudflare Worker endpoint, which interpolates arguments and returns the formatted response.
+When viewers or moderators type `!cmd` commands in a live stream chat, the channel's chatbot triggers the `!cmd` Cloudflare Worker endpoint, which interpolates arguments and returns the formatted response.
 
 ### Example 1: Standard Static Utility Command / Promote Supporting this Channel
 
