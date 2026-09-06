@@ -87,7 +87,7 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 
 * **Bot Response**:
 ```text
-📢 Nick Shirley 🇺🇸 | 📺 [https://www.youtube.com/@NickShirley](https://www.youtube.com/@NickShirley) | 💬 [https://www.instagram.com/nickshirley](https://www.instagram.com/nickshirley) | 💸 [https://officialnickshirley.us](https://officialnickshirley.us)
+📢 Nick Shirley 🇺🇸 | 📺 https://www.youtube.com/@NickShirley | 💬 https://www.instagram.com/nickshirley | 💸 https://officialnickshirley.us
 ```
 
 ### Example 4: Viewer Watcher Count Macro (`!watchers`)
