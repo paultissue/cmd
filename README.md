@@ -57,7 +57,7 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 
 * **Chat Input**:
 ```text
-!sub
+!cmd sub
 ```
 
 * **Bot Response**:
@@ -69,7 +69,7 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 
 * **Chat Input**:
 ```text
-!p @NickShirley
+!cmd promo @NickShirley
 ```
 
 * **Processing**: The interpolation engine maps `@NickShirley` into `$(1)`.
@@ -82,7 +82,7 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 
 * **Chat Input**:
 ```text
-!ns
+!cmd ns
 ```
 
 * **Bot Response**:
@@ -94,12 +94,12 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 
 * **Chat Input**:
 ```text
-!w 1,450
+!cmd watchers 150
 ```
 
 * **Bot Response**:
 ```text
-👀 1,450 Watching 👀 ...Let's Goooo! 🇺🇸
+👀 150 Watching 👀 ...Let's Goooo! 🇺🇸
 ```
 
 ## 🏗️ Core Architecture & Functionality
