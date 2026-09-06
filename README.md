@@ -122,7 +122,9 @@ By fetching centralized JSON/text definitions hosted on GitHub (commands, author
 
 ## 🤖 Platform Configuration & Custom Command Setup
 
-To integrate the `!cmd` service with your chatbot, create a custom command pointing to your Cloudflare Worker URL (`https://cmd.paultissue.workers.dev/`). Below are the custom command setups for each supported chatbot.
+To integrate the `!cmd` service with your chatbot, create a custom command, name it `!cmd`, pointing to the Cloudflare Worker URL (`https://cmd.paultissue.workers.dev/`).
+
+Below are the custom command setups for each supported chatbot.
 
 ### 1. StreamElements
 
@@ -130,12 +132,12 @@ To integrate the `!cmd` service with your chatbot, create a custom command point
 
 * **Minimal Command Setup**:
 ```text
-  !cmd ${customapi [https://cmd.paultissue.workers.dev/?query=$](https://cmd.paultissue.workers.dev/?query=$){1:|EMPTY}}
+${customapi [https://cmd.paultissue.workers.dev/?query=$](https://cmd.paultissue.workers.dev/?query=$){1:|EMPTY}}
 ```
 
 * **Full Authenticated Command Setup**:
 ```text
-!cmd ${customapi [https://cmd.paultissue.workers.dev/?platform=StreamElements&channel=@$](https://cmd.paultissue.workers.dev/?platform=StreamElements&channel=@$){channel}&user=${sender}&query=${1:|EMPTY}}
+${customapi [https://cmd.paultissue.workers.dev/?platform=StreamElements&channel=@$](https://cmd.paultissue.workers.dev/?platform=StreamElements&channel=@$){channel}&user=${sender}&query=${1:|EMPTY}}
 ```
 
 ### 2. Nightbot
@@ -143,12 +145,12 @@ To integrate the `!cmd` service with your chatbot, create a custom command point
 * **Quirk**: Pass remaining query text natively via `q=${query}` or `q=${querystring}`.
 * **Minimal Command Setup**:
 ```text
-!cmd $(customapi [https://cmd.paultissue.workers.dev/?query=$(querystring](https://cmd.paultissue.workers.dev/?query=$(querystring)))
+$(customapi [https://cmd.paultissue.workers.dev/?query=$(querystring](https://cmd.paultissue.workers.dev/?query=$(querystring)))
 ```
 
 * **Full Authenticated Command Setup**:
 ```text
-!cmd $(customapi [https://cmd.paultissue.workers.dev/?platform=Nightbot&channel=@YourChannel&user=$(user)&query=$(querystring](https://cmd.paultissue.workers.dev/?platform=Nightbot&channel=@PaulTissue&user=$(user)&query=$(querystring)))
+$(customapi [https://cmd.paultissue.workers.dev/?platform=Nightbot&channel=@YourChannel&user=$(user)&query=$(querystring](https://cmd.paultissue.workers.dev/?platform=Nightbot&channel=@PaulTissue&user=$(user)&query=$(querystring)))
 ```
 
 ### 3. Fossabot
@@ -156,12 +158,12 @@ To integrate the `!cmd` service with your chatbot, create a custom command point
 * **Quirk**: Pass remaining query text natively via `q=${query}` or `q=${querystring}`.
 * **Minimal Command Setup**:
 ```text
-!cmd $(customapi [https://cmd.paultissue.workers.dev/?query=$(querystring](https://cmd.paultissue.workers.dev/?query=$(querystring)))
+$(customapi [https://cmd.paultissue.workers.dev/?query=$(querystring](https://cmd.paultissue.workers.dev/?query=$(querystring)))
 ```
 
 * **Full Authenticated Command Setup**:
 ```text
-!cmd $(customapi [https://cmd.paultissue.workers.dev/?platform=Fossabot&channel=$](https://cmd.paultissue.workers.dev/?platform=Fossabot&channel=$){channel}&user=${sender}&query=$(querystring))
+$(customapi [https://cmd.paultissue.workers.dev/?platform=Fossabot&channel=$](https://cmd.paultissue.workers.dev/?platform=Fossabot&channel=$){channel}&user=${sender}&query=$(querystring))
 ```
 
 ### 4. Streamlabs Cloudbot
@@ -169,12 +171,12 @@ To integrate the `!cmd` service with your chatbot, create a custom command point
 * **Quirk**: Uses variable injection via `$(sender)` and `$(query)`, and short parameters (`u` & `m`) to bypass dashboard field truncation limits.
 * **Minimal Command Setup**:
 ```text
-!cmd {readapi.[https://cmd.paultissue.workers.dev/?query=](https://cmd.paultissue.workers.dev/?query=){touser.name}}
+{readapi.[https://cmd.paultissue.workers.dev/?query=](https://cmd.paultissue.workers.dev/?query=){touser.name}}
 ```
 
 * **Full Authenticated Command Setup**:
 ```text
-!cmd {readapi.[https://cmd.paultissue.workers.dev/?platform=Cloudbot&channel=@PaulTissue&user=](https://cmd.paultissue.workers.dev/?platform=Cloudbot&channel=@YourChannel&user=){user.name}&query={touser.name}}
+{readapi.[https://cmd.paultissue.workers.dev/?platform=Cloudbot&channel=@PaulTissue&user=](https://cmd.paultissue.workers.dev/?platform=Cloudbot&channel=@YourChannel&user=){user.name}&query={touser.name}}
 ```
 
 ### 5. Streamer.bot
