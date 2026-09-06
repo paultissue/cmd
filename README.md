@@ -4,7 +4,7 @@ Universal Cross-Platform Chatbot Command Router
 
 The **`!cmd` Shout Service** is a high-performance, edge-deployed Cloudflare Worker designed to serve as a **Universal Cross-Platform Chatbot Command Router**. It abstracts and standardizes custom command handling across multiple live-streaming chat platforms, eliminating the need to maintain redundant, platform-specific command blocks. 
 
-## 📋 Supported Commands Directory (`cmd.commands.jsonc`)
+## 📋 Supported Commands Directory
 
 The service supports a comprehensive set of built-in utility commands, argument-based macros, and creator shout-outs.
 
