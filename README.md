@@ -29,7 +29,7 @@ The service supports a comprehensive set of built-in utility commands, argument-
 ### 🔤 Argument-Based Commands (Dynamic Interpolation)
 
 | Command | Aliases | Response Template & Behavior |
-| --- | --- | --- |
+| --- | --- | --- | 
 | `l` | `likes` | 👍 `$(1)` Thumbs Up 👍 Smash that Like button! 👍 ...Let's Goooo! 🇺🇸 |
 | `p` | `promo`, `promote`, `so`, `shout` | 📢 Go follow `$(1)` | 📺 `https://www.youtube.com/$(1)` |
 | `s` | `subs`, `subscribers` | 👥 `$(1)` Subscribers 👥 Smash that Subscribe button! 👥 ...Let's Goooo! 🇺🇸 |
@@ -39,7 +39,7 @@ The service supports a comprehensive set of built-in utility commands, argument-
 
 *Note: Full commands and aliases are registered for many creators. Below is a representative selection:*
 
-| Command | Aliases | Response |
+| Command | Aliases | Response | --- |--- | --- | --- |
 | --- | --- | --- |
 | `ao` | `angry`, `oregon` | 📢 The Angry Oregonian 🇺🇸 | 📺 `@TheAngryOregonian1776` | CashApp / Venmo |
 | `cs` | `chris`, `sims` | 📢 Chris Sims 🇺🇸 | 📺 `@ChrisxSims` | 💬 `@ChrisxSims` | CashApp / Venmo |
