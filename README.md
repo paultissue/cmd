@@ -40,7 +40,7 @@ The service supports a comprehensive set of built-in utility commands, argument-
 *Note: Full commands and aliases are registered for many creators. Below is a representative selection:*
 
 | Command | Aliases | Response | --- |--- | --- | --- |
-| --- | --- | --- |
+| --- | --- | --- | --- |--- | --- | --- |
 | `ao` | `angry`, `oregon` | 📢 The Angry Oregonian 🇺🇸 | 📺 `@TheAngryOregonian1776` | CashApp / Venmo |
 | `cs` | `chris`, `sims` | 📢 Chris Sims 🇺🇸 | 📺 `@ChrisxSims` | 💬 `@ChrisxSims` | CashApp / Venmo |
 | `dr` | `danny`, `rebel` | 📢 Danny Rebel 🇺🇸 | 📺 `@DannyRebel333` | 💬 `@DannyRebel333` | CashApp / Venmo |
