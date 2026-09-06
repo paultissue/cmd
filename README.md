@@ -53,7 +53,7 @@ The service supports a comprehensive set of built-in utility commands, argument-
 
 When viewers or moderators type `!cmd` commands in a live stream chat, the chatbot triggers the Cloudflare Worker endpoint, which interpolates arguments and returns the formatted response.
 
-### Example 1: Standard Static Utility Command
+### Example 1: Standard Static Utility Command / Promote Supporting this Channel
 
 * **Chat Input**:
 ```text
@@ -65,7 +65,7 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 ℹ️ Support this channel! 🇺🇸 Press Thumbs Up 👍, Subscribe 🔔, Set Notifications to All 🔔, and Super Chat 💵 | Thank you!
 ```
 
-### Example 2: Dynamic Shout-Out / Promotion Command (`!p`)
+### Example 2: Dynamic Shout-Out for other Channels / Promotion Command (`!promo`)
 
 * **Chat Input**:
 ```text
@@ -78,11 +78,11 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 📢 Go follow @NickShirley | 📺 [https://www.youtube.com/@NickShirley](https://www.youtube.com/@NickShirley)
 ```
 
-### Example 3: Creator Shortcut Command (`!ns`)
+### Example 3: Creator Specific Shout-out Command (`!nick`)
 
 * **Chat Input**:
 ```text
-!cmd ns
+!cmd nick
 ```
 
 * **Bot Response**:
@@ -90,7 +90,7 @@ When viewers or moderators type `!cmd` commands in a live stream chat, the chatb
 📢 Nick Shirley 🇺🇸 | 📺 [https://www.youtube.com/@NickShirley](https://www.youtube.com/@NickShirley) | 💬 [https://www.instagram.com/nickshirley](https://www.instagram.com/nickshirley) | 💸 [https://officialnickshirley.us](https://officialnickshirley.us)
 ```
 
-### Example 4: Viewer Watcher Count Macro (`!w`)
+### Example 4: Viewer Watcher Count Macro (`!watchers`)
 
 * **Chat Input**:
 ```text
