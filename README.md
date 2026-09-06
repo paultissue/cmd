@@ -98,17 +98,17 @@ The service supports a comprehensive set of built-in utility commands, argument-
 | Command | Aliases | Description / Response Template |
 | --- | --- | --- |
 | `usage` | `syntax` | ℹ️ Usage: `!cmd <command_name> [args]` |
-| `c` | `cmds`, `commands`, `list`, `docs`, `help`, `?` | Presents URL to the dynamic commands webpage. |
-| `f` | `fu`, `fair`, `fairuse` | Fair use policy disclaimer for commentary and critique. |
-| `g` | `cg`, `guide`, `guidelines` | YouTube Community Guidelines reference link. |
-| `h` | `hs`, `hate`, `speech` | YouTube Hate Speech Policy reference link. |
+| `c` | `cmds`, `commands`, `list`, `docs`, `help`, `?` | 🤖 Presents URL to the dynamic commands webpage. |
+| `f` | `fu`, `fair`, `fairuse` | ℹ️ Fair use policy disclaimer for commentary and critique. |
+| `g` | `cg`, `guide`, `guidelines` | ℹ️ YouTube Community Guidelines reference link. |
+| `h` | `hs`, `hate`, `speech` | ℹ️ YouTube Hate Speech Policy reference link. |
 | `m` | `mute`, `muted`, `priv`, `sec` | 🔇 Sound MUTED for PRIVACY and/or SECURITY. Please stand by... 🔇 |
-| `r` | `respect` | Reminder to maintain respectful chat decorum. |
-| `share` | `stream` | Call to action to share stream across social media. |
-| `sp` | `spam` | Anti-spam and readability guidelines reminder. |
+| `r` | `respect` | ⚠️ Reminder to maintain respectful chat decorum. |
+| `share` | `stream` | 📢 Shout-outs to social media content providers to follow and support. |
+| `sp` | `spam` | ⚠️ Anti-spam and readability guidelines reminder. |
 | `st` | `status`, `verify`, `access` | ✅ Status check verified: You are authorized! |
-| `sub` | `subscribe`, `support` | Full subscription and engagement support reminder (Thumbs Up, Subscribe, Notifications, Super Chat). |
-| `subx` | `subscribex`, `supportx` | Standard subscription support reminder (Thumbs Up, Subscribe, Notifications). |
+| `sub` | `subscribe`, `support` | 👍 Full subscription and engagement support reminder (Thumbs Up, Subscribe, Notifications, Super Chat). |
+| `subx` | `subscribex`, `supportx` | 👍 Standard subscription support reminder (Thumbs Up, Subscribe, Notifications). |
 | `t` | `tech`, `issue`, `buffer` | ⚠️ Technical difficulties notice. |
 
 ### 🔤 Argument-Based Commands (Dynamic Interpolation)
@@ -124,13 +124,13 @@ The service supports a comprehensive set of built-in utility commands, argument-
 
 *Note: Full aliases are registered for each creator. Below is a representative selection:*
 
-* **`aa`** (`ari`, `th`): 📢 Apostate Ari / The Transphobic Historian 🇺🇸 | 📺 `@ApostateAri` | 💬 `@ApostateAri` | 🔗 Linktree
-* **`af`** (`adam`, `francisco`): 📢 Adam Francisco 🇺🇸 | 📺 `@AdamFrancisco` | 💬 `@adamfrancisco_`
-* **`ao`** (`angry`): 📢 The Angry Oregonian 🇺🇸 | 📺 `@theangryoregonian1776` | CashApp / Venmo
-* **`ch`** (`cam`, `higby`): 📢 Cam Higby 🇺🇸 | 📺 `@CamHigby` | 💬 `@camhigby`
-* **`cs`** (`chris`, `chrissims`): 📢 Chris Sims 🇺🇸 | 📺 `@chrisxsims` | 💬 `@ChrisxSims`
-* **`ns`** (`nick`, `shirley`): 📢 Nick Shirley 🇺🇸 | 📺 `@NickShirley` | Instagram & Official Site
-* **`sh`** (`sav`, `savsays`): 📢 Sav Says / Savanah Hernandez 🇺🇸 | 📺 `@SavSays` | 💬 `@savsays`
+* **`ao`** (`angry`, `oregopnian`): 📢 The Angry Oregonian 🇺🇸 | 📺 `@TheAngryOregonian1776` | CashApp / Venmo
+* **`cs`** (`chris`, `sims`): 📢 Chris Sims 🇺🇸 | 📺 `@ChrisxSims` | 💬 `@ChrisxSims` | CashApp / Venmo
+* * **`dr`** (`danny`, `rebel`): 📢 Danny Rebel 🇺🇸 | 📺 `@DannyRebel333` | 💬 `@DannyRebel333` | CashApp / Venmo
+* * **`ht`** (`hoot`, `hooty`, `hoot_troop`): 📢 Hoot Troop 🇺🇸 | 📺 `@Hoot_Troop` | 💬 `@Hoot_Troop` | CashApp / Linktr.ee
+* **`mb`** (`bill`, `onlyamrbill`): 📢 Mr. Bill 🇺🇸 | 📺 `@OnlyaMrBill` | 💬 `@OnlyaMrBill` | CashApp / Venmo
+* * **`ns`** (`nick`, `shirley`): 📢 Nick Shirley 🇺🇸 | 📺 `@NickShirley` | 💬 Instagram | 🔗 Official Site
+* **`uc`** (`unscripted`, `adn`): 📢 Unscripted Chronicles (PJ) 🇺🇸 | 📺 `@Unscripted-1437` | 💬 `@Pjsjourney82` | PayPal / Linktr.ee
 
 ## 💬 Usage Examples in Live Video Chat
 
