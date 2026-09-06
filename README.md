@@ -41,10 +41,10 @@ The service supports a comprehensive set of built-in utility commands, argument-
 
 * **`ao`** (`angry`, `oregopnian`): 📢 The Angry Oregonian 🇺🇸 | 📺 `@TheAngryOregonian1776` | CashApp / Venmo
 * **`cs`** (`chris`, `sims`): 📢 Chris Sims 🇺🇸 | 📺 `@ChrisxSims` | 💬 `@ChrisxSims` | CashApp / Venmo
-* * **`dr`** (`danny`, `rebel`): 📢 Danny Rebel 🇺🇸 | 📺 `@DannyRebel333` | 💬 `@DannyRebel333` | CashApp / Venmo
-* * **`ht`** (`hoot`, `hooty`, `hoot_troop`): 📢 Hoot Troop 🇺🇸 | 📺 `@Hoot_Troop` | 💬 `@Hoot_Troop` | CashApp / Linktr.ee
+* **`dr`** (`danny`, `rebel`): 📢 Danny Rebel 🇺🇸 | 📺 `@DannyRebel333` | 💬 `@DannyRebel333` | CashApp / Venmo
+* **`ht`** (`hoot`, `hooty`, `hoot_troop`): 📢 Hoot Troop 🇺🇸 | 📺 `@Hoot_Troop` | 💬 `@Hoot_Troop` | CashApp / Linktr.ee
 * **`mb`** (`bill`, `onlyamrbill`): 📢 Mr. Bill 🇺🇸 | 📺 `@OnlyaMrBill` | 💬 `@OnlyaMrBill` | CashApp / Venmo
-* * **`ns`** (`nick`, `shirley`): 📢 Nick Shirley 🇺🇸 | 📺 `@NickShirley` | 💬 Instagram | 🔗 Official Site
+* **`ns`** (`nick`, `shirley`): 📢 Nick Shirley 🇺🇸 | 📺 `@NickShirley` | 💬 Instagram | 🔗 Official Site
 * **`uc`** (`unscripted`, `adn`): 📢 Unscripted Chronicles (PJ) 🇺🇸 | 📺 `@Unscripted-1437` | 💬 `@Pjsjourney82` | PayPal / Linktr.ee
 
 ## 💬 Usage Examples in Live Video Chat
