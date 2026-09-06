@@ -1,4 +1,4 @@
-# 🚀 !cmd Shout-out Service 
+# 🤖 !cmd Shout-out Service 
       
 Universal Cross-Platform Chatbot Command Router
 
