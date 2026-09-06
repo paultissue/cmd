@@ -148,7 +148,7 @@ To integrate the `!cmd` service with your chatbot, create a custom command point
 
 * **Full Authenticated Command Setup**:
 ```text
-!cmd $(customapi [https://cmd.paultissue.workers.dev/?platform=Nightbot&channel=@PaulTissue&user=$(user)&query=$(querystring](https://cmd.paultissue.workers.dev/?platform=Nightbot&channel=@PaulTissue&user=$(user)&query=$(querystring)))
+!cmd $(customapi [https://cmd.paultissue.workers.dev/?platform=Nightbot&channel=@YourChannel&user=$(user)&query=$(querystring](https://cmd.paultissue.workers.dev/?platform=Nightbot&channel=@PaulTissue&user=$(user)&query=$(querystring)))
 ```
 
 ### 3. Fossabot
@@ -174,7 +174,7 @@ To integrate the `!cmd` service with your chatbot, create a custom command point
 
 * **Full Authenticated Command Setup**:
 ```text
-!cmd {readapi.[https://cmd.paultissue.workers.dev/?platform=Cloudbot&channel=@PaulTissue&user=](https://cmd.paultissue.workers.dev/?platform=Cloudbot&channel=@PaulTissue&user=){user.name}&query={touser.name}}
+!cmd {readapi.[https://cmd.paultissue.workers.dev/?platform=Cloudbot&channel=@PaulTissue&user=](https://cmd.paultissue.workers.dev/?platform=Cloudbot&channel=@YourChannel&user=){user.name}&query={touser.name}}
 ```
 
 ### 5. Streamer.bot
