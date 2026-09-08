@@ -66,6 +66,10 @@
     "response": "👍 $(1) Thumbs Up 👍 Smash that Like button! 👍 ...Let's Goooo! 🇺🇸",
     "aliases": ["likes"]
   },
+  "m": {
+    "response": "👋 You are $(user) watching the $(channel) channel on $(provider) which uses the $(platform) bot. How are you this $(1) $(2)?",
+    "aliases": ["me", "whoami"]
+  },
   "p": {
     "response": "📢 Go follow $(1) | 📺 https://www.youtube.com/$(1)",
     "aliases": ["promo", "promote", "so", "shout", "shoutout"]
