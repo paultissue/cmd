@@ -3,7 +3,29 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-<title>${title}</title>
+<title>🤖 ${pageName} for !cmd</title>
+<script>
+  // Apply theme and alias preferences immediately before first paint to prevent flashes
+  const savedTheme = localStorage.getItem('theme_preference');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  let initialAliasClass = 'show-aliases';
+  if (!${isSimpleRoute}) {
+    const savedShowAliases = localStorage.getItem('show_aliases');
+    if (savedShowAliases === 'false') {
+      initialAliasClass = 'hide-aliases';
+    }
+  }
+  document.write('<style>body { visibility: hidden; }</style>');
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.className = initialAliasClass;
+    document.body.style.visibility = 'visible';
+  });
+</script>
 <style>
 :root {
   --bg-color: #ffffff;
@@ -25,7 +47,7 @@
   --timestamp-color: #aaa;
   --link-color: #4dabf7;
 }
-body { font-family: Arial, sans-serif; padding: 0 20px 20px 20px; background-color: var(--bg-color); color: var(--text-color); transition: background 0.2s, color 0.2s; margin: 0; }
+body { font-family: Arial, sans-serif; padding: 0 20px 20px 20px; background-color: var(--bg-color); color: var(--text-color); margin: 0; }
 a { color: var(--link-color); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -36,25 +58,43 @@ a:hover { text-decoration: underline; }
   padding: 20px 0 15px 0;
   margin-bottom: 0;
   z-index: 1000;
-  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .header-container { display: flex; justify-content: space-between; align-items: baseline; max-width: ${maxWidth}; flex-wrap: wrap; gap: 10px; }
 h2 { margin: 0; font-size: 1.5rem; }
 .header-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .timestamp { color: var(--timestamp-color); font-size: 0.85em; font-weight: normal; margin-right: 5px; }
-.btn { background: none; border: 1px solid var(--border-color); color: var(--text-color); padding: 6px 12px; cursor: pointer; border-radius: 4px; font-size: 0.85em; }
+.btn { background: none; border: 1px solid var(--border-color); color: var(--text-color); padding: 0 12px; height: 31px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 4px; font-size: 0.85em; text-align: center; box-sizing: border-box; vertical-align: middle; white-space: nowrap; }
 .btn:hover { background: var(--header-bg); }
 .btn.active { background: var(--header-bg); font-weight: bold; border-color: var(--text-color); }
-table { border-collapse: collapse; width: 100%; max-width: ${maxWidth}; word-break: break-word; }
-th, td { border: 1px solid var(--border-color); padding: 8px 12px; text-align: left; font-size: 0.95rem; }
-th.col-aliases, td.col-aliases { width: 12%; max-width: none; white-space: normal; overflow: visible; text-overflow: clip; word-break: break-word; }
-th:not(.col-aliases):not(:first-child), td:not(.col-aliases):not(:first-child) { width: auto; }
-th { background: var(--header-bg); white-space: nowrap; position: sticky; z-index: 10; transition: background-color 0.2s, border-color 0.2s; background-clip: padding-box; }
+${!isSimpleRoute ? '#btnTable { width: 145px; } #btnAliases { width: 135px; }' : ''}
+table { 
+  border-collapse: collapse; 
+  width: 100%; 
+  max-width: ${maxWidth}; 
+  word-break: break-word; 
+  table-layout: auto; 
+}
+th, td { 
+  border: 1px solid var(--border-color); 
+  padding: 8px 12px; 
+  text-align: left; 
+  font-size: 0.95rem; 
+}
+th:nth-child(1), td:nth-child(1) { 
+  width: 1%; 
+  white-space: nowrap; 
+}
+th.col-aliases, td.col-aliases { width: 15%; max-width: none; white-space: normal; overflow: visible; text-overflow: clip; word-break: break-word; }
+th:nth-child(3), td:nth-child(3) { width: auto; }
+
+th { background: var(--header-bg); white-space: nowrap; position: sticky; z-index: 10; background-clip: padding-box; }
 tr[style*="background"] { background-color: var(--comment-bg) !important; color: var(--comment-text) !important; }
 pre { background: var(--header-bg); padding: 15px; border-radius: 4px; border: 1px solid var(--border-color); overflow-x: auto; max-width: ${maxWidth}; margin: 0; font-family: monospace; font-size: 0.9rem; white-space: pre-wrap; word-break: break-all; }
+
 .view-panel { display: none; }
-.view-panel.active { display: block; }
+#panelTable { display: block; }
+
 .col-aliases { display: table-cell; }
 body.hide-aliases .col-aliases { display: none; }
 body.hide-aliases tr[style*="background"] td { grid-column: span 2; }
@@ -63,19 +103,19 @@ body.hide-aliases tr[style*="background"] td { grid-column: span 2; }
   body { padding: 0 10px 10px 10px; }
   .sticky-header { padding: 15px 0 10px 0; }
   .header-container { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .header-right { width: 100%; justify-content: space-between; }
+  .header-right { width: 100%; justify-content: space-between; } 
   th, td { padding: 6px 8px; font-size: 0.85rem; }
 }
 </style>
 </head>
-<body class="${!isSimpleRoute ? 'show-aliases' : ''}">
+<body>
 <div class="sticky-header" id="stickyHeader">
   <div class="header-container">
-    <h2>${title}</h2>
+    <h2 id="pageHeading">🤖 ${pageName} for !cmd</h2>
     <div class="header-right">
-      <span class="timestamp">Generated: ${dateStr}</span>
+      <span class="timestamp">Last Refreshed: ${dateStr}</span>
       ${!isSimpleRoute ? '<button class="btn active" id="btnAliases" onclick="toggleAliases()">🏷️ Aliases: Show</button>' : ''}
-      <button class="btn active" id="btnTable" onclick="switchView('table')">${!isSimpleRoute ? '📋 Table: Expanded' : '📋 Table'}</button>
+      <button class="btn active" id="btnTable" onclick="handleTableButtonClick()">${!isSimpleRoute ? '📋 Table: Expanded' : '📋 Table'}</button>
       <button class="btn" id="btnJson" onclick="switchView('json')">📦 JSON</button>
       <button class="btn" id="btnRaw" onclick="switchView('raw')">📄 Raw</button>
       <button class="btn" onclick="toggleTheme()">🌓 Theme</button>
@@ -83,7 +123,7 @@ body.hide-aliases tr[style*="background"] td { grid-column: span 2; }
   </div>
 </div>
 
-<div id="panelTable" class="view-panel active">
+<div id="panelTable" class="view-panel">
   <table>
     <thead>
       <tr><th>${col1}</th>${col2 ? `<th class="col-aliases">${col2}</th>` : ""}${col3 ? `<th>${col3}</th>` : ""}</tr>
@@ -117,13 +157,15 @@ function updateStickyHeaderOffset() {
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme_preference', theme);
-  requestAnimationFrame(updateStickyHeaderOffset);
 }
+
 function toggleTheme() {
   const current = localStorage.getItem('theme_preference') || 'light';
   setTheme(current === 'light' ? 'dark' : 'light');
+  requestAnimationFrame(updateStickyHeaderOffset);
 }
 
+${!isSimpleRoute ? `
 function toggleAliases() {
   const currentShow = localStorage.getItem('show_aliases') === null ? true : localStorage.getItem('show_aliases') === 'true';
   const newState = !currentShow;
@@ -140,7 +182,6 @@ function updateAliasesUI(show) {
   document.body.classList.toggle('show-aliases', show);
   document.body.classList.toggle('hide-aliases', !show);
 
-  // Update colspan for comment rows dynamically based on visible columns
   const commentRows = document.querySelectorAll('tr[style*="background"] td');
   commentRows.forEach(td => {
     td.setAttribute('colspan', show ? '3' : '2');
@@ -148,16 +189,36 @@ function updateAliasesUI(show) {
   requestAnimationFrame(updateStickyHeaderOffset);
 }
 
-function switchView(viewName) {
-  if (viewName === 'table' && localStorage.getItem('preferred_view') === 'table' && typeof updateTableUI === 'function') {
+function updateTableUI(isExpanded) {
+  const btn = document.getElementById('btnTable');
+  if (btn) {
+    btn.textContent = '📋 Table: ' + (isExpanded ? 'Expanded' : 'Simple');
+  }
+  const rows = document.querySelectorAll('#panelTable tbody tr[data-expanded]');
+  rows.forEach(tr => {
+    const targetCell = tr.lastElementChild;
+    if (targetCell) {
+      targetCell.innerHTML = isExpanded ? tr.getAttribute('data-expanded') : tr.getAttribute('data-short');
+    }
+  });
+  requestAnimationFrame(updateStickyHeaderOffset);
+}
+
+function handleTableButtonClick() {
+  const currentView = localStorage.getItem('preferred_view');
+  if (currentView === 'table') {
     const currentExpandedPref = localStorage.getItem('expanded_view');
     const isExpanded = currentExpandedPref === null ? true : currentExpandedPref === 'true';
     const newState = !isExpanded;
     localStorage.setItem('expanded_view', newState);
     updateTableUI(newState);
-    return;
+  } else {
+    switchView('table');
   }
+}
+` : ''}
 
+function switchView(viewName) {
   ['table', 'json', 'raw'].forEach(v => {
     const panel = document.getElementById('panel' + v.charAt(0).toUpperCase() + v.slice(1));
     const btn = document.getElementById('btn' + v.charAt(0).toUpperCase() + v.slice(1));
@@ -165,7 +226,7 @@ function switchView(viewName) {
     if (btn) btn.classList.toggle('active', v === viewName);
   });
 
-  if (viewName === 'table' && typeof updateTableUI === 'function') {
+  if (viewName === 'table' && !${isSimpleRoute}) {
     const currentExpandedPref = localStorage.getItem('expanded_view');
     const isExpanded = currentExpandedPref === null ? true : currentExpandedPref === 'true';
     updateTableUI(isExpanded);
@@ -178,32 +239,21 @@ function switchView(viewName) {
 window.addEventListener('load', updateStickyHeaderOffset);
 window.addEventListener('resize', updateStickyHeaderOffset);
 
-(function() {
-  const savedTheme = localStorage.getItem('theme_preference');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
+window.addEventListener('DOMContentLoaded', () => {
+  if (!${isSimpleRoute}) {
+    const savedShowAliases = localStorage.getItem('show_aliases');
+    const showAliases = savedShowAliases === null ? true : savedShowAliases === 'true';
+    updateAliasesUI(showAliases);
 
-  const savedShowAliases = localStorage.getItem('show_aliases');
-  const showAliases = savedShowAliases === null ? true : savedShowAliases === 'true';
-  updateAliasesUI(showAliases);
-
-  const currentExpandedPref = localStorage.getItem('expanded_view');
-  const savedExpanded = currentExpandedPref === null ? true : currentExpandedPref === 'true';
-  if (typeof updateTableUI === 'function') {
+    const currentExpandedPref = localStorage.getItem('expanded_view');
+    const savedExpanded = currentExpandedPref === null ? true : currentExpandedPref === 'true';
     updateTableUI(savedExpanded);
   }
 
   const savedView = localStorage.getItem('preferred_view') || 'table';
   switchView(savedView);
-  if (savedView === 'table' && typeof updateTableUI === 'function') {
-    updateTableUI(savedExpanded);
-  }
-
   requestAnimationFrame(updateStickyHeaderOffset);
-})();
+});
 </script>
 </body>
 </html>
