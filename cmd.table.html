@@ -5,7 +5,6 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
 <title>🤖 ${pageName} for !cmd</title>
 <script>
-  // Apply theme and alias preferences immediately before first paint to prevent flashes
   const savedTheme = localStorage.getItem('theme_preference');
   if (savedTheme) {
     document.documentElement.setAttribute('data-theme', savedTheme);
@@ -68,22 +67,22 @@ h2 { margin: 0; font-size: 1.5rem; }
 .btn:hover { background: var(--header-bg); }
 .btn.active { background: var(--header-bg); font-weight: bold; border-color: var(--text-color); }
 ${!isSimpleRoute ? '#btnTable { width: 145px; } #btnAliases { width: 135px; }' : ''}
-table { 
-  border-collapse: collapse; 
-  width: 100%; 
-  max-width: ${maxWidth}; 
-  word-break: break-word; 
-  table-layout: auto; 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: ${maxWidth};
+  word-break: break-word;
+  table-layout: auto;
 }
-th, td { 
-  border: 1px solid var(--border-color); 
-  padding: 8px 12px; 
-  text-align: left; 
-  font-size: 0.95rem; 
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 0.95rem;
 }
-th:nth-child(1), td:nth-child(1) { 
-  width: 1%; 
-  white-space: nowrap; 
+th:nth-child(1), td:nth-child(1) {
+  width: 1%;
+  white-space: nowrap;
 }
 th.col-aliases, td.col-aliases { width: 15%; max-width: none; white-space: normal; overflow: visible; text-overflow: clip; word-break: break-word; }
 th:nth-child(3), td:nth-child(3) { width: auto; }
@@ -103,7 +102,7 @@ body.hide-aliases tr[style*="background"] td { grid-column: span 2; }
   body { padding: 0 10px 10px 10px; }
   .sticky-header { padding: 15px 0 10px 0; }
   .header-container { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .header-right { width: 100%; justify-content: space-between; } 
+  .header-right { width: 100%; justify-content: space-between; }
   th, td { padding: 6px 8px; font-size: 0.85rem; }
 }
 </style>
@@ -205,8 +204,8 @@ function updateTableUI(isExpanded) {
 }
 
 function handleTableButtonClick() {
-  const currentView = localStorage.getItem('preferred_view');
-  if (currentView === 'table') {
+  const currentPrefView = localStorage.getItem('preferred_view');
+  if (currentPrefView === 'table') {
     const currentExpandedPref = localStorage.getItem('expanded_view');
     const isExpanded = currentExpandedPref === null ? true : currentExpandedPref === 'true';
     const newState = !isExpanded;
