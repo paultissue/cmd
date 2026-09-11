@@ -2,257 +2,368 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-<title>🤖 ${pageName} for !cmd</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>ðŸ¤–</text></svg>">
+<title>ðŸ¤– ${pageName} for !cmd</title>
 <script>
-  const savedTheme = localStorage.getItem('theme_preference');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
-
-  let initialAliasClass = 'show-aliases';
-  if (!${isSimpleRoute}) {
-    const savedShowAliases = localStorage.getItem('show_aliases');
-    if (savedShowAliases === 'false') {
-      initialAliasClass = 'hide-aliases';
-    }
-  }
+  const safeStorage = {
+    get: (k, fallback) => { try { return localStorage.getItem(k) ?? fallback; } catch { return fallback; } },
+    set: (k, v) => { try { localStorage.setItem(k, v); } catch {} }
+  };
+  const theme = safeStorage.get('theme_preference', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+  const showAliases = ${isSimpleRoute} ? true : safeStorage.get('show_aliases', 'true') !== 'false';
   document.write('<style>body { visibility: hidden; }</style>');
   window.addEventListener('DOMContentLoaded', () => {
-    document.body.className = initialAliasClass;
+    document.body.className = showAliases ? 'show-aliases' : 'hide-aliases';
     document.body.style.visibility = 'visible';
   });
 </script>
-<style>
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --header-bg: #f2f2f2;
-  --border-color: #ccc;
-  --comment-bg: #e9ecef;
-  --comment-text: #495057;
-  --timestamp-color: #666;
-  --link-color: #0056b3;
-}
-[data-theme="dark"] {
-  --bg-color: #1a1a1a;
-  --text-color: #e0e0e0;
-  --header-bg: #2d2d2d;
-  --border-color: #404040;
-  --comment-bg: #252525;
-  --comment-text: #adb5bd;
-  --timestamp-color: #aaa;
-  --link-color: #4dabf7;
-}
-body { font-family: Arial, sans-serif; padding: 0 20px 20px 20px; background-color: var(--bg-color); color: var(--text-color); margin: 0; }
-a { color: var(--link-color); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.sticky-header {
-  position: sticky;
-  top: 0;
-  background-color: var(--bg-color);
-  padding: 20px 0 15px 0;
-  margin-bottom: 0;
-  z-index: 1000;
-}
-
-.header-container { display: flex; justify-content: space-between; align-items: baseline; max-width: ${maxWidth}; flex-wrap: wrap; gap: 10px; }
-h2 { margin: 0; font-size: 1.5rem; }
-.header-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.timestamp { color: var(--timestamp-color); font-size: 0.85em; font-weight: normal; margin-right: 5px; }
-.btn { background: none; border: 1px solid var(--border-color); color: var(--text-color); padding: 0 12px; height: 31px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 4px; font-size: 0.85em; text-align: center; box-sizing: border-box; vertical-align: middle; white-space: nowrap; }
-.btn:hover { background: var(--header-bg); }
-.btn.active { background: var(--header-bg); font-weight: bold; border-color: var(--text-color); }
-${!isSimpleRoute ? '#btnTable { width: 145px; } #btnAliases { width: 135px; }' : ''}
-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: ${maxWidth};
-  word-break: break-word;
-  table-layout: auto;
-}
-th, td {
-  border: 1px solid var(--border-color);
-  padding: 8px 12px;
-  text-align: left;
-  font-size: 0.95rem;
-}
-th:nth-child(1), td:nth-child(1) {
-  width: 1%;
-  white-space: nowrap;
-}
-th.col-aliases, td.col-aliases { width: 15%; max-width: none; white-space: normal; overflow: visible; text-overflow: clip; word-break: break-word; }
-th:nth-child(3), td:nth-child(3) { width: auto; }
-
-th { background: var(--header-bg); white-space: nowrap; position: sticky; z-index: 10; background-clip: padding-box; }
-tr[style*="background"] { background-color: var(--comment-bg) !important; color: var(--comment-text) !important; }
-pre { background: var(--header-bg); padding: 15px; border-radius: 4px; border: 1px solid var(--border-color); overflow-x: auto; max-width: ${maxWidth}; margin: 0; font-family: monospace; font-size: 0.9rem; white-space: pre-wrap; word-break: break-all; }
-
-.view-panel { display: none; }
-#panelTable { display: block; }
-
-.col-aliases { display: table-cell; }
-body.hide-aliases .col-aliases { display: none; }
-body.hide-aliases tr[style*="background"] td { grid-column: span 2; }
-
-@media (max-width: 600px) {
-  body { padding: 0 10px 10px 10px; }
-  .sticky-header { padding: 15px 0 10px 0; }
-  .header-container { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .header-right { width: 100%; justify-content: space-between; }
-  th, td { padding: 6px 8px; font-size: 0.85rem; }
-}
-</style>
+<style>${cssStyles}</style>
 </head>
 <body>
 <div class="sticky-header" id="stickyHeader">
   <div class="header-container">
-    <h2 id="pageHeading">🤖 ${pageName} for !cmd</h2>
-    <div class="header-right">
+    <h2>ðŸ¤– ${pageName} for !cmd</h2>
+    <div class="header-right" id="headerRight">
       <span class="timestamp">Last Refreshed: ${dateStr}</span>
-      ${!isSimpleRoute ? '<button class="btn active" id="btnAliases" onclick="toggleAliases()">🏷️ Aliases: Show</button>' : ''}
-      <button class="btn active" id="btnTable" onclick="handleTableButtonClick()">${!isSimpleRoute ? '📋 Table: Expanded' : '📋 Table'}</button>
-      <button class="btn" id="btnJson" onclick="switchView('json')">📦 JSON</button>
-      <button class="btn" id="btnRaw" onclick="switchView('raw')">📄 Raw</button>
-      <button class="btn" onclick="toggleTheme()">🌓 Theme</button>
+      ${!isSimpleRoute ? '<button class="btn active" id="btnAliases" data-action="aliases">ðŸ·ï¸ Aliases: Show</button>' : ''}
+      <button class="btn active" id="btnTable" data-action="table">${!isSimpleRoute ? 'ðŸ“‹ Table: Expanded' : 'ðŸ“‹ Table'}</button>
+      <button class="btn" id="btnJson" data-action="json">ðŸ“¦ JSON</button>
+      <button class="btn" id="btnRaw" data-action="raw">ðŸ“„ Raw</button>
+
+      <div class="theme-split-container">
+        <button class="theme-main-btn" id="btnThemeCycle" data-action="cycle-theme">ðŸŒ“ Theme</button>
+        <button class="theme-arrow-btn" id="btnThemeMenu" data-action="toggle-theme-menu">â–¼</button>
+        <div class="theme-menu" id="themeMenu">
+          <button class="theme-item" data-theme-val="light">â˜€ï¸ Light</button>
+          <button class="theme-item" data-theme-val="dark">ðŸŒ™ Dark</button>
+          <button class="theme-item" data-theme-val="sepia">ðŸ“œ Sepia</button>
+          <button class="theme-item" data-theme-val="midnight">ðŸŒŒ Midnight</button>
+          <button class="theme-item" data-theme-val="solarized">ðŸŽ¨ Solarized</button>
+          <button class="theme-item" data-theme-val="soft-blue">ðŸ’§ Soft Blue</button>
+          <button class="theme-item" data-theme-val="nord">â„ï¸ Nord</button>
+          <button class="theme-item" data-theme-val="dracula">ðŸ§› Dracula</button>
+          <button class="theme-item" data-theme-val="gruvbox">ðŸªµ Gruvbox</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div id="panelTable" class="view-panel">
-  <table>
-    <thead>
-      <tr><th>${col1}</th>${col2 ? `<th class="col-aliases">${col2}</th>` : ""}${col3 ? `<th>${col3}</th>` : ""}</tr>
-    </thead>
-    <tbody>
-      ${tableRowsHtml}
-    </tbody>
-  </table>
+<div id="panelTable" class="view-panel active">
+  <div class="table-container">
+    <table id="mainTable">
+      <thead id="cloneHead" class="fixed-lock"></thead>
+      <thead id="originalHead">
+        <tr><th>${col1}</th>${col2 ? `<th class="col-aliases">${col2}</th>` : ""}${col3 ? `<th>${col3}</th>` : ""}</tr>
+      </thead>
+      <tbody id="tableBody">
+        ${processedTableRowsHtml}
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<div id="panelJson" class="view-panel">
-  <pre>${escapeHtml(jsonFormattedText)}</pre>
-</div>
-
-<div id="panelRaw" class="view-panel">
-  <pre>${escapeHtml(rawText)}</pre>
-</div>
+<div id="panelJson" class="view-panel"><pre id="jsonPre"></pre></div>
+<div id="panelRaw" class="view-panel"><pre id="rawPre"></pre></div>
 
 <script>
-function updateStickyHeaderOffset() {
-  const header = document.getElementById('stickyHeader');
-  const thElements = document.querySelectorAll('#panelTable th');
-  if (header && thElements.length > 0) {
-    const headerHeight = header.offsetHeight;
-    thElements.forEach(th => {
-      th.style.top = (headerHeight - 1) + 'px';
-    });
-  }
-}
+let elHeader, elOriginalHead, elCloneHead, elMainTable, elPanelTable, elBtnAliases, elBtnTable, elThemeMenu;
 
-function setTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme_preference', theme);
-}
+const initElements = () => {
+  elHeader ||= document.getElementById('stickyHeader');
+  elOriginalHead ||= document.getElementById('originalHead');
+  elCloneHead ||= document.getElementById('cloneHead');
+  elMainTable ||= document.getElementById('mainTable');
+  elPanelTable ||= document.getElementById('panelTable');
+  elBtnAliases ||= document.getElementById('btnAliases');
+  elBtnTable ||= document.getElementById('btnTable');
+  elThemeMenu ||= document.getElementById('themeMenu');
+};
 
-function toggleTheme() {
-  const current = localStorage.getItem('theme_preference') || 'light';
-  setTheme(current === 'light' ? 'dark' : 'light');
-  requestAnimationFrame(updateStickyHeaderOffset);
-}
+const boldAndItalicizeArguments = (text) => {
+  if (!text) return '';
+  return text.replace(/\\$\\([^)]+\\)/g, '<strong><em>$&</em></strong>');
+};
 
-${!isSimpleRoute ? `
-function toggleAliases() {
-  const currentShow = localStorage.getItem('show_aliases') === null ? true : localStorage.getItem('show_aliases') === 'true';
-  const newState = !currentShow;
-  localStorage.setItem('show_aliases', newState);
-  updateAliasesUI(newState);
-}
-
-function updateAliasesUI(show) {
-  const btn = document.getElementById('btnAliases');
-  if (btn) {
-    btn.textContent = '🏷️ Aliases: ' + (show ? 'Show' : 'Hide');
-    btn.classList.toggle('active', show);
-  }
-  document.body.classList.toggle('show-aliases', show);
-  document.body.classList.toggle('hide-aliases', !show);
-
-  const commentRows = document.querySelectorAll('tr[style*="background"] td');
-  commentRows.forEach(td => {
-    td.setAttribute('colspan', show ? '3' : '2');
-  });
-  requestAnimationFrame(updateStickyHeaderOffset);
-}
-
-function updateTableUI(isExpanded) {
-  const btn = document.getElementById('btnTable');
-  if (btn) {
-    btn.textContent = '📋 Table: ' + (isExpanded ? 'Expanded' : 'Simple');
-  }
-  const rows = document.querySelectorAll('#panelTable tbody tr[data-expanded]');
+const updateZebraStriping = () => {
+  const rows = document.querySelectorAll('#tableBody tr');
+  let dataIndex = 0;
   rows.forEach(tr => {
-    const targetCell = tr.lastElementChild;
-    if (targetCell) {
-      targetCell.innerHTML = isExpanded ? tr.getAttribute('data-expanded') : tr.getAttribute('data-short');
+    if (tr.hasAttribute('style') && tr.getAttribute('style').includes('background')) {
+      tr.classList.remove('row-even', 'row-odd');
+    } else {
+      tr.classList.toggle('row-even', dataIndex % 2 === 0);
+      tr.classList.toggle('row-odd', dataIndex % 2 !== 0);
+      dataIndex++;
     }
   });
-  requestAnimationFrame(updateStickyHeaderOffset);
-}
+};
 
-function handleTableButtonClick() {
-  const currentPrefView = localStorage.getItem('preferred_view');
-  if (currentPrefView === 'table') {
-    const currentExpandedPref = localStorage.getItem('expanded_view');
-    const isExpanded = currentExpandedPref === null ? true : currentExpandedPref === 'true';
-    const newState = !isExpanded;
-    localStorage.setItem('expanded_view', newState);
-    updateTableUI(newState);
+const renderRawText = (elementId, text) => {
+  const preEl = document.getElementById(elementId);
+  if (!preEl) return;
+
+  if (!text) {
+    preEl.innerHTML = '';
+    return;
+  }
+
+  const escaped = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+  preEl.innerHTML = escaped;
+};
+
+const processJsonAlternation = (elementId, text) => {
+  const preEl = document.getElementById(elementId);
+  if (!preEl) return;
+
+  if (!text) {
+    preEl.innerHTML = '';
+    return;
+  }
+
+  const lines = text.split('\\n');
+  let blocks = [];
+  let currentBlock = [];
+
+  lines.forEach(line => {
+    const isTopLevelKey = /^\\s{2}"[^"]+"\\s*:\\s*\\{/.test(line);
+    if (isTopLevelKey && currentBlock.length > 0) {
+      blocks.push(currentBlock);
+      currentBlock = [line];
+    } else {
+      currentBlock.push(line);
+    }
+  });
+  if (currentBlock.length > 0) {
+    blocks.push(currentBlock);
+  }
+
+  let html = '';
+  let dataBlockIndex = 0;
+
+  blocks.forEach(block => {
+    const blockText = block.join('\\n');
+    const escaped = blockText
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+
+    const trimmed = blockText.trim();
+    const isWrapperOrHeader = trimmed === '{' || trimmed === '}' || trimmed.startsWith('//') || trimmed.startsWith('#');
+
+    if (isWrapperOrHeader) {
+      html += '<span class="pre-block" style="padding: 4px 12px;">' + escaped + '</span>';
+    } else {
+      const cls = dataBlockIndex % 2 === 0 ? 'alt-block-even' : 'alt-block-odd';
+      html += '<span class="pre-block ' + cls + '">' + escaped + '</span>';
+      dataBlockIndex++;
+    }
+  });
+
+  preEl.innerHTML = html;
+};
+
+const syncHeaderLock = () => {
+  initElements();
+  if (!elHeader || elPanelTable?.style.display === 'none') {
+    if (elCloneHead) elCloneHead.style.display = 'none';
+    return;
+  }
+
+  const headerBottom = elHeader?.getBoundingClientRect().bottom || 0;
+  const tableRect = elMainTable?.getBoundingClientRect();
+
+  if (tableRect && tableRect.top <= headerBottom && tableRect.bottom > headerBottom) {
+    if (elCloneHead && elCloneHead.style.display !== 'block') {
+      elCloneHead.innerHTML = elOriginalHead?.innerHTML || '';
+      const origThs = elOriginalHead?.querySelectorAll('th') || [];
+      const cloneThs = elCloneHead?.querySelectorAll('th') || [];
+      origThs.forEach((th, i) => {
+        if (cloneThs[i]) cloneThs[i].style.width = th.getBoundingClientRect().width + 'px';
+      });
+      elCloneHead.style.display = 'block';
+    }
+    if (elCloneHead) {
+      elCloneHead.style.top = headerBottom + 'px';
+      elCloneHead.style.left = tableRect.left + 'px';
+      elCloneHead.style.width = tableRect.width + 'px';
+    }
+  } else {
+    if (elCloneHead) elCloneHead.style.display = 'none';
+  }
+};
+
+const setTheme = (themeName) => {
+  document.documentElement.setAttribute('data-theme', themeName);
+  safeStorage.set('theme_preference', themeName);
+
+  document.querySelectorAll('.theme-item').forEach(item => {
+    item.classList.toggle('active', item.getAttribute('data-theme-val') === themeName);
+  });
+
+  if (elThemeMenu) elThemeMenu.classList.remove('open');
+  setTimeout(syncHeaderLock, 0);
+};
+
+const cycleTheme = () => {
+  const themes = ['light', 'dark', 'sepia', 'midnight', 'solarized', 'soft-blue', 'nord', 'dracula', 'gruvbox'];
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  const nextIndex = (themes.indexOf(current) + 1) % themes.length;
+  setTheme(themes[nextIndex]);
+};
+
+const toggleThemeMenu = () => {
+  initElements();
+  elThemeMenu?.classList.toggle('open');
+};
+
+${!isSimpleRoute ? `
+const toggleAliases = () => {
+  if (safeStorage.get('preferred_view', 'table') !== 'table') {
+    switchView('table');
+    return;
+  }
+
+  const show = document.body.classList.toggle('show-aliases');
+  document.body.classList.toggle('hide-aliases', !show);
+  safeStorage.set('show_aliases', show);
+
+  if (elBtnAliases) {
+    elBtnAliases.textContent = 'ðŸ·ï¸ Aliases: ' + (show ? 'Show' : 'Hide');
+    elBtnAliases.classList.toggle('active', show);
+  }
+
+  document.querySelectorAll('tr[style*="background"] td').forEach(td => td.setAttribute('colspan', show ? '3' : '2'));
+  if (elCloneHead) elCloneHead.style.display = 'none';
+  setTimeout(syncHeaderLock, 0);
+};
+
+const updateTableUI = (expanded) => {
+  if (elBtnTable) elBtnTable.textContent = 'ðŸ“‹ Table: ' + (expanded ? 'Expanded' : 'Simple');
+  document.querySelectorAll('#panelTable tbody tr[data-expanded]').forEach(tr => {
+    const rawVal = tr.getAttribute(expanded ? 'data-expanded' : 'data-short');
+    tr.lastElementChild.innerHTML = boldAndItalicizeArguments(rawVal);
+  });
+  updateZebraStriping();
+  if (elCloneHead) elCloneHead.style.display = 'none';
+  setTimeout(syncHeaderLock, 0);
+};
+
+const handleTableBtn = () => {
+  if (safeStorage.get('preferred_view', 'table') === 'table') {
+    const next = safeStorage.get('expanded_view', 'true') !== 'false';
+    const toggled = !next;
+    safeStorage.set('expanded_view', toggled);
+    updateTableUI(toggled);
   } else {
     switchView('table');
   }
-}
-` : ''}
+};
+` : `
+const updateTableUI = () => {
+  document.querySelectorAll('#panelTable tbody tr').forEach(tr => {
+    const cell = tr.lastElementChild;
+    if (cell && !tr.hasAttribute('style')) {
+      cell.innerHTML = boldAndItalicizeArguments(cell.innerHTML);
+    }
+  });
+};
+const handleTableBtn = () => switchView("table");
+`}
 
-function switchView(viewName) {
-  ['table', 'json', 'raw'].forEach(v => {
-    const panel = document.getElementById('panel' + v.charAt(0).toUpperCase() + v.slice(1));
-    const btn = document.getElementById('btn' + v.charAt(0).toUpperCase() + v.slice(1));
-    if (panel) panel.classList.toggle('active', v === viewName);
-    if (btn) btn.classList.toggle('active', v === viewName);
+const switchView = (v) => {
+  ['table', 'json', 'raw'].forEach(name => {
+    const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+    document.getElementById('panel' + capitalized)?.classList.toggle('active', name === v);
+    document.getElementById('btn' + capitalized)?.classList.toggle('active', name === v);
   });
 
-  if (viewName === 'table' && !${isSimpleRoute}) {
-    const currentExpandedPref = localStorage.getItem('expanded_view');
-    const isExpanded = currentExpandedPref === null ? true : currentExpandedPref === 'true';
-    updateTableUI(isExpanded);
+  if (v === 'table') {
+    ${!isSimpleRoute ? `
+    updateTableUI(safeStorage.get('expanded_view', 'true') !== 'false');
+    ` : `
+    updateTableUI();
+    updateZebraStriping();
+    `}
+  } else {
+    updateZebraStriping();
   }
-
-  localStorage.setItem('preferred_view', viewName);
-  requestAnimationFrame(updateStickyHeaderOffset);
-}
-
-window.addEventListener('load', updateStickyHeaderOffset);
-window.addEventListener('resize', updateStickyHeaderOffset);
+  safeStorage.set('preferred_view', v);
+  setTimeout(syncHeaderLock, 0);
+};
 
 window.addEventListener('DOMContentLoaded', () => {
+  initElements();
+
+  document.querySelectorAll('#panelTable tbody tr[data-expanded]').forEach(tr => {
+    tr.setAttribute('data-expanded', boldAndItalicizeArguments(tr.getAttribute('data-expanded')));
+    tr.setAttribute('data-short', boldAndItalicizeArguments(tr.getAttribute('data-short')));
+  });
+
+  updateZebraStriping();
+  processJsonAlternation('jsonPre', ${JSON.stringify(jsonFormattedText)});
+  renderRawText('rawPre', ${JSON.stringify(rawText)});
+
+  let resizeTimer;
+  window.addEventListener('scroll', syncHeaderLock, { passive: true });
+  window.addEventListener('resize', () => {
+    if (elCloneHead) elCloneHead.style.display = 'none';
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(syncHeaderLock, 50);
+  }, { passive: true });
+
+  window.addEventListener('click', (e) => {
+    if (!e.target.closest('.theme-split-container')) {
+      elThemeMenu?.classList.remove('open');
+    }
+  });
+
+  document.getElementById('headerRight')?.addEventListener('click', (e) => {
+    const actionTarget = e.target.closest('[data-action]');
+    const themeValTarget = e.target.closest('[data-theme-val]');
+
+    if (themeValTarget) {
+      setTheme(themeValTarget.getAttribute('data-theme-val'));
+      return;
+    }
+
+    const action = actionTarget?.getAttribute('data-action');
+    if (!action) return;
+
+    if (action === 'aliases') toggleAliases();
+    else if (action === 'table') handleTableBtn();
+    else if (action === 'json') switchView('json');
+    else if (action === 'raw') switchView('raw');
+    else if (action === 'cycle-theme') cycleTheme();
+    else if (action === 'toggle-theme-menu') toggleThemeMenu();
+  });
+
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  document.querySelectorAll('.theme-item').forEach(item => {
+    item.classList.toggle('active', item.getAttribute('data-theme-val') === currentTheme);
+  });
+
   if (!${isSimpleRoute}) {
-    const savedShowAliases = localStorage.getItem('show_aliases');
-    const showAliases = savedShowAliases === null ? true : savedShowAliases === 'true';
-    updateAliasesUI(showAliases);
-
-    const currentExpandedPref = localStorage.getItem('expanded_view');
-    const savedExpanded = currentExpandedPref === null ? true : currentExpandedPref === 'true';
-    updateTableUI(savedExpanded);
+    const show = safeStorage.get('show_aliases', 'true') !== 'false';
+    if (elBtnAliases) {
+      elBtnAliases.textContent = 'ðŸ·ï¸ Aliases: ' + (show ? 'Show' : 'Hide');
+      elBtnAliases.classList.toggle('active', show);
+    }
+    updateTableUI(safeStorage.get('expanded_view', 'true') !== 'false');
   }
-
-  const savedView = localStorage.getItem('preferred_view') || 'table';
-  switchView(savedView);
-  requestAnimationFrame(updateStickyHeaderOffset);
+  switchView(safeStorage.get('preferred_view', 'table'));
 });
 </script>
+<style>
+  tbody tr.row-even td { background-color: var(--row-bg-1) !important; }
+  tbody tr.row-odd td { background-color: var(--row-bg-2) !important; }
+</style>
 </body>
 </html>
