@@ -1,13 +1,13 @@
 {
   // Usage
   "usage": {
-    "response": "ℹ️ ​Usage: !cmd-lite <command_name> [args]",
+    "response": "ℹ️ ​Usage: !cmd <command_name> [args]",
     "aliases": ["syntax"]
   },
 
   // Built-in Commands
   "c": {
-    "response": "🤖 Commands for !cmd-lite - 📃 User will be presented with a URL showing the latest commands",
+    "response": "🤖 Commands for !cmd - 📃 User will be presented with a URL showing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
 
@@ -66,9 +66,9 @@
     "response": "👍 $(1) Thumbs Up 👍 Smash that Like button! 👍 ...Let's Goooo! 🇺🇸",
     "aliases": ["likes"]
   },
-  "m": {
+  "me": {
     "response": "👋 You are $(user) watching the $(channel) channel on $(provider) which uses the $(platform) bot. How are you this $(1) $(2)?",
-    "aliases": ["me", "whoami"]
+    "aliases": ["whoami"]
   },
   "p": {
     "response": "📢 Go follow $(1) | 📺 https://www.youtube.com/$(1)",
