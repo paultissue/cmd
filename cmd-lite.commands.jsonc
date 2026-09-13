@@ -58,9 +58,9 @@
   },
 
   // General Commands requiring Argument(s)
-  "h": {
+  "hi": {
     "response": "👋 Hello $(1). How are you this $(2) $(3)?",
-    "aliases": ["hello", "greeting"]
+    "aliases": ["hello", "howdy", "greeting"]
   },
   "l": {
     "response": "👍 $(1) Thumbs Up 👍 Smash that Like button! 👍 ...Let's Goooo! 🇺🇸",
