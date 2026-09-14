@@ -292,6 +292,10 @@
     "response": "💸 Support Mr. Bill 🇺🇸 | 💸 https://cash.app/onlyamrbill | 💸 https://venmo.com/u/onlyamrbill | 💸 https://www.paypal.com/paypalme/onlyamrbill | Thank you!",
     "aliases": ["bill$", "mrbill$"]
   },
+  "mb@": {
+    "response": "📺 Follow Mr. Bill on YouTube! 🇺🇸 | 📺 https://www.youtube.com/@onlyamrbill",
+    "aliases": ["bill@", "mrbill@", "mbyt", "billyt", "mrbillyt"]
+  },
   "mb#": {
     "response": "🎶 Follow Mr. Bill on Suno! 🇺🇸 | 🎶 https://suno.com/@onlyamrbill",
     "aliases": ["bill#", "mrbill#", "mbs", "bills", "mrbills"]
@@ -323,10 +327,6 @@
   "mbx": {
     "response": "💬 Follow Mr. Bill on X! 🇺🇸 | 💬 https://x.com/onlyamrbill",
     "aliases": ["billx", "mrbillx"]
-  },
-  "mbyt": {
-    "response": "📺 Follow Mr. Bill on YouTube! 🇺🇸 | 📺 https://www.youtube.com/@onlyamrbill",
-    "aliases": ["billyt", "mrbillyt"]
   },
   "mdg": {
     "response": "📢 MDGgamin 🇺🇸 | 📺 https://www.youtube.com/@MDGgamin | 💬 https://x.com/JonahRHammond | 📺 https://rumble.com/MDGgamin | 📺 https://www.twitch.tv/MDGgamin",
