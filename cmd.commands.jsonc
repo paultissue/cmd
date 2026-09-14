@@ -100,13 +100,13 @@
     "response": "💸 Support The Angry Oregonian 🇺🇸 | 💸 https://cash.app/theangryoregonian | 💸 https://account.venmo.com/u/theangryoregonian | 🛒 https://www.amazon.com/hz/wishlist/ls/1O4C8UH0LHVX0 | Thank you!",
     "aliases": ["angry$"]
   },
+  "ao#": {
+    "response": "🎶 Follow The Angry Oregonian on Suno! 🇺🇸 | 🎶 https://suno.com/@biggdoggsofftheporch",
+    "aliases": ["angry#", "aos", "angrys", "angrymusic"]
+  },
   "ao2": {
     "response": "📣 The Angry Oregonian (More) 🇺🇸 | 📺 https://www.youtube.com/@doggonahogg3607 | 🎶 https://suno.com/@biggdoggsofftheporch",
     "aliases": ["angry2"]
-  },
-  "aos": {
-    "response": "🎶 Follow The Angry Oregonian on Suno! 🇺🇸 | 🎶 https://suno.com/@biggdoggsofftheporch",
-    "aliases": ["angrys", "angrymusic"]
   },
   "bcp": {
     "response": "📢 TheBCPreacher (BCP) 🇺🇸 | 📺 https://www.youtube.com/@TheBCPreacher | 💬 https://x.com/thebcpreacher | 🔗 https://linktr.ee/thebcpreacher",
@@ -168,6 +168,10 @@
     "response": "💸 Support Danny Rebel! 🇺🇸 | 💸 Cash App $orangetabby420 (mobile) | 💸 https://account.venmo.com/u/dannyrebel33 | 🛒 https://www.amazon.com/hz/wishlist/ls/2GEQYGRGRUWQM | Thank you!",
     "aliases": ["danny$", "dannyrebel$"]
   },
+  "dr#": {
+    "response": "🎶 Follow Danny Rebel on Suno! 🇺🇸 | 🎶 https://suno.com/@dannyrebel",
+    "aliases": ["danny#", "dannyrebel#", "drs", "dannys", "dannyrebels"]
+  },
   "dr2": {
     "response": "📣 Danny Rebel (More) 🇺🇸 | 📺 https://kick.com/dannyrebel33 | 💬 https://www.instagram.com/dannyrebel_33 | 💬 https://www.facebook.com/danny.rebel.77 | 🎶 https://suno.com/@dannyrebel",
     "aliases": ["danny2", "dannyrebel2"]
@@ -179,10 +183,6 @@
   "drk": {
     "response": "📺 Follow Danny Rebel on Kick! 🇺🇸 | 📺 https://kick.com/dannyrebel33",
     "aliases": ["dannyk", "dannyrebelk"]
-  },
-  "drs": {
-    "response": "🎶 Follow Danny Rebel on Suno! 🇺🇸 | 🎶 https://suno.com/@dannyrebel",
-    "aliases": ["dannys", "dannyrebels"]
   },
   "drstore$": {
     "response": "🛒 Support Danny Rebel on his Vrosh Glass Store! 🇺🇸 | 🛒 https://vroshglass.com | Thank you!",
@@ -292,6 +292,10 @@
     "response": "💸 Support Mr. Bill 🇺🇸 | 💸 https://cash.app/onlyamrbill | 💸 https://venmo.com/u/onlyamrbill | 💸 https://www.paypal.com/paypalme/onlyamrbill | Thank you!",
     "aliases": ["bill$", "mrbill$"]
   },
+  "mb#": {
+    "response": "🎶 Follow Mr. Bill on Suno! 🇺🇸 | 🎶 https://suno.com/@onlyamrbill",
+    "aliases": ["bill#", "mrbill#", "mbs", "bills", "mrbills"]
+  },
   "mb2": {
     "response": "📣 Mr. Bill (More) 🇺🇸 | 📺 https://kick.com/onlyamrbill | 💬 https://www.facebook.com/profile.php?id=61561551778527 | 💬 https://www.instagram.com/onlyamrbill",
     "aliases": ["bill2", "mrbill2"]
@@ -315,10 +319,6 @@
   "mbr": {
     "response": "📺 Follow Mr. Bill on Rumble! 🇺🇸 | 📺 https://rumble.com/user/onlyamrbill",
     "aliases": ["billr", "mrbillr"]
-  },
-  "mbs": {
-    "response": "🎶 Follow Mr. Bill on Suno! 🇺🇸 | 🎶 https://suno.com/@onlyamrbill",
-    "aliases": ["bills", "mrbills"]
   },
   "mbx": {
     "response": "💬 Follow Mr. Bill on X! 🇺🇸 | 💬 https://x.com/onlyamrbill",
