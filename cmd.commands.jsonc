@@ -1,7 +1,7 @@
 {
   // Usage
   "usage": {
-    "response": "ℹ️ ​Usage: !cmd <command_name> [args]",
+    "response": "🤖 ​Usage: !cmd <command_name> [args]",
     "aliases": ["syntax"]
   },
 
