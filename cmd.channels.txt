@@ -1,7 +1,6 @@
 // YouTube Channels - StreamElements
 @PaulTissue
 @ChrisxSims
-@DannyRebel333
 @OnlyaMrBill
 @RawTactixIRL
 
