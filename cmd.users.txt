@@ -1,4 +1,4 @@
-// YouTube Users 
+// YouTube Users - Streamers
 @PaulTissue
 @PaulTissue2
 @Hoot_Troop
@@ -8,11 +8,11 @@
 @OnlyaMrBill
 @TheAngryOregonian1776
 
-@jeannie24
-@IceQueen-jd23
-
+// YouTube Users - Other
 @PolyBiusXX
 @TheSandTiger
+@jeannie24
+@IceQueen-jd23
 
 // Kick Users
 
