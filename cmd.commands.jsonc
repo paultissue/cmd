@@ -426,6 +426,10 @@
   },
 
   // Misc Shout-out Commands
+  "fw": {
+    "response": "📢 Freedom & Whiskey 🇺🇸 | 📺 https://youtube.com/@FreedomandWhiskey1776 | 💬 https://x.com/freeandwhiskey | 💸 https://venmo.com/u/freedomandwhiskey | 🔗 https://linktr.ee/freedomandwhiskeyus",
+    "aliases": ["freedom", "whiskey", "fw2", "fw$"]
+  },
   "gs": {
     "response": "📢 Ginger Shepherd 🇺🇸 | 📺 https://youtube.com/@GingerAndCarey | 💬 https://x.com/GingerGail72 | 💸 https://cash.app/GingerGail420",
     "aliases": ["ginger", "gingersheperd", "sheperd", "gs2", "gs$"]
