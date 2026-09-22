@@ -308,6 +308,10 @@
     "response": "💬 Follow Mr. Bill on Facebook! 🇺🇸 | 💬 https://facebook.com/profile.php?id=61561551778527",
     "aliases": ["billfb", "mrbillfb"]
   },
+  "mbig": {
+    "response": "💬 Follow Mr. Bill on Instagram! 🇺🇸 | 💬 https://instagram.com/onlyamrbill",
+    "aliases": ["billig", "mrbillig"]
+  },
   "mbk": {
     "response": "📺 Follow Mr. Bill on Kick! 🇺🇸 | 📺 https://kick.com/onlyamrbill",
     "aliases": ["billk", "mrbillk"]
