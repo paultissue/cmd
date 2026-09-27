@@ -421,12 +421,20 @@
     "aliases": ["scuba", "steve", "scubasteve", "ss2", "ss$"]
   },
   "tb": {
-    "response": "📢 Tommy Boi 🇺🇸 | 📺 https://youtube.com/@Tommy4trump420 | 💬 https://x.com/Tommy4Trump420 | 🛒 https://tommyboi420.com",
+    "response": "📢 Tommy Boi 🇺🇸 | 📺 https://youtube.com/@Tommy4trump420 | 💬 https://x.com/Tommy4Trump420 | 📺 https://kick.com/tommytv420 | 🛒 https://tommyboi420.com",
     "aliases": ["tommy", "tommyboi", "tb2"]
   },
   "tb$": {
     "response": "💸 Support Tommy Boi 🇺🇸 | 💸 https://cash.app/brakebred4209 | 💸 https://venmo.com/u/Tommyboi4209 | 💸 https://paypal.me/tommyboifreedom31 | Thank you!",
     "aliases": ["tommy$", "tommyboi$"]
+  },
+  "tb@": {
+    "response": "📢 Follow Tommy Boi on YouTube! 🇺🇸 | 📺 https://youtube.com/@Tommy4trump420",
+    "aliases": ["tbyt", "tommy@", "tommyboi@"]
+  },
+  "tbk": {
+    "response": "📢 Follow Tommy Boi on Kick! 🇺🇸 | 📺 https://kick.com/tommytv420",
+    "aliases": ["tommyk", "tommyboik"]
   },
   "tt": {
     "response": "📢 Tinkerton 🇺🇸 | 📺 https://youtube.com/@the1Tinkerton | 💬 https://x.com/Tinkertonpdx | 💸 https://cash.app/T1nk3rt0n",
