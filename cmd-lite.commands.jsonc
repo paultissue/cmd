@@ -116,6 +116,10 @@
     "response": "📣 The Angry Oregonian (More) 🇺🇸 | 📺 https://youtube.com/@doggonahogg3607 | 🎶 https://suno.com/@biggdoggsofftheporch",
     "aliases": ["angry2"]
   },
+  "aogsg$": {
+    "response": "🤲 Support The Angry Oregonian and LadyA with GiveSendGo! 🇺🇸 | 🤲 https://www.givesendgo.com/help-a-proud-family-through-two-medical- | Thank you!",
+    "aliases": ["aogsg", "angrygsg$", "ao2$"]
+  },
   "bcp": {
     "response": "📢 TheBCPreacher (BCP) 🇺🇸 | 📺 https://youtube.com/@TheBCPreacher | 💬 https://x.com/thebcpreacher | 🔗 https://linktr.ee/thebcpreacher",
     "aliases": ["bc", "preacher", "thebcpreacher", "quincy", "bcp2", "bcp$"]
@@ -160,6 +164,10 @@
     "response": "📣 Chris Sims (More) 🇺🇸 | 📺 https://kick.com/chrisxsims | 💬 https://instagram.com/chrisxsims1 | 💸 https://venmo.com/u/Chrisxsims",
     "aliases": ["chris2", "chrissims2"]
   },
+  "csk": {
+    "response": "📺 Follow Chris Sims on Kick! 🇺🇸 | 📺 https://kick.com/chrisxsims",
+    "aliases": ["chrisk", "chrissimsk"]
+  },
   "ct": {
     "response": "📢 Conspiretard (Patrick) 🇺🇸 | 📺 https://youtube.com/@Conspiretard | 💬 https://x.com/conspiretard | 🔗 https://linktr.ee/Conspiretard",
     "aliases": ["conspire", "conspiretard"]
@@ -203,6 +211,10 @@
   "drx": {
     "response": "💬 Follow Danny Rebel on X! 🇺🇸 | 💬 https://x.com/DannyRebel333",
     "aliases": ["dannyx", "dannyrebelx"]
+  },
+  "ds": {
+    "response": "📢 David Stahr TV 🇺🇸 | 📺 https://youtube.com/@DavidStahrTV | 💬 https://x.com/davidstahrtv | 📺 https://rumble.com/c/DavidStahr | 📺 https://twitch.tv/davidstahrtv",
+    "aliases": ["kly", "david", "stahr", "davidstahr", "ds2", "ds$"]
   },
   "fp": {
     "response": "📢 Fat Patriot 🇺🇸 | 📺 https://youtube.com/@FatPatriot | 💬 https://x.com/FatPatriot95 | 💸 https://cash.app/FatPatriot | 🔗 https://linktr.ee/FatPatriot",
@@ -312,6 +324,10 @@
     "response": "💬 Follow Mr. Bill on Facebook! 🇺🇸 | 💬 https://facebook.com/profile.php?id=61561551778527",
     "aliases": ["billfb", "mrbillfb"]
   },
+  "mbig": {
+    "response": "💬 Follow Mr. Bill on Instagram! 🇺🇸 | 💬 https://instagram.com/mrbill4freedom",
+    "aliases": ["billig", "mrbillig"]
+  },
   "mbk": {
     "response": "📺 Follow Mr. Bill on Kick! 🇺🇸 | 📺 https://kick.com/onlyamrbill",
     "aliases": ["billk", "mrbillk"]
@@ -349,7 +365,7 @@
     "aliases": ["nick", "shirley", "nickshirley", "ns2", "ns$"]
   },
   "ntk": {
-    "response": "📢 Not Tina Kotex 🇺🇸 | 📺 https://youtube.com/@Not_Tina_Kotex | 📺 (New) https://youtube.com/@patriotcabin | 💬 https://x.com/NotTinaKotex | ☕ https://buymeacoffee.com/nottinakotex",
+    "response": "📢 NTK Reports 🇺🇸 | 📺 (New) https://youtube.com/@NTKReports | 📺 (New) https://youtube.com/@bugoutcabin | 💬 https://x.com/NotTinaKotex | 💸 https://buymeacoffee.com/nottinakotex",
     "aliases": ["nottina", "kotex", "not", "ntk2", "ntk$"]
   },
   "ot": {
@@ -387,6 +403,10 @@
   "rt$": {
     "response": "💸 Support rawtactix (Josh) 🇺🇸 | 💸 https://cash.app/irock777 | 🛒 https://amazon.com/hz/wishlist/ls/2ZX70T9QHAQZ1 | Thank you!",
     "aliases": ["tix$", "rawtactix$", "joshmeshell$", "josh$"]
+  },
+  "sg": {
+    "response": "📢 Sara Gonzales 🇺🇸 | 📺 https://youtube.com/@saragonzalesunfiltered | 💬 https://x.com/SaraGonzalesTX | 🛒 https://shop.blazemedia.com/collections/sara-gonzales",
+    "aliases": ["sara", "gonzales", "sg2", "sg$"]
   },
   "sh": {
     "response": "📢 Sav Says / Savanah Hernandez 🇺🇸 | 📺 https://youtube.com/@SavSays | 💬 https://x.com/savsays | 🔗 https://linktr.ee/savsays",
@@ -434,6 +454,10 @@
   },
 
   // Misc Shout-out Commands
+  "fw": {
+    "response": "📢 Freedom & Whiskey 🇺🇸 | 📺 https://youtube.com/@FreedomandWhiskey1776 | 💬 https://x.com/freeandwhiskey | 💸 https://venmo.com/u/freedomandwhiskey | 🔗 https://linktr.ee/freedomandwhiskeyus",
+    "aliases": ["freedom", "whiskey", "fw2", "fw$"]
+  },
   "gs": {
     "response": "📢 Ginger Shepherd 🇺🇸 | 📺 https://youtube.com/@GingerAndCarey | 💬 https://x.com/GingerGail72 | 💸 https://cash.app/GingerGail420",
     "aliases": ["ginger", "gingersheperd", "sheperd", "gs2", "gs$"]
