@@ -294,7 +294,15 @@
   },
   "ss": {
     "response": "📢 Scuba Steve 🇺🇸 | 📺 https://youtube.com/@scubasteve026 | 💬 https://x.com/ScubaSteve026 | 💸 https://cash.app/ScubaSteve02626",
-    "aliases": ["scuba", "steve", "scubasteve", "ss2", "ss$"]
+    "aliases": ["scuba", "steve", "scubasteve", "ss2"]
+  },
+  "ss$": {
+    "response": "💸 Support Scuba Steve 🇺🇸 | 💸 https://cash.app/ScubaSteve02626 | Thank you!",
+    "aliases": ["scuba$", "steve$", "scubasteve$"]
+  },
+  "ssx": {
+    "response": "💬 Follow Scuba Steveon X / Twitter! 🇺🇸 | 💬 https://x.com/ScubaSteve026",
+    "aliases": ["scubax", "stevex", "scubastevex"]
   },
   "tb": {
     "response": "📢 Tommy Boi 🇺🇸 | 📺 https://youtube.com/@Tommy4trump420 | 💬 https://x.com/Tommy4Trump420 | 📺 https://kick.com/tommytv420 | 🛒 https://tommyboi420.com",
