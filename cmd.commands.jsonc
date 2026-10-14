@@ -414,6 +414,18 @@
     "response": "📢 Fat Patriot 🇺🇸 | 📺 https://youtube.com/@FatPatriot | 💬 https://x.com/FatPatriot95 | 💸 https://cash.app/FatPatriot | 🔗 https://linktr.ee/FatPatriot",
     "aliases": ["fatpatriot", "fp2", "fp$"]
   },
+  "hcr": {
+    "response": "📢 Harley's Chaos Report 🇺🇸| 📺 https://youtube.com/@HarleysChaosReport | 💬 https://x.com/HarleyChaosRprt | 💸 https://cash.app/HarleyChaosReport",
+    "aliases": ["harley"]
+  },
+  "hcr$": {
+    "response": "💸 Support Harley's Chaos Report 🇺🇸 | 💸 https://cash.app/HarleyChaosReport | 💸 https://paypal.me/HarleyChaosRpt",
+    "aliases": ["harley$"]
+  },
+  "hcr2": {
+    "response": "📣 Harley's Chaos Report (More) 🇺🇸| 📺 https://rumble.com/c/HarleysChaosReport | 💬 https://facebook.com/profile.php?id=61584506457577 | 💬 https://discord.gg/pZxZGKF9S",
+    "aliases": ["harley2"]
+  },
   "ht": {
     "response": "📢 Our World Live - Hoot Troop 🦉 🇺🇸 | 📺 https://youtube.com/@Hoot_Troop | 💬 https://x.com/Hoot_Troop | 🔗 https://linktr.ee/hoot_troop",
     "aliases": ["hoot", "hooty", "owl"]
