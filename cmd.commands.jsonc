@@ -85,11 +85,11 @@
     "aliases": ["ari$", "th$"]
   },
   "ao": {
-    "response": "📢 The Angry Oregonian 🇺🇸 | 📺 https://youtube.com/@theangryoregonian1776 | 💬 https://x.com/AOregonian | 💸 https://cash.app/theangryoregonian | 💸 https://venmo.com/u/theangryoregonian",
+    "response": "📢 The Angry Oregonian 🇺🇸 | 📺 https://youtube.com/@TheAngryOregonian1776 | 💬 https://x.com/AOregonian | 💸 https://cash.app/TheAngryOregonian | 💸 https://venmo.com/u/TheAngryOregonian",
     "aliases": ["angry"]
   },
   "ao$": {
-    "response": "💸 Support The Angry Oregonian 🇺🇸 | 💸 https://cash.app/theangryoregonian | 💸 https://venmo.com/u/theangryoregonian | 🛒 https://amazon.com/hz/wishlist/ls/1O4C8UH0LHVX0 | Thank you!",
+    "response": "💸 Support The Angry Oregonian 🇺🇸 | 💸 https://cash.app/TheAngryOregonian | 💸 https://venmo.com/u/TheAngryOregonian | 🛒 https://amazon.com/hz/wishlist/ls/1O4C8UH0LHVX0 | Thank you!",
     "aliases": ["angry$"]
   },
   "ao#": {
@@ -121,56 +121,72 @@
     "aliases": ["cam3", "higby3", "camhigby3"]
   },
   "cs": {
-    "response": "📢 Chris Sims 🇺🇸 | 📺 https://youtube.com/@chrisxsims | 💬 https://x.com/ChrisxSims | 💸 https://cash.app/chrisxsims",
-    "aliases": ["chris", "chrissims"]
+    "response": "📢 Chris Sims 🇺🇸 | 📺 https://youtube.com/@ChrisxSims | 💬 https://x.com/ChrisxSims | 💸 https://cash.app/ChrisxSims",
+    "aliases": ["chris", "chrissims","chrisxsims"]
   },
   "cs$": {
-    "response": "💸 Support Chris Sims 🇺🇸 | 💸 https://cash.app/chrisxsims | 💸 https://venmo.com/u/Chrisxsims | 🛒 https://amazon.com/hz/wishlist/ls/1SNC20ET5ZU56 | Thank you!",
-    "aliases": ["chris$", "chrissims$"]
+    "response": "💸 Support Chris Sims 🇺🇸 | 💸 https://cash.app/ChrisxSims | 💸 https://venmo.com/u/ChrisxSims | 🛒 https://amazon.com/hz/wishlist/ls/1SNC20ET5ZU56 | Thank you!",
+    "aliases": ["chris$", "chrissims$", "chrisxsims$"]
   },
   "cs2": {
-    "response": "📣 Chris Sims (More) 🇺🇸 | 📺 https://kick.com/chrisxsims | 💬 https://instagram.com/chrisxsims1 | 💸 https://venmo.com/u/Chrisxsims",
-    "aliases": ["chris2", "chrissims2"]
+    "response": "📣 Chris Sims (More) 🇺🇸 | 📺 https://kick.com/ChrisxSims | 💬 https://instagram.com/ChrisxSims1 | 💸 https://venmo.com/u/ChrisxSims",
+    "aliases": ["chris2", "chrissims2", "chrisxsims2"]
+  },
+  "csca$": {
+    "response": "💸 Support Chris Sims on CashApp! 🇺🇸 | 💸 https://cash.app/ChrisxSims | Thank you!",
+    "aliases": ["csca", "chrisca$", "chrisca"]
   },
   "csk": {
-    "response": "📺 Follow Chris Sims on Kick! 🇺🇸 | 📺 https://kick.com/chrisxsims",
-    "aliases": ["chrisk", "chrissimsk"]
+    "response": "📺 Follow Chris Sims on Kick! 🇺🇸 | 📺 https://kick.com/ChrisxSims",
+    "aliases": ["chrisk", "chrissimsk", "chrisxsimsk"]
+  },
+  "csvm$": {
+    "response": "💸 Support Chris Sims on Venmo! 🇺🇸 | 💸 https://venmo.com/u/ChrisxSims | Thank you!",
+    "aliases": ["csvm", "chrisvm$", "chrisvm"]
   },
   "dr": {
-    "response": "📢 Danny Rebel 🇺🇸 | 📺 https://youtube.com/@DannyRebel333 | 💬 https://x.com/DannyRebel333 | 💸 https://cash.app/$orangetabby420",
-    "aliases": ["danny", "dannyrebel"]
+    "response": "📢 Danny Rebel 🇺🇸 | 📺 https://youtube.com/@DannyRebel333 | 💬 https://x.com/DannyRebel333 | 💸 https://cash.app/orangetabby420",
+    "aliases": ["danny", "DannyRebel"]
   },
   "dr$": {
-    "response": "💸 Support Danny Rebel! 🇺🇸 | 💸 https://cash.app/$orangetabby420 | 💸 https://venmo.com/u/dannyrebel33 | 🛒 https://amazon.com/hz/wishlist/ls/2GEQYGRGRUWQM | Thank you!",
-    "aliases": ["danny$", "dannyrebel$"]
+    "response": "💸 Support Danny Rebel! 🇺🇸 | 💸 https://cash.app/orangetabby420 | 💸 https://venmo.com/u/DannyRebel33 | 🛒 https://amazon.com/hz/wishlist/ls/2GEQYGRGRUWQM | Thank you!",
+    "aliases": ["danny$", "DannyRebel$"]
   },
   "dr#": {
-    "response": "🎶 Follow Danny Rebel on Suno! 🇺🇸 | 🎶 https://suno.com/@dannyrebel",
-    "aliases": ["danny#", "dannyrebel#", "drs", "dannys", "dannyrebels"]
+    "response": "🎶 Follow Danny Rebel on Suno! 🇺🇸 | 🎶 https://suno.com/@DannyRebel",
+    "aliases": ["danny#", "DannyRebel#", "drs", "dannys", "DannyRebels"]
   },
   "dr2": {
-    "response": "📣 Danny Rebel (More) 🇺🇸 | 📺 https://kick.com/dannyrebel33 | 💬 https://instagram.com/dannyrebel_33 | 💬 https://facebook.com/danny.rebel.77 | 🎶 https://suno.com/@dannyrebel",
-    "aliases": ["danny2", "dannyrebel2"]
+    "response": "📣 Danny Rebel (More) 🇺🇸 | 📺 https://kick.com/DannyRebel33 | 💬 https://instagram.com/DannyRebel_33 | 💬 https://facebook.com/danny.rebel.77 | 🎶 https://suno.com/@DannyRebel",
+    "aliases": ["danny2", "DannyRebel2"]
   },
   "dretsy$": {
     "response": "🛒 Support Danny Rebel's on his Etsy store! 🇺🇸 | 🛒 https://etsy.com/shop/Americana47 | Thank you!",
-    "aliases": ["dannyetsy$", "dannyrebeletsy$"]
+    "aliases": ["dannyetsy$", "DannyRebeletsy$"]
+  },
+  "drca$": {
+    "response": "💸 Support Danny Rebel on CashApp! 🇺🇸 | 💸 https://cash.app/orangetabby420 | Thank you!",
+    "aliases": ["dannyca"]
   },
   "drk": {
-    "response": "📺 Follow Danny Rebel on Kick! 🇺🇸 | 📺 https://kick.com/dannyrebel33",
-    "aliases": ["dannyk", "dannyrebelk"]
+    "response": "📺 Follow Danny Rebel on Kick! 🇺🇸 | 📺 https://kick.com/DannyRebel33",
+    "aliases": ["dannyk", "DannyRebelk"]
   },
   "drstore$": {
     "response": "🛒 Support Danny Rebel on his Vrosh Glass Store! 🇺🇸 | 🛒 https://vroshglass.com | Thank you!",
-    "aliases": ["dannystore$", "dannyrebelstore$"]
+    "aliases": ["dannystore$", "DannyRebelstore$"]
+  },
+  "drvm$": {
+    "response": "💸 Support Danny Rebel on Venmo! 🇺🇸 | 💸 https://cash.app/orangetabby420 | Thank you!",
+    "aliases": ["drvm", "dannyvm$", "dannyvm"]
   },
   "drwl$": {
     "response": "🛒 Support Danny Rebel on Amazon Wishlists! 🇺🇸 | 🛒 https://amazon.com/hz/wishlist/ls/2GEQYGRGRUWQM | Thank you!",
-    "aliases": ["dannywl$", "dannyrebelwl$"]
+    "aliases": ["dannywl$", "DannyRebelwl$"]
   },
   "drx": {
     "response": "💬 Follow Danny Rebel on X! 🇺🇸 | 💬 https://x.com/DannyRebel333",
-    "aliases": ["dannyx", "dannyrebelx"]
+    "aliases": ["dannyx", "DannyRebelx"]
   },
   "gz": {
     "response": "📢 GroundZeroPDX (Shayne) 🇺🇸 | 📺 https://youtube.com/@groundzeropdx | 💬 https://x.com/GroundZeroPDX1 | 💸 https://cash.app/shaynepdx",
@@ -201,23 +217,23 @@
     "aliases": ["irock$", "mm$", "marissa$", "marissameshell$"]
   },
   "mb": {
-    "response": "📢 Mr. Bill 🇺🇸 | 📺 https://youtube.com/@onlyamrbill | 💬 https://x.com/onlyamrbill | 🔗 https://linktr.ee/onlyamrbill",
+    "response": "📢 Mr. Bill 🇺🇸 | 📺 https://youtube.com/@OnlyaMrBill | 💬 https://x.com/OnlyaMrBill | 🔗 https://linktr.ee/OnlyaMrBill",
     "aliases": ["bill", "mrbill"]
   },
   "mb$": {
-    "response": "💸 Support Mr. Bill 🇺🇸 | 💸 https://cash.app/onlyamrbill | 💸 https://venmo.com/u/onlyamrbill | 💸 https://paypal.me/onlyamrbill | ☕ https://ko-fi.com/onlyamrbill | Thank you!",
+    "response": "💸 Support Mr. Bill 🇺🇸 | 💸 https://cash.app/OnlyaMrBill | 💸 https://venmo.com/u/OnlyaMrBill | 💸 https://paypal.me/OnlyaMrBill | ☕ https://ko-fi.com/OnlyaMrBill | Thank you!",
     "aliases": ["bill$", "mrbill$"]
   },
   "mb@": {
-    "response": "📺 Follow Mr. Bill on YouTube! 🇺🇸 | 📺 https://youtube.com/@onlyamrbill",
+    "response": "📺 Follow Mr. Bill on YouTube! 🇺🇸 | 📺 https://youtube.com/@OnlyaMrBill",
     "aliases": ["bill@", "mrbill@", "mbyt", "billyt", "mrbillyt"]
   },
   "mb#": {
-    "response": "🎶 Follow Mr. Bill on Suno! 🇺🇸 | 🎶 https://suno.com/@onlyamrbill",
+    "response": "🎶 Follow Mr. Bill on Suno! 🇺🇸 | 🎶 https://suno.com/@OnlyaMrBill",
     "aliases": ["bill#", "mrbill#", "mbs", "bills", "mrbills"]
   },
   "mb2": {
-    "response": "📣 Mr. Bill (More) 🇺🇸 | 📺 https://kick.com/onlyamrbill | 💬 https://facebook.com/profile.php?id=61561551778527 | 💬 https://instagram.com/mrbill4freedom",
+    "response": "📣 Mr. Bill (More) 🇺🇸 | 📺 https://kick.com/OnlyaMrBill | 💬 https://facebook.com/profile.php?id=61561551778527 | 💬 https://instagram.com/MrBill4Freedom",
     "aliases": ["bill2", "mrbill2"]
   },
   "mbfb": {
@@ -225,15 +241,15 @@
     "aliases": ["billfb", "mrbillfb"]
   },
   "mbig": {
-    "response": "💬 Follow Mr. Bill on Instagram! 🇺🇸 | 💬 https://instagram.com/mrbill4freedom",
+    "response": "💬 Follow Mr. Bill on Instagram! 🇺🇸 | 💬 https://instagram.com/MrBill4Freedom",
     "aliases": ["billig", "mrbillig"]
   },
   "mbk": {
-    "response": "📺 Follow Mr. Bill on Kick! 🇺🇸 | 📺 https://kick.com/onlyamrbill",
+    "response": "📺 Follow Mr. Bill on Kick! 🇺🇸 | 📺 https://kick.com/OnlyaMrBill",
     "aliases": ["billk", "mrbillk"]
   },
   "mblt": {
-    "response": "🔗 Mr. Bill on Linktr.ee! 🇺🇸 | 🔗 https://linktr.ee/onlyamrbill",
+    "response": "🔗 Mr. Bill on Linktr.ee! 🇺🇸 | 🔗 https://linktr.ee/OnlyaMrBill",
     "aliases": ["billt", "mrbilllt"]
   },
   "mbm": {
@@ -241,11 +257,11 @@
     "aliases": ["manny", "mbm2", "mbm$"]
   },
   "mbr": {
-    "response": "📺 Follow Mr. Bill on Rumble! 🇺🇸 | 📺 https://rumble.com/user/onlyamrbill",
+    "response": "📺 Follow Mr. Bill on Rumble! 🇺🇸 | 📺 https://rumble.com/user/OnlyaMrBill",
     "aliases": ["billr", "mrbillr"]
   },
   "mbx": {
-    "response": "💬 Follow Mr. Bill on X! 🇺🇸 | 💬 https://x.com/onlyamrbill",
+    "response": "💬 Follow Mr. Bill on X! 🇺🇸 | 💬 https://x.com/OnlyaMrBill",
     "aliases": ["billx", "mrbillx"]
   },
   "mdg": {
