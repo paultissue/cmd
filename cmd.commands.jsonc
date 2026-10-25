@@ -34,6 +34,7 @@
     "response": "📅 Generates a random Canadian historical event that occured on this same day",
     "aliases": ["cahistory""]
   },
+
   // General Commands
   "f": {
     "response": "ℹ️ This video uses fair use for the purpose of criticism, commentary, satire, news reporting, teaching, education, and research. Thank you for your attention to this matter...",
