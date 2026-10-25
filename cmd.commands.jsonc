@@ -1,16 +1,39 @@
 {
   // Usage
   "usage": {
-    "response": "🤖 ​Usage: !cmd <command_name> [args]",
+    "response": "🤖 ​Usage: !cmd <command_name> [args] -or- !! <command_name> [args]",
     "aliases": ["syntax"]
   },
 
   // Built-in Commands
+  "ai": {
+    "response": "🧠 Usage: !cmd ai <question> - gives a standard AI response to the user's question",
+    "aliases": ["ai"]
+  },
+  "ai)": {
+    "response": "🧠 Usage: !cmd ai <question> - gives a more humorous AI response to the user's question",
+    "aliases": ["ai)"]
+  },
   "c": {
-    "response": "🤖 Commands for !cmd - 📃 User will be presented with a URL showing the latest commands",
+    "response": "🤖 Commands for !cmd - User will be presented with a URL showing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
-
+  "ddg": {
+    "response": "🤖 Usage: !cmd ddg <topic> - a shortened post related to the specified DuckDuckGo topic",
+    "aliases": ["duckduckgo"]
+  },
+  "joke": {
+    "response": "🤡 Generates a random \"Dad Joke\" to post in the chat",
+    "aliases": ["dadjoke""]
+  },
+  "today": {
+    "response": "📅 Generates a random world historical event that occured on this same day",
+    "aliases": ["history""]
+  },
+  "todeh": {
+    "response": "📅 Generates a random Canadian historical event that occured on this same day",
+    "aliases": ["cahistory""]
+  },
   // General Commands
   "f": {
     "response": "ℹ️ This video uses fair use for the purpose of criticism, commentary, satire, news reporting, teaching, education, and research. Thank you for your attention to this matter...",
@@ -73,6 +96,10 @@
   "w": {
     "response": "👀 $(1) Watching 👀 ...Let's Goooo! 🇺🇸",
     "aliases": ["watchers", "watching"]
+  },
+  "wiki": {
+    "response": "🤖 Usage: !cmd wiki <topic> - a shortened post related to the specified Wikipedia topic",
+    "aliases": ["wikipedia"]
   },
 
   // Live Streamer Shout-out Commands
