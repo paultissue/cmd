@@ -19,7 +19,7 @@
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
   "ddg": {
-    "response": "🤖 Usage: !cmd ddg <topic> - a shortened post related to the specified DuckDuckGo topic",
+    "response": "🤖 Usage: !cmd ddg <topic> - a shortened post (100 characters or less) related to the specified DuckDuckGo topic",
     "aliases": ["duckduckgo"]
   },
   "joke": {
