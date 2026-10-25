@@ -22,17 +22,17 @@
     "response": "🤖 Usage: !cmd ddg <topic> - a shortened post related to the specified DuckDuckGo topic",
     "aliases": ["duckduckgo"]
   },
-  "joke": {
+ "joke": {
     "response": "🤡 Generates a random \"Dad Joke\" to post in the chat",
-    "aliases": ["dadjoke""]
+    "aliases": ["dadjoke"]
   },
-  "today": {
+ "today": {
     "response": "📅 Generates a random world historical event that occured on this same day",
-    "aliases": ["history""]
+    "aliases": ["history"]
   },
-  "todeh": {
+ "todeh": {
     "response": "📅 Generates a random Canadian historical event that occured on this same day",
-    "aliases": ["cahistory""]
+    "aliases": ["cahistory"] // Removed the extra trailing quote: "cahistory""]
   },
 
   // General Commands
