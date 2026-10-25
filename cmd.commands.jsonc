@@ -23,7 +23,7 @@
     "aliases": ["duckduckgo"]
   },
   "joke": {
-    "response": "🤡 Generates a random \"Dad Joke\" to post in the chat",
+    "response": "🤡 Generates a random Dad Joke to post in the chat",
     "aliases": ["dadjoke""]
   },
   "today": {
