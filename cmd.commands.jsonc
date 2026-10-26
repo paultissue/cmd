@@ -10,6 +10,10 @@
     "response": "🤖 Commands for !cmd - User will be presented with a URL showing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
+  "joke": {
+    "response": "🤡 Generates a random \"Dad Joke\" to post in the chat",
+    "aliases": ["dadjoke"]
+  },
   "today": {
     "response": "📅 Generates a random World historical event that occured on this same day",
     "aliases": ["history"]
@@ -31,10 +35,6 @@
   "ddg": {
     "response": "🤖 Usage: !cmd ddg <topic> - a shortened post (100 characters or less) related to the specified DuckDuckGo topic",
     "aliases": ["duckduckgo"]
-  },
-  "joke": {
-    "response": "🤡 Generates a random \"Dad Joke\" to post in the chat",
-    "aliases": ["dadjoke"]
   },
   "wiki": {
     "response": "🤖 Usage: !cmd wiki <topic> - a shortened post related to the specified Wikipedia topic",
@@ -585,4 +585,3 @@
     "aliases": ["xx2", "xx$"]
   }
 }
-
