@@ -37,7 +37,7 @@
     "aliases": ["duckduckgo"]
   },
   "wiki": {
-    "response": "🤖 Usage: !cmd wiki <topic> - a shortened post related to the specified Wikipedia topic",
+    "response": "🤖 Usage: !cmd wiki <topic> - a shortened post (upto 200 characters) related to the specified Wikipedia topic",
     "aliases": ["wikipedia"]
   },
 
