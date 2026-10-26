@@ -27,7 +27,7 @@
     "aliases": ["dadjoke"]
   },
   "today": {
-    "response": "📅 Generates a random world historical event that occured on this same day",
+    "response": "📅 Generates a random World historical event that occured on this same day",
     "aliases": ["history"]
   },
   "todeh": {
