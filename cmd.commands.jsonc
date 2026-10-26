@@ -34,6 +34,10 @@
     "response": "📅 Generates a random Canadian historical event that occured on this same day",
     "aliases": ["cahistory"]
   },
+  "wiki": {
+    "response": "🤖 Usage: !cmd wiki <topic> - a shortened post related to the specified Wikipedia topic",
+    "aliases": ["wikipedia"]
+  },
 
   // General Commands
   "f": {
@@ -97,10 +101,6 @@
   "w": {
     "response": "👀 $(1) Watching 👀 ...Let's Goooo! 🇺🇸",
     "aliases": ["watchers", "watching"]
-  },
-  "wiki": {
-    "response": "🤖 Usage: !cmd wiki <topic> - a shortened post related to the specified Wikipedia topic",
-    "aliases": ["wikipedia"]
   },
 
   // Live Streamer Shout-out Commands
