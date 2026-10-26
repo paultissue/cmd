@@ -11,7 +11,7 @@
     "aliases": ["ai"]
   },
   "ai)": {
-    "response": "🧠 Usage: !cmd ai <question> - gives a more humorous AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai) <question> - gives a more humorous AI response to the user's question",
     "aliases": ["ai)"]
   },
   "c": {
