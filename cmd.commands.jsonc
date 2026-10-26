@@ -14,6 +14,10 @@
     "response": "🤡 Generates a random \"Dad Joke\" to post in the chat",
     "aliases": ["dadjoke"]
   },
+  "time": {
+    "response": "🕒 Posts current West Coast and East Coast USA time",
+    "aliases": ["clock"]
+  },
   "today": {
     "response": "📅 Generates a random World historical event that occured on this same day",
     "aliases": ["history"]
