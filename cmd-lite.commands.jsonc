@@ -1,38 +1,48 @@
 {
   // Usage
   "usage": {
-    "response": "🤖 ​Usage: !cmd <command_name> [args] -or- !! <command_name> [args]",
+    "response": "🤖 ​Usage: !cmd <command> [args] -or- !! <command> [args]",
     "aliases": ["syntax"]
   },
 
   // Built-in Commands
-  "ai": {
-    "response": "🧠 Usage: !cmd ai <question> - gives a standard AI response to the user's question",
-    "aliases": ["ai"]
-  },
-  "ai)": {
-    "response": "🧠 Usage: !cmd ai <question> - gives a more humorous AI response to the user's question",
-    "aliases": ["ai)"]
-  },
   "c": {
-    "response": "🤖 Commands for !cmd - User will be presented with a URL showing the latest commands",
+    "response": "🤖 Commands for !cmd - Posts the URL to the command reference page containing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
-  "ddg": {
-    "response": "🤖 Usage: !cmd ddg <topic> - a shortened post related to the specified DuckDuckGo topic",
-    "aliases": ["duckduckgo"]
-  },
   "joke": {
-    "response": "🤡 Generates a random \"Dad Joke\" to post in the chat",
+    "response": "🤡 Posts a random dad joke for the chat",
     "aliases": ["dadjoke"]
   },
+  "time": {
+    "response": "🕒 Posts the current West Coast and East Coast U.S. time",
+    "aliases": ["clock"]
+  },
   "today": {
-    "response": "📅 Generates a random world historical event that occured on this same day",
+    "response": "📅 Posts a random world historical event that occurred on this same day",
     "aliases": ["history"]
   },
   "todeh": {
-    "response": "📅 Generates a random Canadian historical event that occured on this same day",
+    "response": "📅 Posts a random Canadian historical event that occurred on this same day",
     "aliases": ["cahistory"]
+  },
+
+  // Built-in Commands requiring Argument(s)
+  "ai": {
+    "response": "🧠 Usage: !cmd ai <question> - provides a standard AI response to the user's question",
+    "aliases": ["ai"]
+  },
+  "ai)": {
+    "response": "🧠 Usage: !cmd ai) <question> - provides a more humorous AI response to the user's question",
+    "aliases": ["ai)"]
+  },
+  "ddg": {
+    "response": "🤖 Usage: !cmd ddg <topic> - provides a shortened post (100 characters or fewer) related to the specified DuckDuckGo topic",
+    "aliases": ["duckduckgo"]
+  },
+  "wiki": {
+    "response": "🤖 Usage: !cmd wiki <topic> - provides a shortened post (up to 200 characters) related to the specified Wikipedia topic",
+    "aliases": ["wikipedia"]
   },
 
   // General Commands
@@ -87,7 +97,7 @@
     "aliases": ["hello", "howdy", "greeting"]
   },
   "l": {
-    "response": "👍 $(1) Thumbs Up 👍 Smash that Like button! 👍 ...Let's Goooo! 🇺🇸",
+    "response": "👍 $(1) Thumbs Up 👍 Smash that Like button! 👍 Let's Goooo! 🇺🇸",
     "aliases": ["likes"]
   },
   "me": {
@@ -95,23 +105,19 @@
     "aliases": ["whoami"]
   },
   "p": {
-    "response": "📢 Go follow $(1) | 📺 https://youtube.com/$(1)",
+    "response": "📢 Go follow $(1)! | 📺 https://youtube.com/$(1)",
     "aliases": ["promo", "promote", "so", "shout", "shoutout"]
   },
   "s": {
-    "response": "👥 $(1) Subscribers 👥 Smash that Subscribe button! 👥 ...Let's Goooo! 🇺🇸",
+    "response": "👥 $(1) Subscribers 👥 Smash that Subscribe button! 👥 Let's Goooo! 🇺🇸",
     "aliases": ["subs", "subscribers"]
   },
   "w": {
-    "response": "👀 $(1) Watching 👀 ...Let's Goooo! 🇺🇸",
+    "response": "👀 $(1) Watching 👀 Let's Goooo! 🇺🇸",
     "aliases": ["watchers", "watching"]
   },
-  "wiki": {
-    "response": "🤖 Usage: !cmd wiki <topic> - a shortened post related to the specified Wikipedia topic",
-    "aliases": ["wikipedia"]
-  },
 
-  // Live Streamer Shout-out Commands
+  // Live Streamer Shout-out Commands: End with '|' to stop after the first URL block; end with '-' to display only the first URL 
   "aa": {
     "response": "📢 Apostate Ari / The Transphobic Historian 🇺🇸 | 📺 https://youtube.com/@ApostateAri | 💬 https://x.com/ApostateAri | 🔗 https://linktr.ee/transphobichistorian",
     "aliases": ["ari", "th", "aa2"]
@@ -197,7 +203,7 @@
     "aliases": ["danny2", "DannyRebel2"]
   },
   "dretsy$": {
-    "response": "🛒 Support Danny Rebel's on his Etsy store! 🇺🇸 | 🛒 https://etsy.com/shop/Americana47 | Thank you!",
+    "response": "🛒 Support Danny Rebel on his Etsy store! 🇺🇸 | 🛒 https://etsy.com/shop/Americana47 | Thank you!",
     "aliases": ["dannyetsy$", "DannyRebeletsy$"]
   },
   "drca$": {
@@ -213,7 +219,7 @@
     "aliases": ["dannystore$", "DannyRebelstore$"]
   },
   "drvm$": {
-    "response": "💸 Support Danny Rebel on Venmo! 🇺🇸 | 💸 https://cash.app/orangetabby420 | Thank you!",
+    "response": "💸 Support Danny Rebel on Venmo! 🇺🇸 | 💸 https://venmo.com/u/DannyRebel33 | Thank you!",
     "aliases": ["drvm", "dannyvm$", "dannyvm"]
   },
   "drwl$": {
@@ -353,7 +359,7 @@
     "aliases": ["scuba$", "steve$", "scubasteve$"]
   },
   "ssx": {
-    "response": "💬 Follow Scuba Steveon X / Twitter! 🇺🇸 | 💬 https://x.com/ScubaSteve026",
+    "response": "💬 Follow Scuba Steve on X / Twitter! 🇺🇸 | 💬 https://x.com/ScubaSteve026",
     "aliases": ["scubax", "stevex", "scubastevex"]
   },
   "tb": {
@@ -377,7 +383,7 @@
     "aliases": ["tommyr", "tommyboir"]
   },
   "tbgsg$": {
-    "response": " 🤲 Support Tommy Boi on GiveSendGo! 🇺🇸 |  🤲 https://givesendgo.com/help-tommy-fight-false-charges-in-multno",
+    "response": "🤲 Support Tommy Boi on GiveSendGo! 🇺🇸 | 🤲 https://givesendgo.com/help-tommy-fight-false-charges-in-multno",
     "aliases": ["tbgsg", "tommygsg$", "tommyboigsg$"]
   },
   "tbx": {
@@ -434,7 +440,7 @@
   },
   "bk": {
     "response": "📢 unDivided with Brandi Kruse 🇺🇸 | 📺 https://youtube.com/@unDividedwithBrandiKruse | 💬 https://x.com/BrandiKruse | 💬 https://facebook.com/brandikrusenews | 💸 https://patreon.com/cw/undivided",
-    "aliases": ["brandi", "Kruse", "undivided"]
+    "aliases": ["brandi", "kruse", "undivided"]
   },
   "dd": {
     "response": "📢 The Daily Discourse w/ Arturo 🇺🇸 | 📺 https://youtube.com/@TheDailyDiscourseArturo | 💬 https://x.com/TheDDiscourse",
@@ -467,7 +473,7 @@
     "aliases": ["fatpatriot", "fp2", "fp$"]
   },
   "hcr": {
-    "response": "📢 Harley's Chaos Report 🇺🇸| 📺 https://youtube.com/@HarleysChaosReport | 💬 https://x.com/HarleyChaosRprt | 💸 https://cash.app/HarleyChaosReport",
+    "response": "📢 Harley's Chaos Report 🇺🇸 | 📺 https://youtube.com/@HarleysChaosReport | 💬 https://x.com/HarleyChaosRprt | 💸 https://cash.app/HarleyChaosReport",
     "aliases": ["harley"]
   },
   "hcr$": {
@@ -475,7 +481,7 @@
     "aliases": ["harley$"]
   },
   "hcr2": {
-    "response": "📣 Harley's Chaos Report (More) 🇺🇸| 📺 https://rumble.com/c/HarleysChaosReport | 💬 https://facebook.com/profile.php?id=61584506457577 | 💬 https://discord.gg/pZxZGKF9S",
+    "response": "📣 Harley's Chaos Report (More) 🇺🇸 | 📺 https://rumble.com/c/HarleysChaosReport | 💬 https://facebook.com/profile.php?id=61584506457577 | 💬 https://discord.gg/pZxZGKF9S",
     "aliases": ["harley2"]
   },
   "ht": {
@@ -538,7 +544,7 @@
   },
   "gs": {
     "response": "📢 Ginger Shepherd 🇺🇸 | 📺 https://youtube.com/@GingerAndCarey | 💬 https://x.com/GingerGail72 | 💸 https://cash.app/GingerGail420",
-    "aliases": ["ginger", "gingersheperd", "sheperd", "gs2", "gs$"]
+    "aliases": ["ginger", "gingershepherd", "shepherd", "gs2", "gs$"]
   },
   "ja": {
     "response": "📢 Jessica Axtell (Jessie) 🇺🇸 | 📺 https://youtube.com/@Mrs.Axtell_Media | 💬 https://x.com/MrsAxtellMedia | 🔗 https://linktr.ee/Mrs.Axtell_Media",
@@ -591,4 +597,3 @@
     "aliases": ["xx2", "xx$"]
   }
 }
-
