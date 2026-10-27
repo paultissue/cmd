@@ -7,41 +7,41 @@
 
   // Built-in Commands
   "c": {
-    "response": "🤖 Commands for !cmd - User will be presented with a URL showing the latest commands",
+    "response": "🤖 Commands for !cmd - Posts the URL of where to find this document page with the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
   "joke": {
-    "response": "🤡 Generates a random \"Dad Joke\" to post in the chat",
+    "response": "🤡 Posts a random dad joke for the chat",
     "aliases": ["dadjoke"]
   },
   "time": {
-    "response": "🕒 Posts current West Coast and East Coast USA time",
+    "response": "🕒 Posts the current West Coast and East Coast U.S. time",
     "aliases": ["clock"]
   },
   "today": {
-    "response": "📅 Generates a random World historical event that occured on this same day",
+    "response": "📅 Posts a random world historical event that occurred on this same day",
     "aliases": ["history"]
   },
   "todeh": {
-    "response": "📅 Generates a random Canadian historical event that occured on this same day",
+    "response": "📅 Posts a random Canadian historical event that occurred on this same day",
     "aliases": ["cahistory"]
   },
 
   // Built-in Commands requiring Argument(s)
   "ai": {
-    "response": "🧠 Usage: !cmd ai <question> - gives a standard AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai <question> - provides a standard AI response to the user's question",
     "aliases": ["ai"]
   },
   "ai)": {
-    "response": "🧠 Usage: !cmd ai) <question> - gives a more humorous AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai) <question> - provides a more humorous AI response to the user's question",
     "aliases": ["ai)"]
   },
   "ddg": {
-    "response": "🤖 Usage: !cmd ddg <topic> - a shortened post (100 characters or less) related to the specified DuckDuckGo topic",
+    "response": "🤖 Usage: !cmd ddg <topic> - provides a shortened post (100 characters or fewer) related to the specified DuckDuckGo topic",
     "aliases": ["duckduckgo"]
   },
   "wiki": {
-    "response": "🤖 Usage: !cmd wiki <topic> - a shortened post (upto 200 characters) related to the specified Wikipedia topic",
+    "response": "🤖 Usage: !cmd wiki <topic> - provides a shortened post (up to 200 characters) related to the specified Wikipedia topic",
     "aliases": ["wikipedia"]
   },
 
@@ -109,7 +109,7 @@
     "aliases": ["watchers", "watching"]
   },
 
-  // Live Streamer Shout-out Commands : end with '|' to stop after first '|' block; end with '-' to display first URL only  
+  // Live Streamer Shout-out Commands: End with '|' to stop after the first URL block; end with '-' to display only the first URL 
   "aa": {
     "response": "📢 Apostate Ari / The Transphobic Historian 🇺🇸 | 📺 https://youtube.com/@ApostateAri | 💬 https://x.com/ApostateAri | 🔗 https://linktr.ee/transphobichistorian",
     "aliases": ["ari", "th", "aa2"]
@@ -351,7 +351,7 @@
     "aliases": ["scuba$", "steve$", "scubasteve$"]
   },
   "ssx": {
-    "response": "💬 Follow Scuba Steveon X / Twitter! 🇺🇸 | 💬 https://x.com/ScubaSteve026",
+    "response": "💬 Follow Scuba Steve on X / Twitter! 🇺🇸 | 💬 https://x.com/ScubaSteve026",
     "aliases": ["scubax", "stevex", "scubastevex"]
   },
   "tb": {
