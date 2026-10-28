@@ -461,7 +461,7 @@
 
   // Restreamers Commands
   "fp": {
-    "response": "📢 Fat Patriot 🇺🇸 | 📺 https://youtube.com/@FatPatriot | 💬 https://x.com/FatPatriot95 | 💸 https://cash.app/FatPatriot | 🔗 https://linktr.ee/FatPatriot",
+    "response": "📢 Fat Patriot 🇺🇸 | 📺 https://youtube.com/@FatPatriot | 🔗 https://linktr.ee/FatPatriot",
     "aliases": ["fatpatriot", "fp2", "fp$"]
   },
   "hcr": {
@@ -469,7 +469,7 @@
     "aliases": ["harley"]
   },
   "hcr$": {
-    "response": "💸 Support Harley's Chaos Report 🇺🇸 | 💸 https://cash.app/HarleyChaosReport | 💸 https://paypal.me/HarleyChaosRpt",
+    "response": "💸 Support Harley's Chaos Report 🇺🇸 | 💸 https://cash.app/HarleyChaosReport | 💸 https://paypal.me/HarleyChaosRpt | Thank you!",
     "aliases": ["harley$"]
   },
   "hcr2": {
@@ -571,7 +571,7 @@
     "aliases": ["shane", "patriotshane", "ps2", "ps$"]
   },
   "td": {
-    "response": "📢 TwiztdDooBie 🇺🇸 | 📺 https://youtube.com/@twiztdDooB | 💸 https://cash.app/twiztiddoobie1989 | 🎶 https://youtube.com/@twiztdDooB/shorts",
+    "response": "📢 TwiztdDooBie 🇺🇸 | 📺 https://youtube.com/@twiztdDooB | 💬 https://x.com/TWIZTDDOOBIE89 | 💸 https://cash.app/twiztiddoobie1989 | 🎶 (Shorts) https://youtube.com/@twiztdDooB/shorts",
     "aliases": ["twiz", "twix", "twitztd", "twiztddoob", "td2", "td$"]
   },
   "tt": {
