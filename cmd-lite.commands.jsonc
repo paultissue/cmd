@@ -6,6 +6,10 @@
   },
 
   // Built-in Commands
+  "a": {
+    "response": "💡 Answer: Posts the answer to the last trivia question associated with the user that requested it",
+    "aliases": ["answer"]
+  },
   "c": {
     "response": "🤖 Commands for !cmd - Posts the URL to the command reference page containing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
@@ -13,6 +17,10 @@
   "joke": {
     "response": "🤡 Posts a random dad joke for the chat",
     "aliases": ["dadjoke"]
+  },
+  "q": {
+    "response": "❓ Question: Posts a random trivia question",
+    "aliases": ["question", "trivia"]
   },
   "time": {
     "response": "🕒 Posts the current West Coast and East Coast U.S. time",
@@ -117,7 +125,7 @@
     "aliases": ["watchers", "watching"]
   },
 
-  // Live Streamer Shout-out Commands: End with '|' to stop after the first URL block; end with '-' to display only the first URL 
+  // Live Streamer Shout-out Commands: End with '|' to stop after the first URL block; end with '-' to display only the first URL
   "aa": {
     "response": "📢 Apostate Ari / The Transphobic Historian 🇺🇸 | 📺 https://youtube.com/@ApostateAri | 💬 https://x.com/ApostateAri | 🔗 https://linktr.ee/transphobichistorian",
     "aliases": ["ari", "th", "aa2"]
