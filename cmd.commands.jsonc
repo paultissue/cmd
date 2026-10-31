@@ -14,17 +14,17 @@
     "response": "🤖 Commands for !cmd - Posts the URL to the command reference page containing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
-  "joke": {
+  "j": {
     "response": "🤡 Posts a random dad joke for the chat",
-    "aliases": ["dadjoke"]
+    "aliases": ["joke", "dadjoke"]
   },
   "q": {
     "response": "❓ Question: Posts a random trivia question",
     "aliases": ["question", "trivia"]
   },
-  "time": {
+  "t": {
     "response": "🕒 Posts the current West Coast and East Coast U.S. time",
-    "aliases": ["clock"]
+    "aliases": ["time","clock"]
   },
   "today": {
     "response": "📅 Posts a random world historical event that occurred on this same day",
@@ -94,9 +94,9 @@
     "response": "ℹ️ Support this channel! 🇺🇸 Press Thumbs Up 👍, Subscribe 🔔, and Set Notifications to All 🔔 | Thank you!",
     "aliases": ["subscribex", "supportx"]
   },
-  "t": {
+  "tech": {
     "response": "⚠️ We are experiencing Technical Difficulties. Please stand by... ⚠️",
-    "aliases": ["tech", "issue", "buffer", "buffering"]
+    "aliases": ["issue", "buffer", "buffering"]
   },
 
   // General Commands requiring Argument(s)
