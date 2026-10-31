@@ -299,8 +299,16 @@
     "aliases": ["billx", "mrbillx"]
   },
   "mdg": {
-    "response": "📢 MDGgamin 🇺🇸 | 📺 https://youtube.com/@MDGgamin | 💬 https://x.com/JonahRHammond | 📺 https://rumble.com/MDGgamin | 📺 https://twitch.tv/MDGgamin",
-    "aliases": ["mdggamin", "mdg2", "mdg$"]
+    "response": "📢 MDGgamin (Jonah) 🇺🇸 | 📺 https://youtube.com/@MDGgamin | 💬 https://x.com/JonahRHammond | 💸 https://cash.app/MDGgamin",
+    "aliases": ["mdggamin"]
+  },
+  "mdg2": {
+    "response": 📣 MDGgamin (Jonah) (More) 🇺🇸 | 📺 https://rumble.com/MDGgamin | 📺 https://twitch.tv/MDGgamin | 💸 https://paypal.me/MDGgamin",
+    "aliases": ["mdggamin2"]
+  },
+  "mdg$": {
+    "response": "💸 Support MDGgamin (Jonah)! 🇺🇸 | 💸 https://cash.app/MDGgamin | 💸 https://paypal.me/MDGgamin | Thank you!",
+    "aliases": ["mdggamin$"]
   },
   "no": {
     "response": "📢 Nico Oregon 🇺🇸 | 📺 (New) https://youtube.com/@NicoOregon-ooO | 💬 https://x.com/nicooregon | 💸 https://venmo.com/u/NicoOregon",
