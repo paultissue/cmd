@@ -324,7 +324,11 @@
   },
   "pa": {
     "response": "📢 Portland Andy 🇺🇸 | 📺 https://youtube.com/@PortlandAndy | 💬 https://x.com/ThePortlandAndy | 🔗 https://linktr.ee/portlandandy",
-    "aliases": ["andy", "portlandandy", "pa2", "pa$"]
+    "aliases": ["andy", "portlandandy", "pa2"]
+  },
+  "pa$": {
+    "response": "💸 Support Portland Andy! 🇺🇸 | 💸 https://cash.app/PortlandAndy | ☕ https://buymeacoffee.com/portlandandy | Thank you!"
+    "aliases": ["andy$", "portlandandy$"]
   },
   "ra": {
     "response": "📢 Rhein Amacher 🇺🇸 | 📺 https://youtube.com/@RheinAmacher | 💬 https://x.com/RheinAmacher",
