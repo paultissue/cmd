@@ -109,7 +109,7 @@
     "aliases": ["watchers", "watching"]
   },
 
-  // Live Streamer Shout-out Commands: End with '|' to stop after the first URL block; end with '-' to display only the first URL 
+  // Live Streamer Shout-out Commands: End with '|' to stop after the first URL block; end with '-' to display only the first URL
   "aa": {
     "response": "📢 Apostate Ari / The Transphobic Historian 🇺🇸 | 📺 https://youtube.com/@ApostateAri | 💬 https://x.com/ApostateAri | 🔗 https://linktr.ee/transphobichistorian",
     "aliases": ["ari", "th", "aa2"]
