@@ -1,7 +1,7 @@
 {
   // Usage
   "usage": {
-    "response": "🤖 ​Usage: !cmd <command> [args] -or- !! <command> [args]",
+    "response": "🤖 Usage: !cmd <command> [args] -or- !! <command> [args]",
     "aliases": ["syntax"]
   },
 
@@ -14,17 +14,17 @@
     "response": "🤖 Commands for !cmd - Posts the URL to the command reference page containing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
-  "joke": {
+  "j": {
     "response": "🤡 Posts a random dad joke for the chat",
-    "aliases": ["dadjoke"]
+    "aliases": ["joke", "dadjoke"]
   },
   "q": {
     "response": "❓ Question: Posts a random trivia question",
     "aliases": ["question", "trivia"]
   },
-  "time": {
+  "t": {
     "response": "🕒 Posts the current West Coast and East Coast U.S. time",
-    "aliases": ["clock"]
+    "aliases": ["time","clock"]
   },
   "today": {
     "response": "📅 Posts a random world historical event that occurred on this same day",
@@ -94,9 +94,9 @@
     "response": "ℹ️ Support this channel! 🇺🇸 Press Thumbs Up 👍, Subscribe 🔔, and Set Notifications to All 🔔 | Thank you!",
     "aliases": ["subscribex", "supportx"]
   },
-  "t": {
+  "tech": {
     "response": "⚠️ We are experiencing Technical Difficulties. Please stand by... ⚠️",
-    "aliases": ["tech", "issue", "buffer", "buffering"]
+    "aliases": ["issue", "buffer", "buffering"]
   },
 
   // General Commands requiring Argument(s)
@@ -224,7 +224,7 @@
   },
   "drstore$": {
     "response": "🛒 Support Danny Rebel on his Vrosh Glass Store! 🇺🇸 | 🛒 https://vroshglass.com | Thank you!",
-    "aliases": ["dannystore$", "DannyRebelstore$"]
+    "aliases": ["drstore", "dannystore$", "DannyRebelstore$"]
   },
   "drvm$": {
     "response": "💸 Support Danny Rebel on Venmo! 🇺🇸 | 💸 https://venmo.com/u/DannyRebel33 | Thank you!",
@@ -315,8 +315,16 @@
     "aliases": ["billx", "mrbillx"]
   },
   "mdg": {
-    "response": "📢 MDGgamin 🇺🇸 | 📺 https://youtube.com/@MDGgamin | 💬 https://x.com/JonahRHammond | 📺 https://rumble.com/MDGgamin | 📺 https://twitch.tv/MDGgamin",
-    "aliases": ["mdggamin", "mdg2", "mdg$"]
+    "response": "📢 MDGgamin (Jonah) 🇺🇸 | 📺 https://youtube.com/@MDGgamin | 💬 https://x.com/JonahRHammond | 💸 https://cash.app/MDGgamin",
+    "aliases": ["mdggamin"]
+  },
+  "mdg2": {
+    "response": "📣 MDGgamin (Jonah) (More) 🇺🇸 | 📺 https://rumble.com/MDGgamin | 📺 https://twitch.tv/MDGgamin | 💸 https://paypal.me/MDGgamin",
+    "aliases": ["mdggamin2"]
+  },
+  "mdg$": {
+    "response": "💸 Support MDGgamin (Jonah)! 🇺🇸 | 💸 https://cash.app/MDGgamin | 💸 https://paypal.me/MDGgamin | Thank you!",
+    "aliases": ["mdggamin$"]
   },
   "no": {
     "response": "📢 Nico Oregon 🇺🇸 | 📺 (New) https://youtube.com/@NicoOregon-ooO | 💬 https://x.com/nicooregon | 💸 https://venmo.com/u/NicoOregon",
@@ -332,7 +340,11 @@
   },
   "pa": {
     "response": "📢 Portland Andy 🇺🇸 | 📺 https://youtube.com/@PortlandAndy | 💬 https://x.com/ThePortlandAndy | 🔗 https://linktr.ee/portlandandy",
-    "aliases": ["andy", "portlandandy", "pa2", "pa$"]
+    "aliases": ["andy", "portlandandy", "pa2"]
+  },
+  "pa$": {
+    "response": "💸 Support Portland Andy! 🇺🇸 | 💸 https://cash.app/PortlandAndy | ☕ https://buymeacoffee.com/portlandandy | Thank you!",
+    "aliases": ["andy$", "portlandandy$"]
   },
   "ra": {
     "response": "📢 Rhein Amacher 🇺🇸 | 📺 https://youtube.com/@RheinAmacher | 💬 https://x.com/RheinAmacher",
@@ -428,6 +440,10 @@
     "response": "📢 Liberty Hangout / Kaitlin Bennett 🇺🇸 | 📺 https://youtube.com/@LibertyHangout | 💬 https://x.com/kaitmarieox | 🔗 https://libertyhangout.org",
     "aliases": ["kb", "liberty", "libertyhangout", "kaitlin", "kaitlinbennett", "lh2", "lh$"]
   },
+  "nf": {
+    "response": "📢 Nate Friedman 🇺🇸 | 📺 https://youtube.com/@natefriedman | 💬 https://x.com/NateFriedman97 | ☕ https://buymeacoffee.com/nate3",
+    "aliases": ["nate", "friedman", "natefriedman", "nf2", "nf$"]
+  },
   "ns": {
     "response": "📢 Nick Shirley 🇺🇸 | 📺 https://youtube.com/@NickShirley | 💬 https://instagram.com/nickshirley | 💸 https://officialnickshirley.us",
     "aliases": ["nick", "shirley", "nickshirley", "ns2", "ns$"]
@@ -476,16 +492,12 @@
   },
 
   // Restreamers Commands
-  "fp": {
-    "response": "📢 Fat Patriot 🇺🇸 | 📺 https://youtube.com/@FatPatriot | 💬 https://x.com/FatPatriot95 | 💸 https://cash.app/FatPatriot | 🔗 https://linktr.ee/FatPatriot",
-    "aliases": ["fatpatriot", "fp2", "fp$"]
-  },
   "hcr": {
     "response": "📢 Harley's Chaos Report 🇺🇸 | 📺 https://youtube.com/@HarleysChaosReport | 💬 https://x.com/HarleyChaosRprt | 💸 https://cash.app/HarleyChaosReport",
     "aliases": ["harley"]
   },
   "hcr$": {
-    "response": "💸 Support Harley's Chaos Report 🇺🇸 | 💸 https://cash.app/HarleyChaosReport | 💸 https://paypal.me/HarleyChaosRpt",
+    "response": "💸 Support Harley's Chaos Report 🇺🇸 | 💸 https://cash.app/HarleyChaosReport | 💸 https://paypal.me/HarleyChaosRpt | Thank you!",
     "aliases": ["harley$"]
   },
   "hcr2": {
@@ -517,7 +529,7 @@
     "aliases": ["un$", "pj$", "unscripted$"]
   },
   "uc2": {
-    "response": "📣 Unscripted Chronicles (PJ) (More) 🇺🇸 | 📺 https://twitch.tv/unscriptedchronicles | 📺 https://rumble.com/user/Lightingthewayhome | 💬 https://facebook.com/Pjsjourney2change | Thank you!",
+    "response": "📣 Unscripted Chronicles (PJ) (More) 🇺🇸 | 📺 https://twitch.tv/unscriptedchronicles | 📺 https://rumble.com/user/Lightingthewayhome | 💬 https://facebook.com/Pjsjourney2change",
     "aliases": ["un2", "pj2", "unscripted2"]
   },
 
@@ -527,7 +539,7 @@
     "aliases": ["axtell", "am2", "am$"]
   },
   "dg$": {
-    "response": "🛒 Doc G / Graff's Rustik Oddities 🇺🇸 | 🛒 https://etsy.com/shop/GRAFFSRUSTIKODDITIES | ✉ mailto:admin@graffsrustikoddities.com",
+    "response": "🛒 Doc G / Graff's Rustik Oddities 🇺🇸 | 🛒 Art/Gifts: https://etsy.com/shop/GRAFFSRUSTIKODDITIES | 🛒 (New) Apparel: https://doc-rey-shop.fourthwall.com | ✉ mailto:admin@graffsrustikoddities.com",
     "aliases": ["docg", "dg", "dg2"]
   },
   "br": {
@@ -587,7 +599,7 @@
     "aliases": ["shane", "patriotshane", "ps2", "ps$"]
   },
   "td": {
-    "response": "📢 TwiztdDooBie 🇺🇸 | 📺 https://youtube.com/@twiztdDooB | 💸 https://cash.app/twiztiddoobie1989 | 🎶 https://youtube.com/@twiztdDooB/shorts",
+    "response": "📢 TwiztdDooBie 🇺🇸 | 📺 https://youtube.com/@twiztdDooB | 💬 https://x.com/TWIZTDDOOBIE89 | 💸 https://cash.app/twiztiddoobie1989 | 🎶 (Shorts) https://youtube.com/@twiztdDooB/shorts",
     "aliases": ["twiz", "twix", "twitztd", "twiztddoob", "td2", "td$"]
   },
   "tt": {
