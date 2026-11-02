@@ -19,7 +19,7 @@
     "aliases": ["joke", "dadjoke"]
   },
   "q": {
-    "response": "❓ Question: Posts a random trivia question: End with '-' for easy 🟢; end with '|' for medium 🟡; default is hard 🔴",
+    "response": "❓ Question: Posts a random trivia question: End with '-' for easy 🟢; with '|' for medium 🟡; with '!' for hard 🔴; default is random",
     "aliases": ["question", "trivia"]
   },
   "t": {
