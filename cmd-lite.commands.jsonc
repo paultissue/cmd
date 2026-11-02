@@ -19,7 +19,7 @@
     "aliases": ["joke", "dadjoke"]
   },
   "q": {
-    "response": "❓ Question: Posts a random trivia question",
+    "response": "❓ Question: Posts a random trivia question: End with '-' for easy 🟢; end with '|' for medium 🟡; default is hard 🔴",
     "aliases": ["question", "trivia"]
   },
   "t": {
@@ -125,7 +125,7 @@
     "aliases": ["watchers", "watching"]
   },
 
-  // Live Streamer Shout-out Commands: End with '|' to stop after the first URL block; end with '-' to display only the first URL
+  // Live Streamer Shout-out Commands: End with '-' to display only the first URL; with '|' to stop after the first URL block
   "aa": {
     "response": "📢 Apostate Ari / The Transphobic Historian 🇺🇸 | 📺 https://youtube.com/@ApostateAri | 💬 https://x.com/ApostateAri | 🔗 https://linktr.ee/transphobichistorian",
     "aliases": ["ari", "th", "aa2"]
