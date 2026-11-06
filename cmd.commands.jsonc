@@ -11,7 +11,7 @@
     "aliases": ["answer"]
   },
   "c": {
-    "response": "🤖 Commands for !cmd - Posts the URL to the command reference page containing the latest commands",
+    "response": "🤖 Commands for !cmd - 📃 URL to commands | Posts the URL to the command reference page containing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
   "j": {
@@ -37,29 +37,29 @@
 
   // Built-in Commands requiring Argument(s)
   "ai": {
-    "response": "🧠 Usage: !cmd ai <question> - Provides a standard AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai <question> | Provides a standard AI response to the user's question",
     "aliases": ["ai"]
   },
   "ai)": {
-    "response": "🧠 Usage: !cmd ai) <question> - Provides a more humorous AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai) <question> | Provides a more humorous AI response to the user's question",
     "aliases": ["ai)"]
   },
   "ai!": {
-    "response": "🧠 Usage: !cmd ai! <question> - Provides a snarkier, political-comedian-style AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai! <question> | Provides a snarkier, political-comedian-style AI response to the user's question",
     "aliases": ["ai!"]
   },
   "ddg": {
-    "response": "🤖 Usage: !cmd ddg <topic> - Provides a shortened post (100 characters or fewer) related to the specified DuckDuckGo topic",
+    "response": "🤖 Usage: !cmd ddg <topic> | Provides a shortened post (100 characters or fewer) related to the specified DuckDuckGo topic",
     "aliases": ["duckduckgo"]
   },
   "wiki": {
-    "response": "🤖 Usage: !cmd wiki <topic> - Provides a shortened post (up to 200 characters) related to the specified Wikipedia topic",
+    "response": "🤖 Usage: !cmd wiki <topic> | Provides a shortened post (up to 200 characters) related to the specified Wikipedia topic",
     "aliases": ["wikipedia"]
   },
 
   // General Commands
   "f": {
-    "response": "ℹ️ This video uses fair use for the purpose of criticism, commentary, satire, news reporting, teaching, education, and research. Thank you for your attention to this matter...",
+    "response": "ℹ️ This video uses fair use for the purpose of criticism, commentary, satire, news reporting, teaching, education, and research. Thank you for your attention to this matter.",
     "aliases": ["fu", "fair", "fairuse"]
   },
   "g": {
@@ -121,7 +121,7 @@
     "aliases": ["watchers", "watching"]
   },
 
-  // Live Streamer Shout-out Commands: End with '-' to display only the first URL; with '|' to stop after the first URL block
+  // Live Streamer Shout-out Commands | End with '-' to display only the first URL; with '|' to stop after the first URL block
   "aa": {
     "response": "📢 Apostate Ari / The Transphobic Historian 🇺🇸 | 📺 https://youtube.com/@ApostateAri | 💬 https://x.com/ApostateAri | 🔗 https://linktr.ee/transphobichistorian",
     "aliases": ["ari", "th", "aa2"]
