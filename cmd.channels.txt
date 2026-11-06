@@ -1,12 +1,12 @@
 // YouTube Channels - StreamElements
 @PaulTissue
 @ChrisxSims
-@OnlyaMrBill
 @RawTactixIRL
 
 // YouTube Channels - Nightbot
 @Hoot_Troop
 @Unscripted-1437
+@OnlyaMrBill
 @TheAngryOregonian1776
 
 // Kick Channels
