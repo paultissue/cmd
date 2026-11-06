@@ -3,7 +3,7 @@
   "usage": {
     "response": "🤖 Usage: !cmd &lt;command&gt; [args] -or- !! &lt;command&gt; [args]",
     "aliases": ["syntax"]
-  }
+  },
 
   // Built-in Commands
   "a": {
