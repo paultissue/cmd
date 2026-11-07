@@ -143,7 +143,7 @@
     "aliases": ["angry#", "aos", "angrys", "angrymusic"]
   },
   "ao2": {
-    "response": "📣 The Angry Oregonian (More) 🇺🇸 | 📺 https://youtube.com/@doggonahogg3607 | 🎶 https://suno.com/@biggdoggsofftheporch | ✉ mailto:biggdoggsofftheporch@gmail.com",
+    "response": "📣 The Angry Oregonian (More) 🇺🇸 | 📺 https://youtube.com/@doggonahogg3607 | 🎶 https://suno.com/@biggdoggsofftheporch | ✉ biggdoggsofftheporch@gmail.com",
     "aliases": ["angry2"]
   },
   "aogsg$": {
@@ -163,7 +163,7 @@
     "aliases": ["cam2", "higby2", "camhigby2"]
   },
   "ch3": {
-    "response": "📣 Cam Higby (More) 🇺🇸 | 💬 https://discord.com/invite/SFWeTuhBD4 | ✉ mailto:Dcbhigbyy@gmail.com",
+    "response": "📣 Cam Higby (More) 🇺🇸 | 💬 https://discord.com/invite/SFWeTuhBD4 | ✉ Dcbhigbyy@gmail.com",
     "aliases": ["cam3", "higby3", "camhigby3"]
   },
   "cs": {
@@ -407,7 +407,7 @@
     "aliases": ["tommyx", "tommyboix"]
   },
   "zx": {
-    "response": "📢 Zak X 🇺🇸 | 📺 https://youtube.com/@zakxdrift | 💬 https://x.com/GDaddyzs | 🔗 https://lnk.bio/TherealZakX | ✉ mailto:ZakXMedia@proton.me",
+    "response": "📢 Zak X 🇺🇸 | 📺 https://youtube.com/@zakxdrift | 💬 https://x.com/GDaddyzs | 🔗 https://lnk.bio/TherealZakX | ✉ ZakXMedia@proton.me",
     "aliases": ["zak", "zakx", "zakx2"]
   },
   "zx$": {
@@ -535,7 +535,7 @@
     "aliases": ["axtell", "am2", "am$"]
   },
   "dg$": {
-    "response": "🛒 Doc G / Graff's Rustik Oddities 🇺🇸 | 🛒 Art & Crafts/Gifts: https://etsy.com/shop/GRAFFSRUSTIKODDITIES | 🛒 Apparel: https://doc-rey-shop.fourthwall.com | ✉ mailto:admin@graffsrustikoddities.com",
+    "response": "🛒 Doc G / Graff's Rustik Oddities 🇺🇸 | 🛒 Art & Crafts/Gifts: https://etsy.com/shop/GRAFFSRUSTIKODDITIES | 🛒 Apparel: https://doc-rey-shop.fourthwall.com | ✉ admin@graffsrustikoddities.com",
     "aliases": ["docg", "dg", "dg2"]
   },
   "br": {
@@ -609,7 +609,7 @@
 
   // Shout-out Template
   "xx": {
-    "response": "📢 XX 🇺🇸 | 📺 https://youtube.com/@MyChannel | 💬 https://x.com/MyX | 💸 https://cash.app/MyCashApp | 🔗 https://linktr.ee/MyLinkTree | ✉ mailto:MyAddress@MyMailbox.com",
+    "response": "📢 XX 🇺🇸 | 📺 https://youtube.com/@MyChannel | 💬 https://x.com/MyX | 💸 https://cash.app/MyCashApp | 🔗 https://linktr.ee/MyLinkTree | ✉ MyAddress@MyMailbox.com",
     "aliases": ["xx2", "xx$"]
   }
 }
