@@ -7,8 +7,12 @@
 
   // Built-in Commands
   "a": {
-    "response": "💡 Answer: Posts the answer to the last trivia question associated with the user that requested it",
+    "response": "💡 Answer: Posts the answer to the last Trivia Question associated with the user that requested it",
     "aliases": ["answer"]
+  },
+  "a2": {
+    "response": "💡 Answer2: Posts the answer to the last Trivia Question2 associated with the user that requested it",
+    "aliases": ["answer2"]
   },
   "c": {
     "response": "🤖 Commands for !cmd - 📃 URL to commands | Posts the URL to the command reference page containing the latest commands",
@@ -19,8 +23,12 @@
     "aliases": ["joke", "dadjoke"]
   },
   "q": {
-    "response": "❓ Question: Posts a random trivia question: End with '-' for easy 🟢; with '|' for medium 🟡; with '!' for hard 🔴; default is random",
+    "response": "❓ Question: Posts a random Trivia Question (The Trivia API): End with '-' for easy 🟢; with '|' for medium 🟡; with '!' for hard 🔴; default is random",
     "aliases": ["question", "trivia"]
+  },
+  "q2": {
+    "response": "❓ Question2: Posts a random Trivia Question (Open Trivia Database): End with '-' for easy 🟢; with '|' for medium 🟡; with '!' for hard 🔴; default is random",
+    "aliases": ["question2", "trivia2"]
   },
   "t": {
     "response": "🕒 Posts the current West Coast and East Coast U.S. time",
