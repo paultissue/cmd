@@ -191,4 +191,51 @@
 
   <h3>Live Streamer Shout-out Commands</h3>
   <p>End with '-' to display only the first URL; with '|' to stop after the first URL block</p>
+
+  <h4>Shout-out Modifiers</h4>
+  <table style="width: max-content;">
+    <thead>
+      <tr>
+        <th>Modifier Suffix</th>
+        <th>Behavior Description</th>
+        <th>Example Command</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>-</code> (Minus)</td>
+        <td>Displays only the first URL found in the response.</td>
+        <td><code>!cmd cs-</code></td>
+      </tr>
+      <tr>
+        <td><code>|</code> (Pipe)</td>
+        <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
+        <td><code>!cmd cs|</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Shout-out Examples</h4>
+  <table style="width: max-content;">
+    <thead>
+      <tr>
+        <th>Command Example</th>
+        <th>Resulting Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>!cmd cs</code></td>
+        <td>📢 Chris Sims 🇺🇸 | 📺 https://youtube.com/@ChrisxSims | 💬 https://x.com/ChrisxSims | 💸 https://cash.app/ChrisxSims</td>
+      </tr>
+      <tr>
+        <td><code>!cmd cs-</code></td>
+        <td>https://youtube.com/@ChrisxSims</td>
+      </tr>
+      <tr>
+        <td><code>!cmd cs|</code></td>
+        <td>📢 Chris Sims 🇺🇸 | 📺 https://youtube.com/@ChrisxSims</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
