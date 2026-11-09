@@ -2,7 +2,7 @@
 <!-- cmd.commands.html - Usage Documentation & Trivia Reference Footer            -->
 <!-- ============================================================================ -->
 <div id="cmd-docs-container">
-  <h3>Trivia Commands Reference (!q / !a / !q2 / !a2)</h3>
+  <h3>Trivia Commands Reference (!cmd q / !cmd a / !cmd q2 / !cmd a2)</h3>
   <p>The trivia system provides random trivia questions and retrieves stored answers per user and channel context.</p>
 
   <h4>1. Command Overview</h4>
@@ -16,24 +16,24 @@
     </thead>
     <tbody>
       <tr>
-        <td><strong>!q</strong></td>
+        <td><strong>!cmd q</strong></td>
         <td>q, trivia, question1, q1, trivia1</td>
         <td>Fetches a random trivia question from The Trivia API. Stores answer in cache/KV.</td>
       </tr>
       <tr>
-        <td><strong>!a</strong></td>
+        <td><strong>!cmd a</strong></td>
         <td>a, answer1, a1</td>
-        <td>Retrieves the answer for the active <strong>!q</strong> question.</td>
+        <td>Retrieves the answer for the active <strong>!cmd q</strong> question.</td>
       </tr>
       <tr>
-        <td><strong>!q2</strong></td>
+        <td><strong>!cmd q2</strong></td>
         <td>q2, trivia2</td>
         <td>Fetches a random trivia question from OpenTDB (with fallback to Trivia API). Stores answer in cache/KV.</td>
       </tr>
       <tr>
-        <td><strong>!a2</strong></td>
+        <td><strong>!cmd a2</strong></td>
         <td>a2</td>
-        <td>Retrieves the answer for the active <strong>!q2</strong> question.</td>
+        <td>Retrieves the answer for the active <strong>!cmd q2</strong> question.</td>
       </tr>
     </tbody>
   </table>
@@ -54,25 +54,25 @@
         <td><code>-</code> (Minus)</td>
         <td>Easy</td>
         <td>🟢</td>
-        <td><code>!q-</code> or <code>!q2-</code></td>
+        <td><code>!cmd q-</code> or <code>!cmd q2-</code></td>
       </tr>
       <tr>
         <td><code>|</code> (Pipe)</td>
         <td>Medium</td>
         <td>🟡</td>
-        <td><code>!q|</code> or <code>!q2|</code></td>
+        <td><code>!cmd q|</code> or <code>!cmd q2|</code></td>
       </tr>
       <tr>
         <td><code>!</code> (Exclamation)</td>
         <td>Hard</td>
         <td>🔴</td>
-        <td><code>!q!</code> or <code>!q2!</code></td>
+        <td><code>!cmd q!</code> or <code>!cmd q2!</code></td>
       </tr>
     </tbody>
   </table>
 
   <h4>3. Supported Categories & Short Aliases</h4>
-  <p>Pass a category name or shortcut alias as the first argument (e.g., <code>!q history</code> or <code>!q2- geo</code>).</p>
+  <p>Pass a category name or shortcut alias as the first argument (e.g., <code>!cmd q history</code> or <code>!cmd q2- geo</code>).</p>
   <table>
     <thead>
       <tr>
