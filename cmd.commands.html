@@ -1,12 +1,56 @@
 <!-- ============================================================================ -->
 <!-- cmd.commands.html - Usage Documentation & Trivia Reference Footer            -->
 <!-- ============================================================================ -->
-<div id="cmd-docs-container">
+<div id="cmd-docs-container" style="width: max-content; max-width: 100%;">
+  <h3>Chatbot Provider Prefix &amp; Shortcut Aliases</h3>
+  <p>The <code>!!</code> shortcut alias can be used in place of <code>!cmd</code> on supported chatbot providers.</p>
+  
+  <h4>Supported Providers for <code>!!</code></h4>
+  <table style="width: max-content;">
+    <thead>
+      <tr>
+        <th>Provider</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>StreamElements</td>
+        <td>Supported</td>
+      </tr>
+      <tr>
+        <td>Nightbot</td>
+        <td>Supported</td>
+      </tr>
+      <tr>
+        <td>Fossabot</td>
+        <td>Supported</td>
+      </tr>
+      <tr>
+        <td>Streamlabs Cloudbot</td>
+        <td>Supported</td>
+      </tr>
+      <tr>
+        <td>Streamer.bot</td>
+        <td>Supported</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Not Supported:</strong> KickBot</p>
+
+  <h4>Unsupported Chatbots</h4>
+  <p>The following chatbots are not supported by this service:</p>
+  <ul>
+    <li><strong>BotRix</strong> — Does not support calling other services</li>
+    <li>Others to be determined</li>
+  </ul>
+
   <h3>Trivia Commands Reference (!cmd q / !cmd a / !cmd q2 / !cmd a2)</h3>
   <p>The trivia system provides random trivia questions and retrieves stored answers per user and channel context.</p>
 
   <h4>1. Command Overview</h4>
-  <table>
+  <table style="width: max-content;">
     <thead>
       <tr>
         <th>Command</th>
@@ -40,7 +84,7 @@
 
   <h4>2. Command Modifiers (Difficulty Levels)</h4>
   <p>Suffixing <code>q</code> or <code>q2</code> with a modifier explicitly selects the difficulty tier. Unmodified commands select a random difficulty.</p>
-  <table>
+  <table style="width: max-content;">
     <thead>
       <tr>
         <th>Modifier Suffix</th>
@@ -73,13 +117,12 @@
 
   <h4>3. Supported Categories & Short Aliases</h4>
   <p>Pass a category name or shortcut alias as the first argument (e.g., <code>!cmd q history</code> or <code>!cmd q2- geo</code>).</p>
-  <table>
+  <table style="width: max-content;">
     <thead>
       <tr>
         <th>Category Name</th>
         <th>Aliases / Shortcuts</th>
         <th>Trivia API Target</th>
-        <th>OpenTDB ID</th>
       </tr>
     </thead>
     <tbody>
@@ -87,61 +130,51 @@
         <td>Arts &amp; Literature</td>
         <td><code>a</code>, <code>b</code>, <code>l</code>, <code>art</code>, <code>book</code>, <code>lit</code>, <code>arts</code>, <code>books</code>, <code>literature</code></td>
         <td>arts_and_literature</td>
-        <td>10 (Books)</td>
       </tr>
       <tr>
         <td>Film &amp; Television</td>
         <td><code>e</code>, <code>f</code>, <code>m</code>, <code>t</code>, <code>ent</code>, <code>mov</code>, <code>tv</code>, <code>film</code>, <code>movie</code>, <code>movies</code>, <code>entertain</code>, <code>television</code></td>
         <td>film_and_tv</td>
-        <td>11 (Film)</td>
       </tr>
       <tr>
         <td>General Knowledge</td>
         <td><code>k</code>, <code>know</code>, <code>knowledge</code></td>
         <td>general_knowledge</td>
-        <td>9 (General Knowledge)</td>
       </tr>
       <tr>
         <td>Geography</td>
         <td><code>g</code>, <code>geo</code>, <code>geography</code></td>
         <td>geography</td>
-        <td>22 (Geography)</td>
       </tr>
       <tr>
         <td>History</td>
         <td><code>h</code>, <code>hist</code>, <code>history</code></td>
         <td>history</td>
-        <td>23 (History)</td>
       </tr>
       <tr>
         <td>Politics</td>
         <td><code>p</code>, <code>pol</code>, <code>politics</code></td>
         <td>history</td>
-        <td>24 (Politics)</td>
       </tr>
       <tr>
         <td>Music</td>
         <td><code>u</code>, <code>mus</code>, <code>music</code></td>
         <td>music</td>
-        <td>12 (Music)</td>
       </tr>
       <tr>
         <td>Science &amp; Nature</td>
         <td><code>c</code>, <code>n</code>, <code>nat</code>, <code>sci</code>, <code>nature</code>, <code>science</code></td>
         <td>science</td>
-        <td>17 (Science &amp; Nature)</td>
       </tr>
       <tr>
         <td>Society &amp; Culture / Mythology</td>
         <td><code>y</code>, <code>soc</code>, <code>cult</code>, <code>myth</code>, <code>social</code>, <code>culture</code>, <code>mythology</code></td>
         <td>society_and_culture</td>
-        <td>20 (Mythology)</td>
       </tr>
       <tr>
         <td>Sports &amp; Leisure</td>
         <td><code>s</code>, <code>spo</code>, <code>sports</code>, <code>leisure</code></td>
         <td>sport_and_leisure</td>
-        <td>21 (Sports)</td>
       </tr>
     </tbody>
   </table>
@@ -155,4 +188,7 @@
     <li><code>!cmd q2| geo</code> — Request a <strong>Medium</strong> geography question from OpenTDB.</li>
     <li><code>!cmd a2</code> — View the answer to the last requested OpenTDB trivia question.</li>
   </ul>
+
+  <h3>Live Streamer Shout-out Commands</h3>
+  <p>End with '-' to display only the first URL; with '|' to stop after the first URL block</p>
 </div>
