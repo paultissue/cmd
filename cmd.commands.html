@@ -2,13 +2,59 @@
 <!-- cmd.commands.html - Usage Documentation & Trivia Reference Footer            -->
 <!-- ============================================================================ -->
 <div id="cmd-docs-container" style="width: max-content; max-width: 100%;">
-  <h3>Chatbot Provider Prefix &amp; Shortcut Aliases</h3>
-  <p>The <code>!!</code> shortcut alias can be used in place of <code>!cmd</code> on supported chatbot providers: StreamElements, Nightbot, Fossabot, Streamlabs Cloudbot, and Streamer.bot. Not supported on: KickBot.</p>
+  <h3>Command Usage</h3>
+  <p>Use <code>!cmd</code> to invoke these shout-out service commands. The <code>!!</code> shortcut alias can be used in place of <code>!cmd</code> on supported providers.</p>
+
   <p>🤖 <strong>Usage:</strong> <code>!cmd &lt;command&gt; [args]</code><br>
-  🤖 <strong>Usage:</strong> <code>!! &lt;command&gt; [args]</code><br>
-  <code>&lt;command&gt;</code> is required; <code>[args]</code> is optional, when necessary</p>
-  <p><strong>Example:</strong> <code>!! likes 123</code><br>
-  <strong>Response:</strong> 👍 123 Thumbs Up 👍 Smash that Like button! 👍 Let's Goooo! 🇺🇸</p>
+  🤖 <strong>Usage:</strong> <code>!! &lt;command&gt; [args]</code></p>
+
+  <h4>Syntax Parameters &amp; Format</h4>
+  <table style="width: max-content;">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;command&gt;</code></td>
+        <td>You must provide a specific command to invoke.</td>
+      </tr>
+      <tr>
+        <td><code>[args]</code></td>
+        <td>Optional and only provided if the specific command requires them.</td>
+      </tr>
+      <tr>
+        <td><strong>Format</strong></td>
+        <td>There must be a space after <code>!cmd</code> or <code>!!</code> before the specific command to invoke.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Usage Examples</h4>
+  <table style="width: max-content;">
+    <thead>
+      <tr>
+        <th>Example Command</th>
+        <th>Response Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>!! likes 123</code></td>
+        <td>👍 123 Thumbs Up 👍 Smash that Like button! 👍 Let's Goooo! 🇺🇸</td>
+      </tr>
+      <tr>
+        <td><code>!cmd question2!</code></td>
+        <td>❓ Question2: [music] 🔴 Which song was originally recorded by The Velvet Underground and was later covered by Cowboy Junkies? | Choices: Sweet Jane, Blue Suede Shoes, I Love Rock 'n' Roll, Tainted Love</td>
+      </tr>
+      <tr>
+        <td><code>!cmd answer2</code></td>
+        <td>💡 Answer2: Sweet Jane</td>
+      </tr>
+    </tbody>
+  </table>
 
   <h3>Command Modifiers</h3>
   <p>Append a hyphen (<code>-</code>) to display only the first URL, or a pipe (<code>|</code>) to truncate the output after the first URL block.</p>
