@@ -30,6 +30,10 @@
     "response": "❓ Question2: Posts a random Trivia Question (Open Trivia Database): End with '-' for easy 🟢; with '|' for medium 🟡; with '!' for hard 🔴; default is random",
     "aliases": ["question2", "trivia2"]
   },
+  "s": {
+    "response": "👥 Posts the number of subscribers or followers for the channel | Example: 👥 123 Subscribers 👥 Smash that Subscribe button! | Usage: !cmd subs <channel> | <channel> is optional",
+    "aliases": ["subs", "subscribers", "follows", "followers"]
+  },
   "t": {
     "response": "🕒 Posts the current West Coast and East Coast U.S. time",
     "aliases": ["time","clock"]
@@ -119,10 +123,6 @@
   "p": {
     "response": "📢 Go follow $(1)! | 📺 https://youtube.com/$(1)",
     "aliases": ["promo", "promote", "so", "shout", "shoutout"]
-  },
-  "s": {
-    "response": "👥 $(1) Subscribers 👥 Smash that Subscribe button! 👥 Let's Goooo! 🇺🇸",
-    "aliases": ["subs", "subscribers"]
   },
   "w": {
     "response": "👀 $(1) Watching 👀 Let's Goooo! 🇺🇸",
