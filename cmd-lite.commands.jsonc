@@ -127,6 +127,7 @@
   "me": {
     "response": "👋 You are $(user) watching the $(channel) channel on $(provider) which uses the $(platform) bot. How are you this $(1) $(2)?",
     "aliases": ["whoami"]
+  },
   "p": {
     "response": "📢 Go follow $(1)! | 📺 https://youtube.com/$(1)",
     "aliases": ["promo", "promote", "so", "shout", "shoutout"]
