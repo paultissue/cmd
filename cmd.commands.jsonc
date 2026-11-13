@@ -31,7 +31,7 @@
     "aliases": ["question2", "trivia2"]
   },
   "s": {
-    "response": "👥 Posts the number of subscribers or followers for the channel | Example: 👥 123 Subscribers 👥 Smash that Subscribe button! | Usage: !cmd subs <channel> | <channel> is optional",
+    "response": "👥 Posts the number of subscribers or followers for this channel | Example: ​​👥 123 subscribers on this channel 👥 Smash that Subscribe button! | Usage: !cmd subs <channel> | <channel> is optional",
     "aliases": ["subs", "subscribers", "follows", "followers"]
   },
   "t": {
