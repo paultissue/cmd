@@ -198,6 +198,10 @@
     "response": "💸 Support Chris Sims on Venmo! 🇺🇸 | 💸 https://venmo.com/u/ChrisxSims | Thank you!",
     "aliases": ["csvm", "chrisvm$", "chrisvm"]
   },
+  "cswl$": {
+    "response": "🛒 Support Chris Sims on Amazon Wishlist! 🇺🇸 | 🛒 https://amazon.com/hz/wishlist/ls/1SNC20ET5ZU56 | Thank you!",
+    "aliases": ["chriswl$", "chrissimswl$", "chrisxsimswl$"]
+  },
   "csx": {
     "response": "💬 Follow Chris Sims on X! 🇺🇸 | 💬 https://x.com/ChrisxSims",
     "aliases": ["chrisx", "chrissimsx", "chrisxsimsx"]
@@ -239,7 +243,7 @@
     "aliases": ["drvm", "dannyvm$", "dannyvm"]
   },
   "drwl$": {
-    "response": "🛒 Support Danny Rebel on Amazon Wishlists! 🇺🇸 | 🛒 https://amazon.com/hz/wishlist/ls/2GEQYGRGRUWQM | Thank you!",
+    "response": "🛒 Support Danny Rebel on Amazon Wishlist! 🇺🇸 | 🛒 https://amazon.com/hz/wishlist/ls/2GEQYGRGRUWQM | Thank you!",
     "aliases": ["dannywl$", "DannyRebelwl$"]
   },
   "drx": {
