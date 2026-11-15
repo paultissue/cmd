@@ -200,7 +200,7 @@
   },
   "cswl$": {
     "response": "🛒 Support Chris Sims on Amazon Wishlist! 🇺🇸 | 🛒 https://amazon.com/hz/wishlist/ls/1SNC20ET5ZU56 | Thank you!",
-    "aliases": ["chriswl$", "chrissimswl$", "chrisxsimswl$"]
+    "aliases": ["cswl", "chriswl", "chriswl$", "chrissimswl$", "chrisxsimswl$"]
   },
   "csx": {
     "response": "💬 Follow Chris Sims on X! 🇺🇸 | 💬 https://x.com/ChrisxSims",
@@ -244,7 +244,7 @@
   },
   "drwl$": {
     "response": "🛒 Support Danny Rebel on Amazon Wishlist! 🇺🇸 | 🛒 https://amazon.com/hz/wishlist/ls/2GEQYGRGRUWQM | Thank you!",
-    "aliases": ["dannywl$", "DannyRebelwl$"]
+    "aliases": ["drwl", "dannywl", "dannywl$", "DannyRebelwl$"]
   },
   "drx": {
     "response": "💬 Follow Danny Rebel on X! 🇺🇸 | 💬 https://x.com/DannyRebel333",
