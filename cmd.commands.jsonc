@@ -49,15 +49,15 @@
 
   // Built-in Commands requiring Argument(s)
   "ai": {
-    "response": "🧠 Usage: !cmd ai <question> | Provides a standard AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai <request> | Provides a standard AI response to the user's request",
     "aliases": ["ai"]
   },
   "ai)": {
-    "response": "🧠 Usage: !cmd ai) <question> | Provides a more humorous AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai) <request> | Provides a more humorous AI response to the user's request",
     "aliases": ["ai)"]
   },
   "ai!": {
-    "response": "🧠 Usage: !cmd ai! <question> | Provides a snarkier, political-comedian-style AI response to the user's question",
+    "response": "🧠 Usage: !cmd ai! <request> | Provides a snarkier, political-comedian-style AI response to the user's request",
     "aliases": ["ai!"]
   },
   "ddg": {
