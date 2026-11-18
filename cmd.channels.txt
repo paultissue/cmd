@@ -1,6 +1,5 @@
 // YouTube Channels - StreamElements
 @PaulTissue
-@ChrisxSims
 @RawTactixIRL
 
 // YouTube Channels - Nightbot
