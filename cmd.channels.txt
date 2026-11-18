@@ -13,3 +13,6 @@
 
 // Twitch Channels
 @PaulTissue
+
+// Miscellaneous Channels
+@ChatCmd
