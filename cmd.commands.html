@@ -151,26 +151,26 @@
     <table>
       <thead>
         <tr>
+          <th>Command Example</th>
           <th>Modifier Suffix</th>
           <th>Behavior Description</th>
-          <th>Example Command</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td><code>!cmd ht-</code></td>
           <td><code>-</code> (Minus)</td>
           <td>Displays only the first URL found in the response.</td>
-          <td><code>!cmd ht-</code></td>
         </tr>
         <tr>
+          <td><code>!cmd ht|</code></td>
           <td><code>|</code> (Pipe)</td>
           <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
-          <td><code>!cmd ht|</code></td>
         </tr>
         <tr>
+          <td><code>!cmd ht!</code></td>
           <td><code>!</code> (Exclamation)</td>
           <td>Displays the full unmodified response (large/default output).</td>
-          <td><code>!cmd ht!</code></td>
         </tr>
       </tbody>
     </table>
@@ -240,30 +240,30 @@
     <table>
       <thead>
         <tr>
+          <th>Command Example</th>
           <th>Modifier Suffix</th>
           <th>Difficulty</th>
           <th>Emoji</th>
-          <th>Example Command</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td><code>!cmd q-</code> or <code>!cmd q2-</code></td>
           <td><code>-</code> (Minus)</td>
           <td>Easy</td>
           <td>🟢</td>
-          <td><code>!cmd q-</code> or <code>!cmd q2-</code></td>
         </tr>
         <tr>
+          <td><code>!cmd q|</code> or <code>!cmd q2|</code></td>
           <td><code>|</code> (Pipe)</td>
           <td>Medium</td>
           <td>🟡</td>
-          <td><code>!cmd q|</code> or <code>!cmd q2|</code></td>
         </tr>
         <tr>
+          <td><code>!cmd q!</code> or <code>!cmd q2!</code></td>
           <td><code>!</code> (Exclamation)</td>
           <td>Hard</td>
           <td>🔴</td>
-          <td><code>!cmd q!</code> or <code>!cmd q2!</code></td>
         </tr>
       </tbody>
     </table>
@@ -529,51 +529,3 @@
           <td><code>small</code></td>
           <td><code>small</code>, <code>sm</code>, <code>s</code></td>
           <td><code>-</code> (Minus)</td>
-          <td>Displays only the first URL found in the response.</td>
-        </tr>
-        <tr>
-          <td><code>medium</code></td>
-          <td><code>medium</code>, <code>md</code>, <code>m</code></td>
-          <td><code>|</code> (Pipe)</td>
-          <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
-        </tr>
-        <tr>
-          <td><code>large</code></td>
-          <td><code>large</code>, <code>lg</code>, <code>l</code></td>
-          <td><code>!</code> (Exclamation / Default)</td>
-          <td>Displays the full unmodified response (default when <code>response</code> is not specified).</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <script>
-    (() => {
-      const container = document.getElementById('cmd-docs-container');
-      if (!container) return;
-      const buttons = container.querySelectorAll('[data-footer-tab]');
-      const panels = {
-        users: document.getElementById('footerTabUsers'),
-        channels: document.getElementById('footerTabChannels')
-      };
-
-      const activateFooterTab = (tabKey) => {
-        buttons.forEach(btn => {
-          const isMatch = btn.getAttribute('data-footer-tab') === tabKey;
-          btn.classList.toggle('active', isMatch);
-          btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
-        });
-        Object.entries(panels).forEach(([key, panel]) => {
-          if (panel) panel.classList.toggle('active', key === tabKey);
-        });
-      };
-
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const tabKey = btn.getAttribute('data-footer-tab');
-          if (tabKey) activateFooterTab(tabKey);
-        });
-      });
-    })();
-  </script>
-</div>
