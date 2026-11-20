@@ -4,6 +4,21 @@ const FALLBACK_PROVIDER = "YouTube";
 // Case-insensitive allowlist of chat providers your upstream Worker explicitly recognizes.
 const VALID_PROVIDERS = new Set(["youtube", "kick", "twitch"]);
 
+function normalizeStreamlabsQuery(rawQuery) {
+  if (!rawQuery || rawQuery === "null") {
+    return "";
+  }
+
+  return rawQuery
+    // Join positional "{1}+{2}+..." tokens into space-separated words
+    .replace(/\+/g, " ")
+    // Strip unexpanded placeholders like "{19}" or literal "null" tokens
+    .replace(/\{\d+\}|\bnull\b/gi, " ")
+    // Collapse repeated spaces and trim leading/trailing whitespace
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export default async function handler(req, res) {
   try {
     // Parse the incoming request URL so we can safely read and mutate query parameters.
@@ -15,12 +30,30 @@ export default async function handler(req, res) {
       url.searchParams.set("provider", FALLBACK_PROVIDER);
     }
 
-    // Normalize `query` so missing or "null" values become an empty string,
-    // while preserving intentional values like "?" for help/info commands.
-    const rawQuery = url.searchParams.get("query");
+    const platform = (url.searchParams.get("platform") || "").toLowerCase();
+    let rawQuery = url.searchParams.get("query");
+
     if (!rawQuery || rawQuery === "null") {
-      url.searchParams.set("query", "");
+      rawQuery = "";
+    } else if (platform === "streamlabs") {
+      // Only Streamlabs uses positional "+..." slots that need slot/null cleanup.
+      // StreamElements, BotRix, Nightbot, and Fossabot pass query strings directly.
+      rawQuery = normalizeStreamlabsQuery(rawQuery);
     }
+
+    url.searchParams.set("query", rawQuery);
+
+    // Log request details for verifying incoming bot queries in Vercel logs.
+    console.log(
+      "Relay request:",
+      JSON.stringify({
+        platform,
+        provider: url.searchParams.get("provider"),
+        rawUrl: req.url,
+        cleanedQuery: rawQuery,
+        forwardedSearch: url.search,
+      })
+    );
 
     // Forward the sanitized query string to the upstream Cloudflare Worker.
     const upstream = await fetch(`https://cmd.paultissue.workers.dev/${url.search}`);
