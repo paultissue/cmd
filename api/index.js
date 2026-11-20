@@ -1,6 +1,7 @@
 // Map each incoming Vercel hostname to its corresponding Cloudflare Worker origin
 const UPSTREAM_BY_HOST = {
   "cmdbot.vercel.app": "https://cmd.paultissue.workers.dev",
+  "cmd-lite.vercel.app": "https://cmd-lite.paultissue.workers.dev",  
   "cmdtest.vercel.app": "https://authorized-users.paultissue.workers.dev"
 };
 
