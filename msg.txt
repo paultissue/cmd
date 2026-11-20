@@ -1,1 +1,1 @@
-	ℹ️ ​Usage: !cmd <command_name> [args]
+🤖 Usage: !cmd ＜command＞ [args] -or- !! ＜command＞ [args] | Example: !! likes 123
