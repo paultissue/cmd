@@ -1,10 +1,7 @@
 {
-  // Enables IDE schema autocomplete and syntax validation for Vercel project config
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      // Catch-all route so root ("/") and dynamic subpaths ("/commands", "/builtin", "/users", etc.)
-      // all go through the serverless relay instead of hard-coding individual pages
       "source": "/(.*)",
       "destination": "/api/index.js"
     }
