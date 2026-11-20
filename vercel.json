@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/:path*",
-      "destination": "https://cmd.paultissue.workers.dev/:path*"
+      "destination": "/api/index.js"
     }
   ]
 }
