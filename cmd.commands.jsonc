@@ -15,7 +15,7 @@
     "aliases": ["answer2"]
   },
   "c": {
-    "response": "🤖 Posts the URL to the command reference page containing the latest commands | Example Response: 🤖 Commands for !cmd - 📃 URL to commands | ",
+    "response": "🤖 Posts the URL to the command reference page containing the latest commands",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
   "j": {
