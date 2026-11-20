@@ -87,39 +87,6 @@
     </tbody>
   </table>
 
-  <h4>Response URL Parameter Settings</h4>
-  <p>The <code>response</code> URL parameter (aliases: <code>r</code>, <code>resp</code>, <code>response</code>) overrides the default behavior of commands that do not include a command modifier. If not specified, <code>response</code> defaults to <code>large</code>. Note that this is not a user setting, but rather a customization that some channels may opt-in to.</p>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Response Value</th>
-        <th>Aliases</th>
-        <th>Mapped Modifier</th>
-        <th>Behavior Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>small</code></td>
-        <td><code>small</code>, <code>sm</code>, <code>s</code></td>
-        <td><code>-</code> (Minus)</td>
-        <td>Displays only the first URL found in the response.</td>
-      </tr>
-      <tr>
-        <td><code>medium</code></td>
-        <td><code>medium</code>, <code>md</code>, <code>m</code></td>
-        <td><code>|</code> (Pipe)</td>
-        <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
-      </tr>
-      <tr>
-        <td><code>large</code></td>
-        <td><code>large</code>, <code>lg</code>, <code>l</code></td>
-        <td><code>!</code> (Exclamation / Default)</td>
-        <td>Displays the full unmodified response (default when <code>response</code> is not specified).</td>
-      </tr>
-    </tbody>
-  </table>
-
   <h4>Shout-out Examples</h4>
   <table style="width: max-content;">
     <thead>
@@ -366,7 +333,9 @@
     </tbody>
   </table>
 
-  <h3>Supported Chatbots</h3>
+  <h3>Channel Customizations</h3>
+
+  <h4>Supported Chatbots</h4>
   <table style="width: max-content;">
     <thead>
       <tr>
@@ -450,6 +419,39 @@
         <td style="background-color: transparent;">-</td>
         <td style="background-color: transparent;"><a href="https://botrix.live" target="_blank" rel="noopener noreferrer" style="color: #888888;">https://botrix.live</a></td>
         <td style="background-color: transparent;">Unsupported; broken custom command service call-outs.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Response URL Parameter Settings</h4>
+  <p>The <code>response</code> URL parameter (aliases: <code>r</code>, <code>resp</code>, <code>response</code>) overrides the default behavior of commands that do not include a command modifier. If not specified, <code>response</code> defaults to <code>large</code>. Note that this is not a user setting, but rather a customization that some channels may opt-in to.</p>
+  <table style="width: max-content;">
+    <thead>
+      <tr>
+        <th>Response Value</th>
+        <th>Aliases</th>
+        <th>Mapped Modifier</th>
+        <th>Behavior Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>small</code></td>
+        <td><code>small</code>, <code>sm</code>, <code>s</code></td>
+        <td><code>-</code> (Minus)</td>
+        <td>Displays only the first URL found in the response.</td>
+      </tr>
+      <tr>
+        <td><code>medium</code></td>
+        <td><code>medium</code>, <code>md</code>, <code>m</code></td>
+        <td><code>|</code> (Pipe)</td>
+        <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
+      </tr>
+      <tr>
+        <td><code>large</code></td>
+        <td><code>large</code>, <code>lg</code>, <code>l</code></td>
+        <td><code>!</code> (Exclamation / Default)</td>
+        <td>Displays the full unmodified response (default when <code>response</code> is not specified).</td>
       </tr>
     </tbody>
   </table>
