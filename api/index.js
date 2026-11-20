@@ -1,4 +1,4 @@
-const FALLBACK_PROVIDER = "YouTube"; // or "YouTube|Kick|Twitch"
+const FALLBACK_PROVIDER = "YouTube";
 const VALID_PROVIDERS = new Set(["youtube", "kick", "twitch"]);
 
 export default async function handler(req, res) {
@@ -9,10 +9,17 @@ export default async function handler(req, res) {
     url.searchParams.set("provider", FALLBACK_PROVIDER);
   }
 
-  const rawQuery = url.searchParams.get("query");
+  const platform = (url.searchParams.get("platform") || "").toLowerCase();
+  let rawQuery = url.searchParams.get("query");
+
   if (!rawQuery || rawQuery === "null") {
-    url.searchParams.set("query", "");
+    rawQuery = "";
+  } else if (platform === "streamlabs") {
+    // If Cloudbot {msg} includes the leading "!command" token, strip it
+    rawQuery = rawQuery.trim().replace(/^!\S+\s*/, "");
   }
+
+  url.searchParams.set("query", rawQuery);
 
   const upstream = await fetch(`https://cmd.paultissue.workers.dev/${url.search}`);
   const text = await upstream.text();
