@@ -236,7 +236,7 @@
     </table>
 
     <h4>2. Command Modifiers (Difficulty)</h4>
-    <p>Suffixing <code>q</code> or <code>q2</code> with a modifier explicitly selects the difficulty tier. Unmodified commands select a random difficulty.</p>
+    <p>Suffixing <code>q</code> or <code>q2</code> with a modifier explicitly selects the difficulty tier. Unmodified commands select a random difficulty. Answer commands (<code>!a</code> / <code>!a2</code>) do not require a difficulty modifier to return the answer. Invoking <code>!q</code> or <code>!q2</code> again for the same user overwrites the previous active question's answer, so <code>!a</code> or <code>!a2</code> only returns the answer to the most recent question. <code>!a</code> and <code>!a2</code> track their answers independently.</p>
     <table>
       <thead>
         <tr>
