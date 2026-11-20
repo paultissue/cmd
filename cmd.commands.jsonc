@@ -1,7 +1,7 @@
 {
   // Usage
   "usage": {
-    "response": "🤖 Usage: !cmd ＜command＞ [args] -or- !! ＜command＞ [args] | ＜command＞ is required; [args] is optional, when necessary | Example: !! likes 123",
+    "response": "🤖 Usage: !cmd ＜command＞ [args] -or- !! ＜command＞ [args] | Example: !! likes 123",
     "aliases": ["syntax"]
   },
 
@@ -15,7 +15,7 @@
     "aliases": ["answer2"]
   },
   "c": {
-    "response": "🤖 Commands for !cmd - 📃 URL to commands | Posts the URL to the command reference page containing the latest commands",
+    "response": "🤖 Posts the URL to the command reference page containing the latest commands | Example Response: 🤖 Commands for !cmd - 📃 URL to commands | ",
     "aliases": ["cmds", "commands", "list", "docs", "help", "?"]
   },
   "j": {
@@ -23,15 +23,15 @@
     "aliases": ["joke", "dadjoke"]
   },
   "q": {
-    "response": "❓ Question: Posts a random Trivia Question (The Trivia API): End with '-' for easy 🟢; with '|' for medium 🟡; with '!' for hard 🔴; default is random",
+    "response": "❓ Question: Posts a random Trivia Question (The Trivia API)",
     "aliases": ["question", "trivia"]
   },
   "q2": {
-    "response": "❓ Question2: Posts a random Trivia Question (Open Trivia Database): End with '-' for easy 🟢; with '|' for medium 🟡; with '!' for hard 🔴; default is random",
+    "response": "❓ Question2: Posts a random Trivia Question (Open Trivia Database)",
     "aliases": ["question2", "trivia2"]
   },
   "s": {
-    "response": "👥 Posts the number of subscribers or followers for this channel | Example: ​​👥 123 subscribers on this channel 👥 Smash that Subscribe button! | Usage: !cmd subs <channel> | <channel> is optional",
+    "response": "👥 Posts the number of subscribers or followers for this channel | Usage: !cmd subs <channel> | <channel> is optional",
     "aliases": ["subs", "subscribers", "follows", "followers"]
   },
   "t": {
@@ -129,7 +129,7 @@
     "aliases": ["watchers", "watching"]
   },
 
-  // Live Streamer Shout-out Commands | End with '-' to display only the first URL; with '|' to stop after the first URL block
+  // Live Streamer Shout-out Commands
   "aa": {
     "response": "📢 Apostate Ari / The Transphobic Historian 🇺🇸 | 📺 https://youtube.com/@ApostateAri | 💬 https://x.com/ApostateAri | 🔗 https://linktr.ee/transphobichistorian",
     "aliases": ["ari", "th", "aa2"]
