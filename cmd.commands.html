@@ -2,457 +2,531 @@
 <!-- cmd.commands.html - Usage Documentation & Trivia Reference Footer            -->
 <!-- ============================================================================ -->
 <div id="cmd-docs-container" style="width: max-content; max-width: 100%;">
-  <h3>Command Usage</h3>
-  <p>Use <code>!cmd</code> to invoke these shout-out service commands. The <code>!!</code> shortcut alias can be used in place of <code>!cmd</code> on supported providers.</p>
+  <style>
+    .cmd-footer-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 16px;
+      border-bottom: 1px solid var(--border, #cccccc);
+      padding-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .cmd-footer-tab-btn {
+      background: none;
+      border: 1px solid var(--border, #cccccc);
+      color: var(--text, inherit);
+      padding: 6px 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+    .cmd-footer-tab-btn:hover {
+      background: var(--hdr, rgba(128, 128, 128, 0.15));
+    }
+    .cmd-footer-tab-btn.active {
+      font-weight: bold;
+      background: var(--hdr, rgba(128, 128, 128, 0.2));
+      border-color: var(--text, currentColor);
+    }
+    .cmd-footer-tab-panel {
+      display: none;
+    }
+    .cmd-footer-tab-panel.active {
+      display: block;
+    }
+  </style>
 
-  <p>🤖 <strong>Usage:</strong> <code>!cmd &lt;command&gt; [args]</code><br>
-  🤖 <strong>Usage:</strong> <code>!! &lt;command&gt; [args]</code></p>
+  <div class="cmd-footer-tabs" role="tablist" aria-label="Documentation Sections">
+    <button type="button" class="cmd-footer-tab-btn active" role="tab" aria-selected="true" data-footer-tab="users">Users</button>
+    <button type="button" class="cmd-footer-tab-btn" role="tab" aria-selected="false" data-footer-tab="channels">Channels</button>
+  </div>
 
-  <h4>Syntax Parameters &amp; Format</h4>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Element</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>&lt;command&gt;</code></td>
-        <td>You must provide a specific command to invoke.</td>
-      </tr>
-      <tr>
-        <td><code>[args]</code></td>
-        <td>Optional and only provided if the specific command requires them.</td>
-      </tr>
-      <tr>
-        <td><strong>Format</strong></td>
-        <td>There must be a space after <code>!cmd</code> or <code>!!</code> before the specific command to invoke.</td>
-      </tr>
-    </tbody>
-  </table>
+  <div id="footerTabUsers" class="cmd-footer-tab-panel active" role="tabpanel">
+    <h3>Command Usage</h3>
+    <p>Use <code>!cmd</code> to invoke these shout-out service commands. The <code>!!</code> shortcut alias can be used in place of <code>!cmd</code> on supported providers.</p>
 
-  <h4>Usage Examples</h4>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Example Command</th>
-        <th>Response Output</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>!! likes 123</code></td>
-        <td>👍 123 Thumbs Up 👍 Smash that Like button! 👍 Let's Goooo! 🇺🇸</td>
-      </tr>
-      <tr>
-        <td><code>!cmd question2!</code></td>
-        <td>❓ Question2: [Entertainment: Music] 🔴 Which song was originally recorded by The Velvet Underground and was later covered by Cowboy Junkies? | Choices: Sweet Jane, Blue Suede Shoes, I Love Rock 'n' Roll, Tainted Love</td>
-      </tr>
-      <tr>
-        <td><code>!cmd answer2</code></td>
-        <td>💡 Answer2: Sweet Jane</td>
-      </tr>
-    </tbody>
-  </table>
+    <p>🤖 <strong>Usage:</strong> <code>!cmd &lt;command&gt; [args]</code><br>
+    🤖 <strong>Usage:</strong> <code>!! &lt;command&gt; [args]</code></p>
 
-  <h3>Command Modifiers</h3>
-  <p>Append a hyphen (<code>-</code>) to display only the first URL, a pipe (<code>|</code>) to truncate the output after the first URL block, or an exclamation mark (<code>!</code>) for the full unmodified response.</p>
+    <h4>Syntax Parameters &amp; Format</h4>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;command&gt;</code></td>
+          <td>You must provide a specific command to invoke.</td>
+        </tr>
+        <tr>
+          <td><code>[args]</code></td>
+          <td>Optional and only provided if the specific command requires them.</td>
+        </tr>
+        <tr>
+          <td><strong>Format</strong></td>
+          <td>There must be a space after <code>!cmd</code> or <code>!!</code> before the specific command to invoke.</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>Shout-out Modifiers</h4>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Modifier Suffix</th>
-        <th>Behavior Description</th>
-        <th>Example Command</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>-</code> (Minus)</td>
-        <td>Displays only the first URL found in the response.</td>
-        <td><code>!cmd ht-</code></td>
-      </tr>
-      <tr>
-        <td><code>|</code> (Pipe)</td>
-        <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
-        <td><code>!cmd ht|</code></td>
-      </tr>
-      <tr>
-        <td><code>!</code> (Exclamation)</td>
-        <td>Displays the full unmodified response (large/default output).</td>
-        <td><code>!cmd ht!</code></td>
-      </tr>
-    </tbody>
-  </table>
+    <h4>Usage Examples</h4>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Example Command</th>
+          <th>Response Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!! likes 123</code></td>
+          <td>👍 123 Thumbs Up 👍 Smash that Like button! 👍 Let's Goooo! 🇺🇸</td>
+        </tr>
+        <tr>
+          <td><code>!cmd question2!</code></td>
+          <td>❓ Question2: [Entertainment: Music] 🔴 Which song was originally recorded by The Velvet Underground and was later covered by Cowboy Junkies? | Choices: Sweet Jane, Blue Suede Shoes, I Love Rock 'n' Roll, Tainted Love</td>
+        </tr>
+        <tr>
+          <td><code>!cmd answer2</code></td>
+          <td>💡 Answer2: Sweet Jane</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>Shout-out Examples</h4>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Command Example</th>
-        <th>Resulting Output</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>!cmd ht</code></td>
-        <td>📢 Our World Live - Hoot Troop 🦉 🇺🇸 | 📺 <a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a> | 💬 <a href="https://x.com/Hoot_Troop" target="_blank" rel="noopener noreferrer">https://x.com/Hoot_Troop</a> | 🔗 <a href="https://linktr.ee/hoot_troop" target="_blank" rel="noopener noreferrer">https://linktr.ee/hoot_troop</a></td>
-      </tr>
-      <tr>
-        <td><code>!cmd ht|</code></td>
-        <td>📢 Our World Live - Hoot Troop 🦉 🇺🇸 | 📺 <a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a></td>
-      </tr>
-      <tr>
-        <td><code>!cmd ht-</code></td>
-        <td><a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a></td>
-      </tr>
-    </tbody>
-  </table>
+    <h3>Command Modifiers</h3>
+    <p>Append a hyphen (<code>-</code>) to display only the first URL, a pipe (<code>|</code>) to truncate the output after the first URL block, or an exclamation mark (<code>!</code>) for the full unmodified response.</p>
 
-  <h3>Trivia Commands Reference (!cmd q / !cmd a / !cmd q2 / !cmd a2)</h3>
-  <p>The trivia system provides random trivia questions and retrieves stored answers per user and channel context.</p>
+    <h4>Shout-out Modifiers</h4>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Modifier Suffix</th>
+          <th>Behavior Description</th>
+          <th>Example Command</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>-</code> (Minus)</td>
+          <td>Displays only the first URL found in the response.</td>
+          <td><code>!cmd ht-</code></td>
+        </tr>
+        <tr>
+          <td><code>|</code> (Pipe)</td>
+          <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
+          <td><code>!cmd ht|</code></td>
+        </tr>
+        <tr>
+          <td><code>!</code> (Exclamation)</td>
+          <td>Displays the full unmodified response (large/default output).</td>
+          <td><code>!cmd ht!</code></td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>1. Command Overview</h4>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Command</th>
-        <th>Aliases</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>!cmd q</strong></td>
-        <td>q, q1, trivia, question, trivia1, question1</td>
-        <td>Fetches a random trivia question from The Trivia API.</td>
-      </tr>
-      <tr>
-        <td><strong>!cmd a</strong></td>
-        <td>a, a1, answer, answer1</td>
-        <td>Retrieves the answer for the active <strong>!cmd q</strong> question.</td>
-      </tr>
-      <tr>
-        <td><strong>!cmd q2</strong></td>
-        <td>q2, trivia2, question2</td>
-        <td>Fetches a random trivia question from OpenTDB (with fallback to Trivia API).</td>
-      </tr>
-      <tr>
-        <td><strong>!cmd a2</strong></td>
-        <td>a2, answer2</td>
-        <td>Retrieves the answer for the active <strong>!cmd q2</strong> question.</td>
-      </tr>
-    </tbody>
-  </table>
+    <h4>Shout-out Examples</h4>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Command Example</th>
+          <th>Resulting Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd ht</code></td>
+          <td>📢 Our World Live - Hoot Troop 🦉 🇺🇸 | 📺 <a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a> | 💬 <a href="https://x.com/Hoot_Troop" target="_blank" rel="noopener noreferrer">https://x.com/Hoot_Troop</a> | 🔗 <a href="https://linktr.ee/hoot_troop" target="_blank" rel="noopener noreferrer">https://linktr.ee/hoot_troop</a></td>
+        </tr>
+        <tr>
+          <td><code>!cmd ht|</code></td>
+          <td>📢 Our World Live - Hoot Troop 🦉 🇺🇸 | 📺 <a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a></td>
+        </tr>
+        <tr>
+          <td><code>!cmd ht-</code></td>
+          <td><a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a></td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>2. Command Modifiers (Difficulty)</h4>
-  <p>Suffixing <code>q</code> or <code>q2</code> with a modifier explicitly selects the difficulty tier. Unmodified commands select a random difficulty.</p>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Modifier Suffix</th>
-        <th>Difficulty</th>
-        <th>Emoji</th>
-        <th>Example Command</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>-</code> (Minus)</td>
-        <td>Easy</td>
-        <td>🟢</td>
-        <td><code>!cmd q-</code> or <code>!cmd q2-</code></td>
-      </tr>
-      <tr>
-        <td><code>|</code> (Pipe)</td>
-        <td>Medium</td>
-        <td>🟡</td>
-        <td><code>!cmd q|</code> or <code>!cmd q2|</code></td>
-      </tr>
-      <tr>
-        <td><code>!</code> (Exclamation)</td>
-        <td>Hard</td>
-        <td>🔴</td>
-        <td><code>!cmd q!</code> or <code>!cmd q2!</code></td>
-      </tr>
-    </tbody>
-  </table>
+    <h3>Trivia Commands Reference (!cmd q / !cmd a / !cmd q2 / !cmd a2)</h3>
+    <p>The trivia system provides random trivia questions and retrieves stored answers per user and channel context.</p>
 
-  <h4>3. Supported Categories & Short Aliases</h4>
-  <p>Pass a category name or shortcut alias as the first argument (e.g., <code>!cmd q history</code> or <code>!cmd q2- geo</code>).</p>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Keywords</th>
-        <th>Shorts</th>
-        <th>Letters</th>
-        <th>TriviaAPI</th>
-        <th>OpenTDB</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Arts &amp; Literature</td>
-        <td><code>arts</code>, <code>books</code>, <code>literature</code></td>
-        <td><code>art</code>, <code>book</code>, <code>lit</code></td>
-        <td><code>a</code>, <code>b</code>, <code>l</code></td>
-        <td>arts_and_literature</td>
-        <td>Entertainment: Books</td>
-      </tr>
-      <tr>
-        <td>Film &amp; Television</td>
-        <td><code>entertain</code>, <code>movies</code>, <code>television</code></td>
-        <td><code>ent</code>, <code>mov</code>, <code>tv</code></td>
-        <td><code>e</code>, <code>f</code>, <code>m</code>, <code>t</code></td>
-        <td>film_and_tv</td>
-        <td>Entertainment: Film</td>
-      </tr>
-      <tr>
-        <td>General Knowledge</td>
-        <td><code>knowledge</code></td>
-        <td><code>know</code></td>
-        <td><code>k</code></td>
-        <td>general_knowledge</td>
-        <td>General Knowledge</td>
-      </tr>
-      <tr>
-        <td>Geography</td>
-        <td><code>geography</code></td>
-        <td><code>geo</code></td>
-        <td><code>g</code></td>
-        <td>geography</td>
-        <td>Geography</td>
-      </tr>
-      <tr>
-        <td>History</td>
-        <td><code>history</code></td>
-        <td><code>hist</code></td>
-        <td><code>h</code></td>
-        <td>history</td>
-        <td>History</td>
-      </tr>
-      <tr>
-        <td>Politics</td>
-        <td><code>politics</code>, <code>pol</code></td>
-        <td><code>pol</code></td>
-        <td><code>p</code></td>
-        <td>history</td>
-        <td>Politics</td>
-      </tr>
-      <tr>
-        <td>Music</td>
-        <td><code>music</code></td>
-        <td><code>mus</code></td>
-        <td><code>u</code></td>
-        <td>music</td>
-        <td>Entertainment: Music</td>
-      </tr>
-      <tr>
-        <td>Science &amp; Nature</td>
-        <td><code>nature</code>, <code>science</code></td>
-        <td><code>nat</code>, <code>sci</code></td>
-        <td><code>c</code>, <code>n</code></td>
-        <td>science</td>
-        <td>Science &amp; Nature</td>
-      </tr>
-      <tr>
-        <td>Society &amp; Culture / Mythology</td>
-        <td><code>culture</code>, <code>mythology</code>, <code>social</code></td>
-        <td><code>cult</code>, <code>myth</code>, <code>soc</code></td>
-        <td><code>y</code></td>
-        <td>society_and_culture</td>
-        <td>Mythology</td>
-      </tr>
-      <tr>
-        <td>Sports &amp; Leisure</td>
-        <td><code>leisure</code>, <code>sports</code></td>
-        <td><code>spo</code></td>
-        <td><code>s</code></td>
-        <td>sport_and_leisure</td>
-        <td>Sports</td>
-      </tr>
-    </tbody>
-  </table>
+    <h4>1. Command Overview</h4>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Aliases</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>!cmd q</strong></td>
+          <td>q, q1, trivia, question, trivia1, question1</td>
+          <td>Fetches a random trivia question from The Trivia API.</td>
+        </tr>
+        <tr>
+          <td><strong>!cmd a</strong></td>
+          <td>a, a1, answer, answer1</td>
+          <td>Retrieves the answer for the active <strong>!cmd q</strong> question.</td>
+        </tr>
+        <tr>
+          <td><strong>!cmd q2</strong></td>
+          <td>q2, trivia2, question2</td>
+          <td>Fetches a random trivia question from OpenTDB (with fallback to Trivia API).</td>
+        </tr>
+        <tr>
+          <td><strong>!cmd a2</strong></td>
+          <td>a2, answer2</td>
+          <td>Retrieves the answer for the active <strong>!cmd q2</strong> question.</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>4. Example Invocations</h4>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Command Invocation</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>!cmd q</code></td>
-        <td>Request a random Trivia API question (random difficulty, any category).</td>
-      </tr>
-      <tr>
-        <td><code>!cmd q- history</code></td>
-        <td>Request an <strong>Easy</strong> history question from Trivia API.</td>
-      </tr>
-      <tr>
-        <td><code>!cmd q! sci</code></td>
-        <td>Request a <strong>Hard</strong> science question from Trivia API.</td>
-      </tr>
-      <tr>
-        <td><code>!cmd a</code></td>
-        <td>View the answer to the last requested Trivia API question.</td>
-      </tr>
-      <tr>
-        <td><code>!cmd q2| geo</code></td>
-        <td>Request a <strong>Medium</strong> geography question from OpenTDB.</td>
-      </tr>
-      <tr>
-        <td><code>!cmd a2</code></td>
-        <td>View the answer to the last requested OpenTDB trivia question.</td>
-      </tr>
-    </tbody>
-  </table>
+    <h4>2. Command Modifiers (Difficulty)</h4>
+    <p>Suffixing <code>q</code> or <code>q2</code> with a modifier explicitly selects the difficulty tier. Unmodified commands select a random difficulty.</p>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Modifier Suffix</th>
+          <th>Difficulty</th>
+          <th>Emoji</th>
+          <th>Example Command</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>-</code> (Minus)</td>
+          <td>Easy</td>
+          <td>🟢</td>
+          <td><code>!cmd q-</code> or <code>!cmd q2-</code></td>
+        </tr>
+        <tr>
+          <td><code>|</code> (Pipe)</td>
+          <td>Medium</td>
+          <td>🟡</td>
+          <td><code>!cmd q|</code> or <code>!cmd q2|</code></td>
+        </tr>
+        <tr>
+          <td><code>!</code> (Exclamation)</td>
+          <td>Hard</td>
+          <td>🔴</td>
+          <td><code>!cmd q!</code> or <code>!cmd q2!</code></td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>5. Trivia Sources</h4>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Source Name</th>
-        <th>URL</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>TriviaAPI</td>
-        <td><a href="https://the-trivia-api.com" target="_blank" rel="noopener noreferrer">https://the-trivia-api.com</a></td>
-      </tr>
-      <tr>
-        <td>OpenTDB</td>
-        <td><a href="https://opentdb.com" target="_blank" rel="noopener noreferrer">https://opentdb.com</a></td>
-      </tr>
-    </tbody>
-  </table>
+    <h4>3. Supported Categories & Short Aliases</h4>
+    <p>Pass a category name or shortcut alias as the first argument (e.g., <code>!cmd q history</code> or <code>!cmd q2- geo</code>).</p>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Keywords</th>
+          <th>Shorts</th>
+          <th>Letters</th>
+          <th>TriviaAPI</th>
+          <th>OpenTDB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arts &amp; Literature</td>
+          <td><code>arts</code>, <code>books</code>, <code>literature</code></td>
+          <td><code>art</code>, <code>book</code>, <code>lit</code></td>
+          <td><code>a</code>, <code>b</code>, <code>l</code></td>
+          <td>arts_and_literature</td>
+          <td>Entertainment: Books</td>
+        </tr>
+        <tr>
+          <td>Film &amp; Television</td>
+          <td><code>entertain</code>, <code>movies</code>, <code>television</code></td>
+          <td><code>ent</code>, <code>mov</code>, <code>tv</code></td>
+          <td><code>e</code>, <code>f</code>, <code>m</code>, <code>t</code></td>
+          <td>film_and_tv</td>
+          <td>Entertainment: Film</td>
+        </tr>
+        <tr>
+          <td>General Knowledge</td>
+          <td><code>knowledge</code></td>
+          <td><code>know</code></td>
+          <td><code>k</code></td>
+          <td>general_knowledge</td>
+          <td>General Knowledge</td>
+        </tr>
+        <tr>
+          <td>Geography</td>
+          <td><code>geography</code></td>
+          <td><code>geo</code></td>
+          <td><code>g</code></td>
+          <td>geography</td>
+          <td>Geography</td>
+        </tr>
+        <tr>
+          <td>History</td>
+          <td><code>history</code></td>
+          <td><code>hist</code></td>
+          <td><code>h</code></td>
+          <td>history</td>
+          <td>History</td>
+        </tr>
+        <tr>
+          <td>Politics</td>
+          <td><code>politics</code>, <code>pol</code></td>
+          <td><code>pol</code></td>
+          <td><code>p</code></td>
+          <td>history</td>
+          <td>Politics</td>
+        </tr>
+        <tr>
+          <td>Music</td>
+          <td><code>music</code></td>
+          <td><code>mus</code></td>
+          <td><code>u</code></td>
+          <td>music</td>
+          <td>Entertainment: Music</td>
+        </tr>
+        <tr>
+          <td>Science &amp; Nature</td>
+          <td><code>nature</code>, <code>science</code></td>
+          <td><code>nat</code>, <code>sci</code></td>
+          <td><code>c</code>, <code>n</code></td>
+          <td>science</td>
+          <td>Science &amp; Nature</td>
+        </tr>
+        <tr>
+          <td>Society &amp; Culture / Mythology</td>
+          <td><code>culture</code>, <code>mythology</code>, <code>social</code></td>
+          <td><code>cult</code>, <code>myth</code>, <code>soc</code></td>
+          <td><code>y</code></td>
+          <td>society_and_culture</td>
+          <td>Mythology</td>
+        </tr>
+        <tr>
+          <td>Sports &amp; Leisure</td>
+          <td><code>leisure</code>, <code>sports</code></td>
+          <td><code>spo</code></td>
+          <td><code>s</code></td>
+          <td>sport_and_leisure</td>
+          <td>Sports</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h3>Channel Customizations</h3>
+    <h4>4. Example Invocations</h4>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Command Invocation</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd q</code></td>
+          <td>Request a random Trivia API question (random difficulty, any category).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q- history</code></td>
+          <td>Request an <strong>Easy</strong> history question from Trivia API.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q! sci</code></td>
+          <td>Request a <strong>Hard</strong> science question from Trivia API.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd a</code></td>
+          <td>View the answer to the last requested Trivia API question.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q2| geo</code></td>
+          <td>Request a <strong>Medium</strong> geography question from OpenTDB.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd a2</code></td>
+          <td>View the answer to the last requested OpenTDB trivia question.</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>Supported Chatbots</h4>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Bot / Platform</th>
-        <th>YouTube</th>
-        <th>Kick</th>
-        <th>Twitch</th>
-        <th>!cmd</th>
-        <th>!!</th>
-        <th>URL</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>StreamElements</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td><a href="https://streamelements.com" target="_blank" rel="noopener noreferrer">https://streamelements.com</a></td>
-        <td><strong>Recommended; requires separate per-platform setup.</strong></td>
-      </tr>
-      <tr>
-        <td>Nightbot</td>
-        <td>Y</td>
-        <td>-</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td><a href="https://nightbot.tv" target="_blank" rel="noopener noreferrer">https://nightbot.tv</a></td>
-        <td>Kick not supported.</td>
-      </tr>
-      <tr>
-        <td>Fossabot</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td><a href="https://fossabot.com" target="_blank" rel="noopener noreferrer">https://fossabot.com</a></td>
-        <td>Preferred for multi-platform sync (YT/Kick/Twitch).</td>
-      </tr>
-      <tr>
-        <td>Streamlabs</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td><a href="https://streamlabs.com/cloudbot" target="_blank" rel="noopener noreferrer">https://streamlabs.com/cloudbot</a></td>
-        <td>Must use !cmd2 for 1 argument; max 1 argument limit.</td>
-      </tr>
-      <tr>
-        <td>KickBot</td>
-        <td>-</td>
-        <td>Y</td>
-        <td>-</td>
-        <td>Y</td>
-        <td>-</td>
-        <td><a href="https://kick.com" target="_blank" rel="noopener noreferrer">https://kick.com</a></td>
-        <td>!! shortcut alias not supported.</td>
-      </tr>
-      <tr>
-        <td>Streamer.bot</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td><a href="https://streamer.bot" target="_blank" rel="noopener noreferrer">https://streamer.bot</a></td>
-        <td>Requires local streamer PC installation.</td>
-      </tr>
-      <tr style="color: #888888; background-color: rgba(128, 128, 128, 0.2);">
-        <td style="background-color: transparent;">BotRix</td>
-        <td style="background-color: transparent;">Y</td>
-        <td style="background-color: transparent;">Y</td>
-        <td style="background-color: transparent;">Y</td>
-        <td style="background-color: transparent;">-</td>
-        <td style="background-color: transparent;">-</td>
-        <td style="background-color: transparent;"><a href="https://botrix.live" target="_blank" rel="noopener noreferrer" style="color: #888888;">https://botrix.live</a></td>
-        <td style="background-color: transparent;">Unsupported; broken custom command service call-outs.</td>
-      </tr>
-    </tbody>
-  </table>
+    <h4>5. Trivia Sources</h4>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Source Name</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TriviaAPI</td>
+          <td><a href="https://the-trivia-api.com" target="_blank" rel="noopener noreferrer">https://the-trivia-api.com</a></td>
+        </tr>
+        <tr>
+          <td>OpenTDB</td>
+          <td><a href="https://opentdb.com" target="_blank" rel="noopener noreferrer">https://opentdb.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <h4>Response URL Parameter Settings</h4>
-  <p>The <code>response</code> URL parameter (aliases: <code>r</code>, <code>resp</code>, <code>response</code>) overrides the default behavior of commands that do not include a command modifier. If not specified, <code>response</code> defaults to <code>large</code>. Note that this is not a user setting, but rather a customization that some channels may opt-in to.</p>
-  <table style="width: max-content;">
-    <thead>
-      <tr>
-        <th>Response Value</th>
-        <th>Aliases</th>
-        <th>Mapped Modifier</th>
-        <th>Behavior Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>small</code></td>
-        <td><code>small</code>, <code>sm</code>, <code>s</code></td>
-        <td><code>-</code> (Minus)</td>
-        <td>Displays only the first URL found in the response.</td>
-      </tr>
-      <tr>
-        <td><code>medium</code></td>
-        <td><code>medium</code>, <code>md</code>, <code>m</code></td>
-        <td><code>|</code> (Pipe)</td>
-        <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
-      </tr>
-      <tr>
-        <td><code>large</code></td>
-        <td><code>large</code>, <code>lg</code>, <code>l</code></td>
-        <td><code>!</code> (Exclamation / Default)</td>
-        <td>Displays the full unmodified response (default when <code>response</code> is not specified).</td>
-      </tr>
-    </tbody>
-  </table>
+  <div id="footerTabChannels" class="cmd-footer-tab-panel" role="tabpanel">
+    <h3>Channel Customizations</h3>
+
+    <h4>Supported Chatbots</h4>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Bot / Platform</th>
+          <th>YouTube</th>
+          <th>Kick</th>
+          <th>Twitch</th>
+          <th>!cmd</th>
+          <th>!!</th>
+          <th>URL</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>StreamElements</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://streamelements.com" target="_blank" rel="noopener noreferrer">https://streamelements.com</a></td>
+          <td><strong>Recommended; requires separate per-platform setup.</strong></td>
+        </tr>
+        <tr>
+          <td>Nightbot</td>
+          <td>Y</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://nightbot.tv" target="_blank" rel="noopener noreferrer">https://nightbot.tv</a></td>
+          <td>Kick not supported.</td>
+        </tr>
+        <tr>
+          <td>Fossabot</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://fossabot.com" target="_blank" rel="noopener noreferrer">https://fossabot.com</a></td>
+          <td>Preferred for multi-platform sync (YT/Kick/Twitch).</td>
+        </tr>
+        <tr>
+          <td>Streamlabs</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://streamlabs.com/cloudbot" target="_blank" rel="noopener noreferrer">https://streamlabs.com/cloudbot</a></td>
+          <td>Must use !cmd2 for 1 argument; max 1 argument limit.</td>
+        </tr>
+        <tr>
+          <td>KickBot</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>-</td>
+          <td><a href="https://kick.com" target="_blank" rel="noopener noreferrer">https://kick.com</a></td>
+          <td>!! shortcut alias not supported.</td>
+        </tr>
+        <tr>
+          <td>Streamer.bot</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://streamer.bot" target="_blank" rel="noopener noreferrer">https://streamer.bot</a></td>
+          <td>Requires local streamer PC installation.</td>
+        </tr>
+        <tr style="color: #888888; background-color: rgba(128, 128, 128, 0.2);">
+          <td style="background-color: transparent;">BotRix</td>
+          <td style="background-color: transparent;">Y</td>
+          <td style="background-color: transparent;">Y</td>
+          <td style="background-color: transparent;">Y</td>
+          <td style="background-color: transparent;">-</td>
+          <td style="background-color: transparent;">-</td>
+          <td style="background-color: transparent;"><a href="https://botrix.live" target="_blank" rel="noopener noreferrer" style="color: #888888;">https://botrix.live</a></td>
+          <td style="background-color: transparent;">Unsupported; broken custom command service call-outs.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Response URL Parameter Settings</h4>
+    <p>The <code>response</code> URL parameter (aliases: <code>r</code>, <code>resp</code>, <code>response</code>) overrides the default behavior of commands that do not include a command modifier. If not specified, <code>response</code> defaults to <code>large</code>. Note that this is not a user setting, but rather a customization that some channels may opt-in to.</p>
+    <table style="width: max-content;">
+      <thead>
+        <tr>
+          <th>Response Value</th>
+          <th>Aliases</th>
+          <th>Mapped Modifier</th>
+          <th>Behavior Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>small</code></td>
+          <td><code>small</code>, <code>sm</code>, <code>s</code></td>
+          <td><code>-</code> (Minus)</td>
+          <td>Displays only the first URL found in the response.</td>
+        </tr>
+        <tr>
+          <td><code>medium</code></td>
+          <td><code>medium</code>, <code>md</code>, <code>m</code></td>
+          <td><code>|</code> (Pipe)</td>
+          <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
+        </tr>
+        <tr>
+          <td><code>large</code></td>
+          <td><code>large</code>, <code>lg</code>, <code>l</code></td>
+          <td><code>!</code> (Exclamation / Default)</td>
+          <td>Displays the full unmodified response (default when <code>response</code> is not specified).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    (() => {
+      const container = document.getElementById('cmd-docs-container');
+      if (!container) return;
+      const buttons = container.querySelectorAll('[data-footer-tab]');
+      const panels = {
+        users: document.getElementById('footerTabUsers'),
+        channels: document.getElementById('footerTabChannels')
+      };
+
+      const activateFooterTab = (tabKey) => {
+        buttons.forEach(btn => {
+          const isMatch = btn.getAttribute('data-footer-tab') === tabKey;
+          btn.classList.toggle('active', isMatch);
+          btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+        });
+        Object.entries(panels).forEach(([key, panel]) => {
+          if (panel) panel.classList.toggle('active', key === tabKey);
+        });
+      };
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabKey = btn.getAttribute('data-footer-tab');
+          if (tabKey) activateFooterTab(tabKey);
+        });
+      });
+    })();
+  </script>
 </div>
