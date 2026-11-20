@@ -4,21 +4,6 @@ const FALLBACK_PROVIDER = "YouTube";
 // Case-insensitive allowlist of chat providers your upstream Worker explicitly recognizes.
 const VALID_PROVIDERS = new Set(["youtube", "kick", "twitch"]);
 
-function normalizeStreamlabsQuery(rawQuery) {
-  if (!rawQuery || rawQuery === "null") {
-    return "";
-  }
-
-  return rawQuery
-    // Join positional "{1}+{2}+..." tokens into space-separated words
-    .replace(/\+/g, " ")
-    // Strip unexpanded placeholders like "{19}" or literal "null" tokens
-    .replace(/\{\d+\}|\bnull\b/gi, " ")
-    // Collapse repeated spaces and trim leading/trailing whitespace
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 export default async function handler(req, res) {
   try {
     // Parse the incoming request URL so we can safely read and mutate query parameters.
@@ -35,10 +20,6 @@ export default async function handler(req, res) {
 
     if (!rawQuery || rawQuery === "null") {
       rawQuery = "";
-    } else if (platform === "streamlabs") {
-      // Only Streamlabs uses positional "+..." slots that need slot/null cleanup.
-      // StreamElements, BotRix, Nightbot, and Fossabot pass query strings directly.
-      rawQuery = normalizeStreamlabsQuery(rawQuery);
     }
 
     url.searchParams.set("query", rawQuery);
