@@ -1,10 +1,12 @@
+const FALLBACK_PROVIDER = "YouTube"; // or "YouTube|Kick|Twitch"
+const VALID_PROVIDERS = new Set(["youtube", "kick", "twitch"]);
+
 export default async function handler(req, res) {
   const url = new URL(req.url, `https://${req.headers.host}`);
 
   const rawProvider = url.searchParams.get("provider");
-  const validProviders = new Set(["youtube", "kick", "twitch"]);
-  if (!rawProvider || !validProviders.has(rawProvider.toLowerCase())) {
-    url.searchParams.set("provider", "YouTube|Kick|Twitch");
+  if (!rawProvider || !VALID_PROVIDERS.has(rawProvider.toLowerCase())) {
+    url.searchParams.set("provider", FALLBACK_PROVIDER);
   }
 
   const rawQuery = url.searchParams.get("query");
