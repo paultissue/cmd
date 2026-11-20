@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/commands", "destination": "https://cmd.paultissue.workers.dev/commands" },
+    { "source": "/:path*", "destination": "/api/index.js" }
+  ]
+}
