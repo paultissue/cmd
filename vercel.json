@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/:path*",
-      "destination": "https://cmd.paultissue.workers.dev/:path*"
+      "source": "/(.*)",
+      "destination": "https://cmd.paultissue.workers.dev/$1"
     }
   ]
 }
