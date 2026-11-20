@@ -5,12 +5,19 @@
   <style>
     #cmd-docs-container h3,
     #cmd-docs-container h4 {
-      font-family: inherit;
+      font-family: Arial, sans-serif;
     }
     #cmd-docs-container table,
     #cmd-docs-container th,
     #cmd-docs-container td {
-      font-family: inherit;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      #cmd-docs-container th,
+      #cmd-docs-container td {
+        font-size: 0.8rem;
+      }
     }
     .cmd-footer-tabs {
       display: flex;
@@ -28,7 +35,7 @@
       cursor: pointer;
       border-radius: 4px;
       font-size: 0.9rem;
-      font-family: inherit;
+      font-family: Arial, sans-serif;
     }
     .cmd-footer-tab-btn:hover {
       background: var(--hdr, rgba(128, 128, 128, 0.15));
@@ -168,7 +175,7 @@
     <table style="width: max-content;">
       <thead>
         <tr>
-          <th>Command</th>
+          <th>Command Example</th>
           <th>Aliases</th>
           <th>Description</th>
         </tr>
