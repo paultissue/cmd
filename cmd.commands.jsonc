@@ -72,6 +72,10 @@
     "response": "🤖 Usage: !cmd wiki <topic> | Provides a shortened post (up to 200 characters) related to the specified Wikipedia topic",
     "aliases": ["wikipedia"]
   },
+  "8ball": {
+    "response": "🎱 Usage: !cmd 8ball <question> | Ask the Magic 8-Ball a question for a clever stream fortune",
+    "aliases": ["8", "8b", "guru", "advice"]
+  },
 
   // General Commands
   "f": {
