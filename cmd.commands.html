@@ -427,13 +427,13 @@
     </table>
 
     <h3>Weather Command Reference (!cmd weather / !cmd wx)</h3>
-    <p>Retrieves weather conditions via Open-Meteo using natural-language location queries formatted cleanly for chat (200-character limit). Supported command aliases: <code>w</code>, <code>weather</code>, <code>wx</code>, <code>forecast</code>.</p>
+    <p>Retrieves weather conditions via Open-Meteo using natural-language location queries formatted cleanly for chat (200-character limit). Supported command aliases: <code>weather</code>, <code>wx</code>, <code>forecast</code>.</p>
 
     <p>🌤️ <strong>Usage:</strong> <code>!cmd weather &lt;location&gt;</code><br>
     🌤️ <strong>Usage:</strong> <code>!! wx &lt;location&gt;</code></p>
 
     <h4>1. Command Overview &amp; Supported Location Queries</h4>
-    <p>To comply with Open-Meteo Geocoding API query matching, pass a single location name, postal/ZIP code, or a comma-separated <code>&lt;place&gt;, &lt;qualifier&gt;</code> pair where the qualifier matches a state, province, country name, or 2-letter ISO country code. Any of the weather aliases (<code>w</code>, <code>weather</code>, <code>wx</code>, <code>forecast</code>) can be used interchangeably.</p>
+    <p>To comply with Open-Meteo Geocoding API query matching, pass a single location name, postal/ZIP code, or a comma-separated <code>&lt;place&gt;, &lt;qualifier&gt;</code> pair where the qualifier matches a state, province, country name, or 2-letter ISO country code. Any of the weather aliases (<code>weather</code>, <code>wx</code>, <code>forecast</code>) can be used interchangeably.</p>
     <table>
       <thead>
         <tr>
@@ -445,7 +445,7 @@
       <tbody>
         <tr>
           <td><code>!cmd wx &lt;location&gt;</code></td>
-          <td><code>w</code>, <code>weather</code>, <code>wx</code>, <code>forecast</code></td>
+          <td><code>weather</code>, <code>wx</code>, <code>forecast</code></td>
           <td>Fetches temperature (°F / °C), feels-like temp, sky condition, wind speed/direction, humidity, air pressure, and visibility.</td>
         </tr>
         <tr>
@@ -472,7 +472,7 @@
           <td>Single city or town name (returns highest-population match).</td>
         </tr>
         <tr>
-          <td><code>!cmd w Minneapolis, Minnesota</code></td>
+          <td><code>!cmd weather Minneapolis, Minnesota</code></td>
           <td><strong>City + State / Province</strong></td>
           <td>Comma-separated city and full state/province name to disambiguate shared city names.</td>
         </tr>
@@ -482,7 +482,7 @@
           <td>Comma-separated city and full country name or 2-letter ISO-3166-1 alpha-2 country code.</td>
         </tr>
         <tr>
-          <td><code>!cmd wx 55401</code><br>-or-<br><code>!cmd w 90001, US</code></td>
+          <td><code>!cmd wx 55401</code><br>-or-<br><code>!cmd forecast 90001, US</code></td>
           <td><strong>Postal / ZIP Code</strong></td>
           <td>Numeric or alphanumeric postal code (combine with country code if shared across regions).</td>
         </tr>
@@ -512,7 +512,7 @@
           <td>🌤️ Minneapolis, MN: ❄️ 28.4 °F (-2.0 °C). Feels like 20.1 °F (-6.6 °C). Light snow. Wind from Northwest at 9.2 mph (14.8 km/h). Humidity is 82%. Air Pressure is 992 hPa. Vis: 6.2 mi (10 km).</td>
         </tr>
         <tr>
-          <td><code>!cmd w 55401</code></td>
+          <td><code>!cmd forecast 55401</code></td>
           <td>🌤️ Minneapolis, MN: ❄️ 28.4 °F (-2.0 °C). Feels like 20.1 °F (-6.6 °C). Light snow. Wind from Northwest at 9.2 mph (14.8 km/h). Humidity is 82%. Air Pressure is 992 hPa. Vis: 6.2 mi (10 km).</td>
         </tr>
         <tr>
@@ -528,7 +528,7 @@
           <td>🌤️ New York, NY: ⛅ 46.2 °F (7.9 °C). Feels like 42.1 °F (5.6 °C). Partly cloudy. Wind from North-Northwest at 7.5 mph (12.1 km/h). Humidity is 61%. Air Pressure is 1018 hPa. Vis: 10 mi (16.1 km).</td>
         </tr>
         <tr>
-          <td><code>!cmd w 10001</code></td>
+          <td><code>!cmd forecast 10001</code></td>
           <td>🌤️ New York, NY: ⛅ 46.2 °F (7.9 °C). Feels like 42.1 °F (5.6 °C). Partly cloudy. Wind from North-Northwest at 7.5 mph (12.1 km/h). Humidity is 61%. Air Pressure is 1018 hPa. Vis: 10 mi (16.1 km).</td>
         </tr>
         <tr>
@@ -544,7 +544,7 @@
           <td>🌤️ Paris, FR: ☁️ 45.3 °F (7.4 °C). Feels like 41.4 °F (5.2 °C). Overcast. Wind from East at 6.2 mph (10.0 km/h). Humidity is 84%. Air Pressure is 1016 hPa. Vis: 6.2 mi (10 km).</td>
         </tr>
         <tr>
-          <td><code>!cmd w Toronto</code></td>
+          <td><code>!cmd forecast Toronto</code></td>
           <td>🌤️ Toronto, ON: ❄️ 34.2 °F (1.2 °C). Feels like 28.4 °F (-2.0 °C). Light snow. Wind from North at 8.7 mph (14.0 km/h). Humidity is 76%. Air Pressure is 1011 hPa. Vis: 9.9 mi (16 km).</td>
         </tr>
         <tr>
