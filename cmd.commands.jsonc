@@ -64,6 +64,10 @@
     "response": "🤖 Usage: !cmd ddg <topic> | Provides a shortened post (100 characters or fewer) related to the specified DuckDuckGo topic",
     "aliases": ["duckduckgo"]
   },
+  "weather": {
+    "response": "	🌤️ Usage: !cmd weather <location> | Provides weather conditions via Open-Meteo using natural-language location queries",
+    "aliases": ["w", "wx", "forecast"]
+  },
   "wiki": {
     "response": "🤖 Usage: !cmd wiki <topic> | Provides a shortened post (up to 200 characters) related to the specified Wikipedia topic",
     "aliases": ["wikipedia"]
