@@ -425,6 +425,130 @@
         </tr>
       </tbody>
     </table>
+
+    <h3>Weather Command Reference (!cmd weather / !cmd wx)</h3>
+    <p>Retrieves current local weather conditions via Open-Meteo using natural-language location queries formatted cleanly for chat (200-character limit).</p>
+
+    <p>🌤️ <strong>Usage:</strong> <code>!cmd weather &lt;location&gt;</code><br>
+    🌤️ <strong>Usage:</strong> <code>!! wx &lt;location&gt;</code></p>
+
+    <h4>1. Command Overview &amp; Supported Location Queries</h4>
+    <p>To comply with Open-Meteo Geocoding API query matching, pass a single location name, postal/ZIP code, or a comma-separated <code>&lt;place&gt;, &lt;qualifier&gt;</code> pair where the qualifier matches a state, province, country name, or 2-letter ISO country code.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Example</th>
+          <th>Aliases</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd weather &lt;location&gt;</code></td>
+          <td>w, weather, wx, forecast</td>
+          <td>Fetches current temperature (°F / °C), feels-like temp, sky condition, wind speed/direction, humidity, air pressure, and visibility.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx docs</code></td>
+          <td><code>docs</code>, <code>help</code>, <code>?</code></td>
+          <td>Returns the official Open-Meteo Geocoding API documentation link.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>2. Location Query Formats (Open-Meteo Compliant)</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Query Type</th>
+          <th>Format / Rule</th>
+          <th>Valid Query Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>City Name</strong></td>
+          <td>Single city or town name (returns highest-population match).</td>
+          <td><code>!cmd wx Tokyo</code></td>
+        </tr>
+        <tr>
+          <td><strong>City + State / Province</strong></td>
+          <td>Comma-separated city and full state/province name to disambiguate shared city names.</td>
+          <td><code>!cmd wx Moscow, Idaho</code></td>
+        </tr>
+        <tr>
+          <td><strong>City + Country / Code</strong></td>
+          <td>Comma-separated city and full country name or 2-letter ISO-3166-1 alpha-2 country code.</td>
+          <td><code>!cmd wx London, GB</code> or <code>!cmd wx Paris, France</code></td>
+        </tr>
+        <tr>
+          <td><strong>Postal / ZIP Code</strong></td>
+          <td>Numeric or alphanumeric postal code (combine with country code if shared across regions).</td>
+          <td><code>!cmd wx 83858</code> or <code>!cmd wx 90210, US</code></td>
+        </tr>
+        <tr>
+          <td><strong>Region / State / Territory</strong></td>
+          <td>Administrative region, state, province, or island name.</td>
+          <td><code>!cmd wx British Columbia</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>3. Example Invocations &amp; Responses</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Invocation</th>
+          <th>Response Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd wx Rathdrum, Idaho</code></td>
+          <td>🌤️ Rathdrum, ID: ☁️ 33.3 °F (0.7 °C). Feels like 28.0 °F (-2.2 °C). Overcast. Wind from North-Northwest at 3.0 mph (4.8 km/h). Humidity is 91%. Air Pressure is 940 hPa. Vis: 6.2 mi (10 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx 83858</code></td>
+          <td>🌤️ Rathdrum, ID: ☁️ 33.3 °F (0.7 °C). Feels like 28.0 °F (-2.2 °C). Overcast. Wind from North-Northwest at 3.0 mph (4.8 km/h). Humidity is 91%. Air Pressure is 940 hPa. Vis: 6.2 mi (10 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx Moscow</code></td>
+          <td>🌤️ Moscow, RU: ❄️ 31.8 °F (-0.1 °C). Feels like 25.9 °F (-3.4 °C). Light snow. Wind from South-Southwest at 4.1 mph (6.6 km/h). Humidity is 90%. Air Pressure is 985 hPa. Vis: 12.2 mi (19.7 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx Tokyo</code></td>
+          <td>🌤️ Tokyo, JP: ☀️ 53.8 °F (12.1 °C). Feels like 49.5 °F (9.7 °C). Clear sky. Wind from East-Southeast at 2.1 mph (3.4 km/h). Humidity is 47%. Air Pressure is 1024 hPa. Vis: 27.3 mi (43.9 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx British Columbia</code></td>
+          <td>🌤️ British Columbia, CA: 🌦️ 44.6 °F (7.0 °C). Feels like 39.2 °F (4.0 °C). Light rain. Wind from Southeast at 8.5 mph (13.7 km/h). Humidity is 86%. Air Pressure is 1012 hPa. Vis: 6.2 mi (10 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx docs</code></td>
+          <td>🌤️ Weather Docs: <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs/geocoding-api</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>4. Weather Sources</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Source Name</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Open-Meteo Weather Forecast API</td>
+          <td><a href="https://open-meteo.com/en/docs" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs</a></td>
+        </tr>
+        <tr>
+          <td>Open-Meteo Geocoding API</td>
+          <td><a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs/geocoding-api</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div id="footerTabChannels" class="cmd-footer-tab-panel" role="tabpanel">
