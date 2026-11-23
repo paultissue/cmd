@@ -128,7 +128,7 @@
     <table>
       <thead>
         <tr>
-          <th>Example Command</th>
+          <th>Command Example</th>
           <th>Response Output</th>
         </tr>
       </thead>
@@ -374,7 +374,7 @@
     <table>
       <thead>
         <tr>
-          <th>Command Invocation</th>
+          <th>Command Example</th>
           <th>Description</th>
         </tr>
       </thead>
@@ -427,13 +427,13 @@
     </table>
 
     <h3>Weather Command Reference (!cmd weather / !cmd wx)</h3>
-    <p>Retrieves current local weather conditions via Open-Meteo using natural-language location queries formatted cleanly for chat (200-character limit).</p>
+    <p>Retrieves weather conditions via Open-Meteo using natural-language location queries formatted cleanly for chat (200-character limit). Supported command aliases: <code>w</code>, <code>weather</code>, <code>wx</code>, <code>forecast</code>.</p>
 
     <p>🌤️ <strong>Usage:</strong> <code>!cmd weather &lt;location&gt;</code><br>
     🌤️ <strong>Usage:</strong> <code>!! wx &lt;location&gt;</code></p>
 
     <h4>1. Command Overview &amp; Supported Location Queries</h4>
-    <p>To comply with Open-Meteo Geocoding API query matching, pass a single location name, postal/ZIP code, or a comma-separated <code>&lt;place&gt;, &lt;qualifier&gt;</code> pair where the qualifier matches a state, province, country name, or 2-letter ISO country code.</p>
+    <p>To comply with Open-Meteo Geocoding API query matching, pass a single location name, postal/ZIP code, or a comma-separated <code>&lt;place&gt;, &lt;qualifier&gt;</code> pair where the qualifier matches a state, province, country name, or 2-letter ISO country code. Any of the weather aliases (<code>w</code>, <code>weather</code>, <code>wx</code>, <code>forecast</code>) can be used interchangeably.</p>
     <table>
       <thead>
         <tr>
@@ -444,9 +444,9 @@
       </thead>
       <tbody>
         <tr>
-          <td><code>!cmd weather &lt;location&gt;</code></td>
-          <td>w, weather, wx, forecast</td>
-          <td>Fetches current temperature (°F / °C), feels-like temp, sky condition, wind speed/direction, humidity, air pressure, and visibility.</td>
+          <td><code>!cmd wx &lt;location&gt;</code></td>
+          <td><code>w</code>, <code>weather</code>, <code>wx</code>, <code>forecast</code></td>
+          <td>Fetches temperature (°F / °C), feels-like temp, sky condition, wind speed/direction, humidity, air pressure, and visibility.</td>
         </tr>
         <tr>
           <td><code>!cmd wx docs</code></td>
@@ -474,22 +474,22 @@
         <tr>
           <td><strong>City + State / Province</strong></td>
           <td>Comma-separated city and full state/province name to disambiguate shared city names.</td>
-          <td><code>!cmd wx Moscow, Idaho</code></td>
+          <td><code>!cmd w Minneapolis, Minnesota</code></td>
         </tr>
         <tr>
           <td><strong>City + Country / Code</strong></td>
           <td>Comma-separated city and full country name or 2-letter ISO-3166-1 alpha-2 country code.</td>
-          <td><code>!cmd wx London, GB</code> or <code>!cmd wx Paris, France</code></td>
+          <td><code>!cmd forecast London, GB</code> or <code>!cmd weather Paris, France</code></td>
         </tr>
         <tr>
           <td><strong>Postal / ZIP Code</strong></td>
           <td>Numeric or alphanumeric postal code (combine with country code if shared across regions).</td>
-          <td><code>!cmd wx 83858</code> or <code>!cmd wx 90210, US</code></td>
+          <td><code>!cmd wx 55401</code> or <code>!cmd w 90001, US</code></td>
         </tr>
         <tr>
           <td><strong>Region / State / Territory</strong></td>
-          <td>Administrative region, state, province, or island name.</td>
-          <td><code>!cmd wx British Columbia</code></td>
+          <td>Administrative region, state, province, or territory name.</td>
+          <td><code>!cmd weather NY</code></td>
         </tr>
       </tbody>
     </table>
@@ -498,33 +498,61 @@
     <table>
       <thead>
         <tr>
-          <th>Command Invocation</th>
+          <th>Command Example</th>
           <th>Response Output</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>!cmd wx Rathdrum, Idaho</code></td>
-          <td>🌤️ Rathdrum, ID: ☁️ 33.3 °F (0.7 °C). Feels like 28.0 °F (-2.2 °C). Overcast. Wind from North-Northwest at 3.0 mph (4.8 km/h). Humidity is 91%. Air Pressure is 940 hPa. Vis: 6.2 mi (10 km).</td>
+          <td><code>!cmd wx Minneapolis</code></td>
+          <td>🌤️ Minneapolis, MN: ❄️ 28.4 °F (-2.0 °C). Feels like 20.1 °F (-6.6 °C). Light snow. Wind from Northwest at 9.2 mph (14.8 km/h). Humidity is 82%. Air Pressure is 992 hPa. Vis: 6.2 mi (10 km).</td>
         </tr>
         <tr>
-          <td><code>!cmd wx 83858</code></td>
-          <td>🌤️ Rathdrum, ID: ☁️ 33.3 °F (0.7 °C). Feels like 28.0 °F (-2.2 °C). Overcast. Wind from North-Northwest at 3.0 mph (4.8 km/h). Humidity is 91%. Air Pressure is 940 hPa. Vis: 6.2 mi (10 km).</td>
+          <td><code>!cmd w 55401</code></td>
+          <td>🌤️ Minneapolis, MN: ❄️ 28.4 °F (-2.0 °C). Feels like 20.1 °F (-6.6 °C). Light snow. Wind from Northwest at 9.2 mph (14.8 km/h). Humidity is 82%. Air Pressure is 992 hPa. Vis: 6.2 mi (10 km).</td>
         </tr>
         <tr>
-          <td><code>!cmd wx Moscow</code></td>
-          <td>🌤️ Moscow, RU: ❄️ 31.8 °F (-0.1 °C). Feels like 25.9 °F (-3.4 °C). Light snow. Wind from South-Southwest at 4.1 mph (6.6 km/h). Humidity is 90%. Air Pressure is 985 hPa. Vis: 12.2 mi (19.7 km).</td>
+          <td><code>!cmd forecast Los Angeles</code></td>
+          <td>🌤️ Los Angeles, CA: ☀️ 68.5 °F (20.3 °C). Feels like 67.1 °F (19.5 °C). Clear sky. Wind from West-Southwest at 6.8 mph (10.9 km/h). Humidity is 54%. Air Pressure is 1015 hPa. Vis: 10 mi (16.1 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx 90001</code></td>
+          <td>🌤️ Los Angeles, CA: ☀️ 68.5 °F (20.3 °C). Feels like 67.1 °F (19.5 °C). Clear sky. Wind from West-Southwest at 6.8 mph (10.9 km/h). Humidity is 54%. Air Pressure is 1015 hPa. Vis: 10 mi (16.1 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd weather NY</code></td>
+          <td>🌤️ New York, NY: ⛅ 46.2 °F (7.9 °C). Feels like 42.1 °F (5.6 °C). Partly cloudy. Wind from North-Northwest at 7.5 mph (12.1 km/h). Humidity is 61%. Air Pressure is 1018 hPa. Vis: 10 mi (16.1 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd w 10001</code></td>
+          <td>🌤️ New York, NY: ⛅ 46.2 °F (7.9 °C). Feels like 42.1 °F (5.6 °C). Partly cloudy. Wind from North-Northwest at 7.5 mph (12.1 km/h). Humidity is 61%. Air Pressure is 1018 hPa. Vis: 10 mi (16.1 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd forecast London</code></td>
+          <td>🌤️ London, GB: 🌦️ 48.9 °F (9.4 °C). Feels like 45.0 °F (7.2 °C). Light rain. Wind from Southwest at 10.1 mph (16.3 km/h). Humidity is 79%. Air Pressure is 1009 hPa. Vis: 6.2 mi (10 km).</td>
         </tr>
         <tr>
           <td><code>!cmd wx Tokyo</code></td>
           <td>🌤️ Tokyo, JP: ☀️ 53.8 °F (12.1 °C). Feels like 49.5 °F (9.7 °C). Clear sky. Wind from East-Southeast at 2.1 mph (3.4 km/h). Humidity is 47%. Air Pressure is 1024 hPa. Vis: 27.3 mi (43.9 km).</td>
         </tr>
         <tr>
-          <td><code>!cmd wx British Columbia</code></td>
-          <td>🌤️ British Columbia, CA: 🌦️ 44.6 °F (7.0 °C). Feels like 39.2 °F (4.0 °C). Light rain. Wind from Southeast at 8.5 mph (13.7 km/h). Humidity is 86%. Air Pressure is 1012 hPa. Vis: 6.2 mi (10 km).</td>
+          <td><code>!cmd weather Paris</code></td>
+          <td>🌤️ Paris, FR: ☁️ 45.3 °F (7.4 °C). Feels like 41.4 °F (5.2 °C). Overcast. Wind from East at 6.2 mph (10.0 km/h). Humidity is 84%. Air Pressure is 1016 hPa. Vis: 6.2 mi (10 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd w Toronto</code></td>
+          <td>🌤️ Toronto, ON: ❄️ 34.2 °F (1.2 °C). Feels like 28.4 °F (-2.0 °C). Light snow. Wind from North at 8.7 mph (14.0 km/h). Humidity is 76%. Air Pressure is 1011 hPa. Vis: 9.9 mi (16 km).</td>
         </tr>
         <tr>
           <td><code>!cmd wx docs</code></td>
+          <td>🌤️ Weather Docs: <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs/geocoding-api</a></td>
+        </tr>
+        <tr>
+          <td><code>!cmd w help</code></td>
+          <td>🌤️ Weather Docs: <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs/geocoding-api</a></td>
+        </tr>
+        <tr>
+          <td><code>!cmd forecast ?</code></td>
           <td>🌤️ Weather Docs: <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs/geocoding-api</a></td>
         </tr>
       </tbody>
