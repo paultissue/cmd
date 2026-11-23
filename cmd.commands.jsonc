@@ -65,8 +65,8 @@
     "aliases": ["duckduckgo"]
   },
   "weather": {
-    "response": "	🌤️ Usage: !cmd weather <location> | Provides weather conditions via Open-Meteo using natural-language location queries",
-    "aliases": ["w", "wx", "forecast"]
+    "response": "🌤️ Usage: !cmd weather <location> | Provides weather conditions via Open-Meteo using natural-language location queries",
+    "aliases": ["wx", "forecast"]
   },
   "wiki": {
     "response": "🤖 Usage: !cmd wiki <topic> | Provides a shortened post (up to 200 characters) related to the specified Wikipedia topic",
