@@ -1,83 +1,724 @@
-// Map each incoming Vercel hostname to its corresponding Cloudflare Worker origin
-const UPSTREAM_BY_HOST = {
-  "cmdbot.vercel.app": "https://cmd.paultissue.workers.dev",
-  "cmd-lite.vercel.app": "https://cmd-lite.paultissue.workers.dev",  
-  "cmdtest.vercel.app": "https://authorized-users.paultissue.workers.dev"
-};
-
-// Default upstream Worker if an unknown or preview hostname hits the relay
-const DEFAULT_UPSTREAM_ORIGIN = "https://cmd.paultissue.workers.dev";
-
-// Fallback base URL used when parsing relative request paths like "/commands?foo=bar"
-const RELAY_BASE_URL = "https://cmdbot.vercel.app";
-
-// Maximum time (in ms) to wait on the Worker before aborting and returning a clean timeout error
-const TIMEOUT_MS = 7000;
-
-export default async function handler(req, res) {
-  // Step 1: Attach CORS headers so browser-based chat clients can read responses cross-origin
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
-  // Step 2: Respond immediately to CORS preflight requests
-  if (req.method === "OPTIONS") {
-    return res.status(204).end();
-  }
-
-  try {
-    // Step 3: Determine the incoming hostname and select the matching upstream Worker
-    const rawHost = String(req.headers?.host || "")
-      .split(":")[0]
-      .toLowerCase();
-    const upstreamOrigin = UPSTREAM_BY_HOST[rawHost] || DEFAULT_UPSTREAM_ORIGIN;
-
-    // Step 4: Parse the incoming request URL safely so pathname and query parameters stay separated
-    const baseForParse = rawHost ? `https://${rawHost}` : RELAY_BASE_URL;
-    const url = new URL(req.url || "/", baseForParse);
-
-    // Step 5: Normalize missing or unexpanded "$(provider)" placeholders to a safe default platform
-    const provider = url.searchParams.get("provider");
-    if (!provider || provider === "$(provider)") {
-      url.searchParams.set("provider", "YouTube");
+<!-- ============================================================================ -->
+<!-- cmd.commands.html - Usage Documentation & Trivia Reference Footer            -->
+<!-- ============================================================================ -->
+<div id="cmd-docs-container" style="width: max-content; max-width: 100%;">
+  <style>
+    #cmd-docs-container,
+    #cmd-docs-container h3,
+    #cmd-docs-container h4,
+    #cmd-docs-container p,
+    #cmd-docs-container table,
+    #cmd-docs-container thead,
+    #cmd-docs-container tbody,
+    #cmd-docs-container tr,
+    #cmd-docs-container th,
+    #cmd-docs-container td,
+    #cmd-docs-container code,
+    #cmd-docs-container strong,
+    #cmd-docs-container a {
+      font-family: Arial, sans-serif;
     }
+    #cmd-docs-container code {
+      font-family: monospace;
+      font-size: inherit;
+      font-weight: normal;
+    }
+    #cmd-docs-container strong {
+      font-weight: bold;
+    }
+    #cmd-docs-container table {
+      border-collapse: collapse;
+      width: max-content;
+    }
+    #cmd-docs-container th,
+    #cmd-docs-container td {
+      border: 1px solid var(--border, #cccccc);
+      padding: 6px 10px;
+      text-align: left;
+      font-size: 0.9rem;
+      font-weight: normal;
+      box-sizing: border-box;
+    }
+    #cmd-docs-container th {
+      background: var(--hdr, #f2f2f2);
+      font-weight: bold;
+    }
+    #cmd-docs-container th:first-child,
+    #cmd-docs-container td:first-child {
+      white-space: nowrap;
+    }
+    @media (max-width: 600px) {
+      #cmd-docs-container th,
+      #cmd-docs-container td {
+        padding: 5px 6px;
+        font-size: 0.8rem;
+      }
+    }
+    .cmd-footer-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 16px;
+      border-bottom: 1px solid var(--border, #cccccc);
+      padding-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .cmd-footer-tab-btn {
+      background: none;
+      border: 1px solid var(--border, #cccccc);
+      color: var(--text, inherit);
+      padding: 6px 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-family: Arial, sans-serif;
+    }
+    .cmd-footer-tab-btn:hover {
+      background: var(--hdr, rgba(128, 128, 128, 0.15));
+    }
+    .cmd-footer-tab-btn.active {
+      font-weight: bold;
+      background: var(--hdr, rgba(128, 128, 128, 0.2));
+      border-color: var(--text, currentColor);
+    }
+    .cmd-footer-tab-panel {
+      display: none;
+    }
+    .cmd-footer-tab-panel.active {
+      display: block;
+    }
+  </style>
 
-    // Step 6: Build the full upstream Worker URL preserving both subpaths and query strings
-    const targetUrl = `${upstreamOrigin}${url.pathname}${url.search}`;
+  <div class="cmd-footer-tabs" role="tablist" aria-label="Documentation Sections">
+    <button type="button" class="cmd-footer-tab-btn active" role="tab" aria-selected="true" data-footer-tab="users">Users</button>
+    <button type="button" class="cmd-footer-tab-btn" role="tab" aria-selected="false" data-footer-tab="channels">Channels</button>
+  </div>
 
-    // Step 7: Forward the request to the Worker with browser-friendly headers and a timeout guard
-    const upstream = await fetch(targetUrl, {
-      method: req.method || "GET",
-      headers: {
-        // Helps avoid edge/WAF blocks on bot or non-browser clients
-        "User-Agent": "Mozilla/5.0",
-        // Preserves caller content preferences (such as HTML vs. plain text) when provided
-        "Accept": req.headers?.accept || "*/*"
-      },
-      // Aborts hung upstream calls before they tie up the serverless function
-      signal: AbortSignal.timeout(TIMEOUT_MS)
-    });
+  <div id="footerTabUsers" class="cmd-footer-tab-panel active" role="tabpanel">
+    <h3>Command Usage</h3>
+    <p>Use <code>!cmd</code> to invoke these shout-out service commands. The <code>!!</code> shortcut alias can be used in place of <code>!cmd</code> on supported providers.</p>
 
-    // Step 8: Read the response body from the Worker as text so both chat replies and HTML pages pass through
-    const body = await upstream.text();
+    <p>🤖 <strong>Usage:</strong> <code>!cmd &lt;command&gt; [args]</code><br>
+    🤖 <strong>Usage:</strong> <code>!! &lt;command&gt; [args]</code></p>
 
-    // Step 9: Mirror the Worker's HTTP status code and content type back to the caller
-    res.status(upstream.status);
-    res.setHeader(
-      "Content-Type",
-      upstream.headers.get("content-type") || "text/plain; charset=utf-8"
-    );
+    <h4>Syntax Parameters &amp; Format</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;command&gt;</code></td>
+          <td>You must provide a specific command to invoke.</td>
+        </tr>
+        <tr>
+          <td><code>[args]</code></td>
+          <td>Optional and only provided if the specific command requires them.</td>
+        </tr>
+        <tr>
+          <td><strong>Format</strong></td>
+          <td>There must be a space after <code>!cmd</code> or <code>!!</code> before the specific command to invoke.</td>
+        </tr>
+      </tbody>
+    </table>
 
-    // Step 10: Disable caching so live chat commands always get fresh responses
-    res.setHeader("Cache-Control", "no-store");
+    <h4>Usage Examples</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Example Command</th>
+          <th>Response Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!! likes 123</code></td>
+          <td>👍 123 Thumbs Up 👍 Smash that Like button! 👍 Let's Goooo! 🇺🇸</td>
+        </tr>
+        <tr>
+          <td><code>!cmd question2!</code></td>
+          <td>❓ Question2: [Entertainment: Music] 🔴 Which song was originally recorded by The Velvet Underground and was later covered by Cowboy Junkies? | Choices: Sweet Jane, Blue Suede Shoes, I Love Rock 'n' Roll, Tainted Love</td>
+        </tr>
+        <tr>
+          <td><code>!cmd answer2</code></td>
+          <td>💡 Answer2: Sweet Jane</td>
+        </tr>
+      </tbody>
+    </table>
 
-    // Step 11: Send the final response back to the browser chat client, bot, or page viewer
-    return res.send(body);
-  } catch (err) {
-    // Step 12: Distinguish timeouts (504) from general relay/network failures (502) and return plain text
-    const timedOut = err?.name === "TimeoutError" || err?.name === "AbortError";
-    res.status(timedOut ? 504 : 502);
-    res.setHeader("Content-Type", "text/plain; charset=utf-8");
-    return res.send(timedOut ? "Upstream timeout." : `Relay error: ${err.message}`);
-  }
-}
+    <h3>Command Modifiers</h3>
+    <p>Append a hyphen (<code>-</code>) to display only the first URL, a pipe (<code>|</code>) to truncate the output after the first URL block, or an exclamation mark (<code>!</code>) for the full unmodified response.<br>
+    There must be no space between the command and the modifier itself.</p>
+
+    <h4>Shout-out Modifiers</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Example</th>
+          <th>Modifier Suffix</th>
+          <th>Behavior Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd ht-</code></td>
+          <td><code>-</code> (Minus)</td>
+          <td>Displays only the first URL found in the response.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd ht|</code></td>
+          <td><code>|</code> (Pipe)</td>
+          <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd ht!</code></td>
+          <td><code>!</code> (Exclamation)</td>
+          <td>Displays the full unmodified response (large/default output).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Shout-out Examples</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Example</th>
+          <th>Resulting Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd ht</code></td>
+          <td>📢 Our World Live - Hoot Troop 🦉 🇺🇸 | 📺 <a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a> | 💬 <a href="https://x.com/Hoot_Troop" target="_blank" rel="noopener noreferrer">https://x.com/Hoot_Troop</a> | 🔗 <a href="https://linktr.ee/hoot_troop" target="_blank" rel="noopener noreferrer">https://linktr.ee/hoot_troop</a></td>
+        </tr>
+        <tr>
+          <td><code>!cmd ht|</code></td>
+          <td>📢 Our World Live - Hoot Troop 🦉 🇺🇸 | 📺 <a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a></td>
+        </tr>
+        <tr>
+          <td><code>!cmd ht-</code></td>
+          <td><a href="https://youtube.com/@Hoot_Troop" target="_blank" rel="noopener noreferrer">https://youtube.com/@Hoot_Troop</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Trivia Commands Reference (!cmd q / !cmd a -and- !cmd q2 / !cmd a2)</h3>
+    <p>The trivia system provides random trivia questions and retrieves stored answers per user and channel context.</p>
+
+    <h4>1. Command Overview</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Example</th>
+          <th>Aliases</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd q</code></td>
+          <td>q, q1, trivia, question, trivia1, question1</td>
+          <td>Fetches a random trivia question from The Trivia API.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd a</code></td>
+          <td>a, a1, answer, answer1</td>
+          <td>Retrieves the answer for the active <strong>!cmd q</strong> question.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q2</code></td>
+          <td>q2, trivia2, question2</td>
+          <td>Fetches a random trivia question from OpenTDB (with fallback to Trivia API).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd a2</code></td>
+          <td>a2, answer2</td>
+          <td>Retrieves the answer for the active <strong>!cmd q2</strong> question.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>2. Command Modifiers (Difficulty)</h4>
+    <p>Suffixing <code>q</code> or <code>q2</code> with a modifier explicitly selects the difficulty tier. Unmodified commands select a random difficulty. Answer commands (<code>!a</code> / <code>!a2</code>) do not require a difficulty modifier to return the answer. Invoking <code>!q</code> or <code>!q2</code> again for the same user overwrites the previous active question's answer, so <code>!a</code> or <code>!a2</code> only returns the answer to the most recent question. <code>!a</code> and <code>!a2</code> track their answers independently.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Example</th>
+          <th>Modifier Suffix</th>
+          <th>Difficulty</th>
+          <th>Emoji</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd q-</code> or <code>!cmd q2-</code></td>
+          <td><code>-</code> (Minus)</td>
+          <td>Easy</td>
+          <td>🟢</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q|</code> or <code>!cmd q2|</code></td>
+          <td><code>|</code> (Pipe)</td>
+          <td>Medium</td>
+          <td>🟡</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q!</code> or <code>!cmd q2!</code></td>
+          <td><code>!</code> (Exclamation)</td>
+          <td>Hard</td>
+          <td>🔴</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>3. Supported Categories &amp; Short Aliases</h4>
+    <p>Pass a category name or shortcut alias as the first argument (e.g., <code>!cmd q history</code> or <code>!cmd q2- geo</code>).</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Keywords</th>
+          <th>Shorts</th>
+          <th>Letters</th>
+          <th>TriviaAPI</th>
+          <th>OpenTDB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arts &amp; Literature</td>
+          <td><code>arts</code>, <code>books</code>, <code>literature</code></td>
+          <td><code>art</code>, <code>book</code>, <code>lit</code></td>
+          <td><code>a</code>, <code>b</code>, <code>l</code></td>
+          <td>arts_and_literature</td>
+          <td>Entertainment: Books</td>
+        </tr>
+        <tr>
+          <td>Film &amp; Television</td>
+          <td><code>entertain</code>, <code>movies</code>, <code>television</code></td>
+          <td><code>ent</code>, <code>mov</code>, <code>tv</code></td>
+          <td><code>e</code>, <code>f</code>, <code>m</code>, <code>t</code></td>
+          <td>film_and_tv</td>
+          <td>Entertainment: Film</td>
+        </tr>
+        <tr>
+          <td>General Knowledge</td>
+          <td><code>knowledge</code></td>
+          <td><code>know</code></td>
+          <td><code>k</code></td>
+          <td>general_knowledge</td>
+          <td>General Knowledge</td>
+        </tr>
+        <tr>
+          <td>Geography</td>
+          <td><code>geography</code></td>
+          <td><code>geo</code></td>
+          <td><code>g</code></td>
+          <td>geography</td>
+          <td>Geography</td>
+        </tr>
+        <tr>
+          <td>History</td>
+          <td><code>history</code></td>
+          <td><code>hist</code></td>
+          <td><code>h</code></td>
+          <td>history</td>
+          <td>History</td>
+        </tr>
+        <tr>
+          <td>Politics</td>
+          <td><code>politics</code>, <code>pol</code></td>
+          <td><code>pol</code></td>
+          <td><code>p</code></td>
+          <td>history</td>
+          <td>Politics</td>
+        </tr>
+        <tr>
+          <td>Music</td>
+          <td><code>music</code></td>
+          <td><code>mus</code></td>
+          <td><code>u</code></td>
+          <td>music</td>
+          <td>Entertainment: Music</td>
+        </tr>
+        <tr>
+          <td>Science &amp; Nature</td>
+          <td><code>nature</code>, <code>science</code></td>
+          <td><code>nat</code>, <code>sci</code></td>
+          <td><code>c</code>, <code>n</code></td>
+          <td>science</td>
+          <td>Science &amp; Nature</td>
+        </tr>
+        <tr>
+          <td>Society &amp; Culture / Mythology</td>
+          <td><code>culture</code>, <code>mythology</code>, <code>social</code></td>
+          <td><code>cult</code>, <code>myth</code>, <code>soc</code></td>
+          <td><code>y</code></td>
+          <td>society_and_culture</td>
+          <td>Mythology</td>
+        </tr>
+        <tr>
+          <td>Sports &amp; Leisure</td>
+          <td><code>leisure</code>, <code>sports</code></td>
+          <td><code>spo</code></td>
+          <td><code>s</code></td>
+          <td>sport_and_leisure</td>
+          <td>Sports</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>4. Example Invocations</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Invocation</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd q</code></td>
+          <td>Request a random Trivia API question (random difficulty, any category).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q- history</code></td>
+          <td>Request an <strong>Easy</strong> history question from Trivia API.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q! sci</code></td>
+          <td>Request a <strong>Hard</strong> science question from Trivia API.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd a</code></td>
+          <td>View the answer to the last requested Trivia API question.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd q2| geo</code></td>
+          <td>Request a <strong>Medium</strong> geography question from OpenTDB.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd a2</code></td>
+          <td>View the answer to the last requested OpenTDB trivia question.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>5. Trivia Sources</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Source Name</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TriviaAPI</td>
+          <td><a href="https://the-trivia-api.com" target="_blank" rel="noopener noreferrer">https://the-trivia-api.com</a></td>
+        </tr>
+        <tr>
+          <td>OpenTDB</td>
+          <td><a href="https://opentdb.com" target="_blank" rel="noopener noreferrer">https://opentdb.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Weather Command Reference (!cmd weather / !cmd wx)</h3>
+    <p>Retrieves current local weather conditions via Open-Meteo using natural-language location queries formatted cleanly for chat (200-character limit).</p>
+
+    <p>🌤️ <strong>Usage:</strong> <code>!cmd weather &lt;location&gt;</code><br>
+    🌤️ <strong>Usage:</strong> <code>!! wx &lt;location&gt;</code></p>
+
+    <h4>1. Command Overview &amp; Supported Location Queries</h4>
+    <p>To comply with Open-Meteo Geocoding API query matching, pass a single location name, postal/ZIP code, or a comma-separated <code>&lt;place&gt;, &lt;qualifier&gt;</code> pair where the qualifier matches a state, province, country name, or 2-letter ISO country code.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Example</th>
+          <th>Aliases</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd weather &lt;location&gt;</code></td>
+          <td>w, weather, wx, forecast</td>
+          <td>Fetches current temperature (°F / °C), feels-like temp, sky condition, wind speed/direction, humidity, air pressure, and visibility.</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx docs</code></td>
+          <td><code>docs</code>, <code>help</code>, <code>?</code></td>
+          <td>Returns the official Open-Meteo Geocoding API documentation link.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>2. Location Query Formats (Open-Meteo Compliant)</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Query Type</th>
+          <th>Format / Rule</th>
+          <th>Valid Query Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>City Name</strong></td>
+          <td>Single city or town name (returns highest-population match).</td>
+          <td><code>!cmd wx Tokyo</code></td>
+        </tr>
+        <tr>
+          <td><strong>City + State / Province</strong></td>
+          <td>Comma-separated city and full state/province name to disambiguate shared city names.</td>
+          <td><code>!cmd wx Moscow, Idaho</code></td>
+        </tr>
+        <tr>
+          <td><strong>City + Country / Code</strong></td>
+          <td>Comma-separated city and full country name or 2-letter ISO-3166-1 alpha-2 country code.</td>
+          <td><code>!cmd wx London, GB</code> or <code>!cmd wx Paris, France</code></td>
+        </tr>
+        <tr>
+          <td><strong>Postal / ZIP Code</strong></td>
+          <td>Numeric or alphanumeric postal code (combine with country code if shared across regions).</td>
+          <td><code>!cmd wx 83858</code> or <code>!cmd wx 90210, US</code></td>
+        </tr>
+        <tr>
+          <td><strong>Region / State / Territory</strong></td>
+          <td>Administrative region, state, province, or island name.</td>
+          <td><code>!cmd wx British Columbia</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>3. Example Invocations &amp; Responses</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Command Invocation</th>
+          <th>Response Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>!cmd wx Rathdrum, Idaho</code></td>
+          <td>🌤️ Rathdrum, ID: ☁️ 33.3 °F (0.7 °C). Feels like 28.0 °F (-2.2 °C). Overcast. Wind from North-Northwest at 3.0 mph (4.8 km/h). Humidity is 91%. Air Pressure is 940 hPa. Vis: 6.2 mi (10 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx 83858</code></td>
+          <td>🌤️ Rathdrum, ID: ☁️ 33.3 °F (0.7 °C). Feels like 28.0 °F (-2.2 °C). Overcast. Wind from North-Northwest at 3.0 mph (4.8 km/h). Humidity is 91%. Air Pressure is 940 hPa. Vis: 6.2 mi (10 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx Moscow</code></td>
+          <td>🌤️ Moscow, RU: ❄️ 31.8 °F (-0.1 °C). Feels like 25.9 °F (-3.4 °C). Light snow. Wind from South-Southwest at 4.1 mph (6.6 km/h). Humidity is 90%. Air Pressure is 985 hPa. Vis: 12.2 mi (19.7 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx Tokyo</code></td>
+          <td>🌤️ Tokyo, JP: ☀️ 53.8 °F (12.1 °C). Feels like 49.5 °F (9.7 °C). Clear sky. Wind from East-Southeast at 2.1 mph (3.4 km/h). Humidity is 47%. Air Pressure is 1024 hPa. Vis: 27.3 mi (43.9 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx British Columbia</code></td>
+          <td>🌤️ British Columbia, CA: 🌦️ 44.6 °F (7.0 °C). Feels like 39.2 °F (4.0 °C). Light rain. Wind from Southeast at 8.5 mph (13.7 km/h). Humidity is 86%. Air Pressure is 1012 hPa. Vis: 6.2 mi (10 km).</td>
+        </tr>
+        <tr>
+          <td><code>!cmd wx docs</code></td>
+          <td>🌤️ Weather Docs: <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs/geocoding-api</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>4. Weather Sources</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Source Name</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Open-Meteo Weather Forecast API</td>
+          <td><a href="https://open-meteo.com/en/docs" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs</a></td>
+        </tr>
+        <tr>
+          <td>Open-Meteo Geocoding API</td>
+          <td><a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/docs/geocoding-api</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="footerTabChannels" class="cmd-footer-tab-panel" role="tabpanel">
+    <h3>Channel Customizations</h3>
+
+    <h4>Supported Chatbots</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Bot / Platform</th>
+          <th>YouTube</th>
+          <th>Kick</th>
+          <th>Twitch</th>
+          <th>!</th>
+          <th>!!</th>
+          <th>!c</th>
+          <th>!cmd</th>
+          <th>URL</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>StreamElements</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://streamelements.com" target="_blank" rel="noopener noreferrer">https://streamelements.com</a></td>
+          <td><strong><u>Recommended</u></strong>. Requires separate per-provider setup.</td>
+        </tr>
+        <tr>
+          <td>Nightbot</td>
+          <td>Y</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://nightbot.tv" target="_blank" rel="noopener noreferrer">https://nightbot.tv</a></td>
+          <td>Kick not supported. Requires separate per-provider setup.</td>
+        </tr>
+        <tr>
+          <td>Fossabot</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://fossabot.com" target="_blank" rel="noopener noreferrer">https://fossabot.com</a></td>
+          <td>Requires separate per-provider setup.</td>
+        </tr>
+        <tr>
+          <td>Streamlabs</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://streamlabs.com/cloudbot" target="_blank" rel="noopener noreferrer">https://streamlabs.com/cloudbot</a></td>
+          <td>Must use !cmd2 for 1 argument commands; max 1 argument limit.</td>
+        </tr>
+        <tr>
+          <td>KickBot</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://kick.com" target="_blank" rel="noopener noreferrer">https://kick.com</a></td>
+          <td>!! command alias not supported.</td>
+        </tr>
+        <tr>
+          <td>BotRix</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://botrix.live" target="_blank" rel="noopener noreferrer">https://botrix.live</a></td>
+          <td>!! command alias not supported.</td>
+        </tr>
+        <tr>
+          <td>Streamer.bot</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td><a href="https://streamer.bot" target="_blank" rel="noopener noreferrer">https://streamer.bot</a></td>
+          <td>Requires local streamer PC installation.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Response URL Parameter Settings</h4>
+    <p>The <code>response</code> URL parameter (aliases: <code>r</code>, <code>resp</code>, <code>response</code>) overrides the default behavior of commands that do not include a command modifier. If not specified, <code>response</code> defaults to <code>large</code>. Note that this is not a user setting, but rather a customization that some channels may opt-in to.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Response Value</th>
+          <th>Aliases</th>
+          <th>Mapped Modifier</th>
+          <th>Behavior Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>small</code></td>
+          <td><code>small</code>, <code>sm</code>, <code>s</code></td>
+          <td><code>-</code> (Minus)</td>
+          <td>Displays only the first URL found in the response.</td>
+        </tr>
+        <tr>
+          <td><code>medium</code></td>
+          <td><code>medium</code>, <code>md</code>, <code>m</code></td>
+          <td><code>|</code> (Pipe)</td>
+          <td>Truncates the response at the second pipe character (stops after the first URL block).</td>
+        </tr>
+        <tr>
+          <td><code>large</code></td>
+          <td><code>large</code>, <code>lg</code>, <code>l</code></td>
+          <td><code>!</code> (Exclamation / Default)</td>
+          <td>Displays the full unmodified response (default when <code>response</code> is not specified).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    (() => {
+      const container = document.getElementById('cmd-docs-container');
+      if (!container) return;
+      const buttons = container.querySelectorAll('[data-footer-tab]');
+      const panels = {
+        users: document.getElementById('footerTabUsers'),
+        channels: document.getElementById('footerTabChannels')
+      };
+
+      const activateFooterTab = (tabKey) => {
+        buttons.forEach(btn => {
+          const isMatch = btn.getAttribute('data-footer-tab') === tabKey;
+          btn.classList.toggle('active', isMatch);
+          btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+        });
+        Object.entries(panels).forEach(([key, panel]) => {
+          if (panel) panel.classList.toggle('active', key === tabKey);
+        });
+      };
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabKey = btn.getAttribute('data-footer-tab');
+          if (tabKey) activateFooterTab(tabKey);
+        });
+      });
+    })();
+  </script>
+</div>
